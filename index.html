@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新媒体数据平台 | 热门内容聚合</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">
+        <div class="logo-icon-wrap">📊</div>
+        <div>
+          <div class="logo-text">新媒体平台</div>
+          <div class="logo-sub">NewMedia Dashboard</div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="nav-section-title">数据平台</div>
+      <a class="nav-item active" data-platform="all">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-label">数据概览</span>
+      </a>
+      <a class="nav-item" data-platform="xiaohongshu">
+        <span class="nav-icon">📕</span>
+        <span class="nav-label">小红书</span>
+        <span class="nav-badge xhs">10</span>
+      </a>
+      <a class="nav-item" data-platform="douyin">
+        <span class="nav-icon">🎵</span>
+        <span class="nav-label">抖音</span>
+        <span class="nav-badge dy">10</span>
+      </a>
+      <a class="nav-item" data-platform="wechat">
+        <span class="nav-icon">💬</span>
+        <span class="nav-label">公众号</span>
+        <span class="nav-badge wx">10</span>
+      </a>
+
+      <div class="nav-section-title">工具</div>
+      <a class="nav-item" data-platform="analytics">
+        <span class="nav-icon">📈</span>
+        <span class="nav-label">数据分析</span>
+        <span class="nav-tag">SOON</span>
+      </a>
+      <a class="nav-item disabled" data-platform="publish">
+        <span class="nav-icon">🚀</span>
+        <span class="nav-label">内容分发</span>
+        <span class="nav-tag">SOON</span>
+      </a>
+      <a class="nav-item disabled" data-platform="collect">
+        <span class="nav-icon">📥</span>
+        <span class="nav-label">数据采集</span>
+        <span class="nav-tag">SOON</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="update-info">
+        <span class="update-dot"></span>
+        <span id="updateTime">数据加载中...</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="main-content" id="mainContent">
+    <!-- Top Bar -->
+    <header class="top-bar">
+      <button class="menu-toggle" id="menuToggle">☰</button>
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" placeholder="搜索热门内容、作者、标签..." id="searchInput">
+      </div>
+      <div class="top-actions">
+        <button class="btn-refresh" id="btnRefresh" title="刷新数据">
+          <span class="refresh-icon">↻</span>
+        </button>
+        <div class="user-pill">
+          <div class="user-avatar-sm">👤</div>
+          <span>新媒体人</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Overview Page -->
+    <div class="page active" id="page-all">
+      <div class="page-header">
+        <h1>数据概览</h1>
+        <p>小红书 · 抖音 · 公众号 — 三大平台热门内容一目了然</p>
+      </div>
+      <div class="stats-grid" id="statsGrid"></div>
+      <div id="platformPreviews"></div>
+    </div>
+
+    <!-- Xiaohongshu Page -->
+    <div class="page" id="page-xiaohongshu">
+      <div class="platform-banner xhs-bg">
+        <div class="platform-banner-content">
+          <h1>📕 小红书热门</h1>
+          <p>今日小红书热门内容 Top 10 · 实时追踪爆款笔记</p>
+        </div>
+        <div class="platform-banner-stats" id="xhsStats"></div>
+      </div>
+      <!-- 小红书搜索框 -->
+      <div style="background:var(--bg-raised);border-radius:var(--radius);padding:20px 24px;border:1px solid var(--border);margin-bottom:20px;display:flex;gap:12px;align-items:center;">
+        <span style="font-size:20px;">🔍</span>
+        <input type="text" id="xhsSearchInput" placeholder="输入关键词，跳转小红书搜索爆款笔记..." style="flex:1;border:none;outline:none;font-size:14px;background:transparent;color:var(--text);font-family:inherit;">
+        <button onclick="searchXHS()" style="padding:8px 20px;border-radius:8px;background:var(--xhs);color:#fff;border:none;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;">搜索</button>
+      </div>
+      <div class="sort-bar" id="xhsSortBar"></div>
+      <div class="content-list" id="xhsList"></div>
+    </div>
+
+    <!-- Douyin Page -->
+    <div class="page" id="page-douyin">
+      <div class="platform-banner dy-bg">
+        <div class="platform-banner-content">
+          <h1>🎵 抖音热门</h1>
+          <p>今日抖音热门内容 Top 10 · 全网最火视频追踪</p>
+        </div>
+        <div class="platform-banner-stats" id="dyStats"></div>
+      </div>
+      <div class="sort-bar" id="dySortBar"></div>
+      <div class="content-list" id="dyList"></div>
+    </div>
+
+    <!-- Wechat Page -->
+    <div class="page" id="page-wechat">
+      <div class="platform-banner wx-bg">
+        <div class="platform-banner-content">
+          <h1>💬 公众号热门</h1>
+          <p>今日公众号热门内容 Top 10 · 深度好文精选</p>
+        </div>
+        <div class="platform-banner-stats" id="wxStats"></div>
+      </div>
+      <div class="sort-bar" id="wxSortBar"></div>
+      <div class="content-list" id="wxList"></div>
+    </div>
+
+    <!-- Analytics Page -->
+    <div class="page" id="page-analytics">
+      <div class="page-header">
+        <h1>📈 数据分析</h1>
+        <p>多维度数据分析与可视化</p>
+      </div>
+      <div class="coming-soon">
+        <div class="coming-soon-icon">🔧</div>
+        <h2>功能开发中</h2>
+        <p>数据分析模块即将上线，敬请期待</p>
+      </div>
+    </div>
+  </main>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>
