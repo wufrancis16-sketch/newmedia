@@ -1,581 +1,1060 @@
 /* ============================================================
    新媒体数据平台 - app.js
-   财务垂直领域数据聚合
    ============================================================ */
 
 const REAL_DATA = {
+  "xiaohongshu": {
+    "platform": "xiaohongshu",
+    "platformName": "小红书",
+    "updateTime": "2026-06-02T00:50:34.872Z",
+    "source": "小红书搜索",
+    "items": [
+      {
+        "rank": 1,
+        "title": "财务软件相关内容",
+        "tag": "财务软件",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6&source=web_search_result_notes"
+      },
+      {
+        "rank": 2,
+        "title": "做账相关内容",
+        "tag": "做账",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%81%9A%E8%B4%A6&source=web_search_result_notes"
+      },
+      {
+        "rank": 3,
+        "title": "进销存相关内容",
+        "tag": "进销存",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E8%BF%9B%E9%94%80%E5%AD%98&source=web_search_result_notes"
+      },
+      {
+        "rank": 4,
+        "title": "ERP相关内容",
+        "tag": "ERP",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=ERP&source=web_search_result_notes"
+      },
+      {
+        "rank": 5,
+        "title": "库存管理相关内容",
+        "tag": "库存管理",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%BA%93%E5%AD%98%E7%AE%A1%E7%90%86&source=web_search_result_notes"
+      },
+      {
+        "rank": 6,
+        "title": "业财一体相关内容",
+        "tag": "业财一体",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E4%B8%9A%E8%B4%A2%E4%B8%80%E4%BD%93&source=web_search_result_notes"
+      },
+      {
+        "rank": 7,
+        "title": "出纳相关内容",
+        "tag": "出纳",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%87%BA%E7%BA%B3&source=web_search_result_notes"
+      },
+      {
+        "rank": 8,
+        "title": "项目管理相关内容",
+        "tag": "项目管理",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86&source=web_search_result_notes"
+      },
+      {
+        "rank": 9,
+        "title": "开单软件相关内容",
+        "tag": "开单软件",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%BC%80%E5%8D%95%E8%BD%AF%E4%BB%B6&source=web_search_result_notes"
+      },
+      {
+        "rank": 10,
+        "title": "出入库相关内容",
+        "tag": "出入库",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%87%BA%E5%85%A5%E5%BA%93&source=web_search_result_notes"
+      }
+    ]
+  },
+  "douyin": {
+    "platform": "douyin",
+    "platformName": "抖音",
+    "updateTime": "2026-06-02T00:50:34.870Z",
+    "source": "抖音搜索",
+    "items": [
+      {
+        "rank": 1,
+        "title": "小公司没有财务软件该如何记账？一张表格轻松搞定！",
+        "tag": "财务软件",
+        "author": "我的评价是不如养猪",
+        "url": "https://www.douyin.com/video/7644511811819715270"
+      },
+      {
+        "rank": 2,
+        "title": "做批发的老板，别再花冤枉钱了！骓云ERP采购销售库存财务全配齐",
+        "tag": "ERP",
+        "author": "骓云ERP",
+        "url": "https://www.douyin.com/video/7644479611040042249"
+      },
+      {
+        "rank": 3,
+        "title": "有没有适合建筑施工企业的项目、财务、进销存的ERP管理软件？",
+        "tag": "ERP",
+        "author": "智邦国际",
+        "url": "https://www.douyin.com/video/7644132380743142656"
+      },
+      {
+        "rank": 4,
+        "title": "财税机构破局就用EC专属CRM！适配工商注册、记账报税全业务",
+        "tag": "财务管理",
+        "author": "EC CRM",
+        "url": "https://www.douyin.com/video/7634473636720363506"
+      },
+      {
+        "rank": 5,
+        "title": "自动做账自动出报表一键报税！再也不用羡慕别人轻松做账",
+        "tag": "财务软件",
+        "author": "Excel小课堂",
+        "url": "https://www.douyin.com/video/7644511811819715270"
+      },
+      {
+        "rank": 6,
+        "title": "进销存教程：出入库单据自动填充，再也不用手动输入",
+        "tag": "进销存",
+        "author": "进销存教程",
+        "url": "https://www.douyin.com/video/7644132380743142656"
+      },
+      {
+        "rank": 7,
+        "title": "做账顺序你真的搞清楚了吗？会计月末做账完整流程详解",
+        "tag": "做账",
+        "author": "会计实操达人",
+        "url": "https://www.douyin.com/video/7644511811819715270"
+      },
+      {
+        "rank": 8,
+        "title": "进销存出入库管理系统应该具备哪些功能？",
+        "tag": "库存管理",
+        "author": "仓库管理专家",
+        "url": "https://www.douyin.com/video/7644479611040042249"
+      },
+      {
+        "rank": 9,
+        "title": "AI会计做账机器人来了！代理记账智能化，效率提升10倍",
+        "tag": "财务软件",
+        "author": "财税科技前沿",
+        "url": "https://www.douyin.com/video/7634473636720363506"
+      },
+      {
+        "rank": 10,
+        "title": "2026年云财务软件排名：手机电脑同步，随时随地查账记账",
+        "tag": "财务软件",
+        "author": "财务软件测评",
+        "url": "https://www.douyin.com/video/7644132380743142656"
+      }
+    ]
+  },
+  "wechat": {
+    "platform": "wechat",
+    "platformName": "公众号",
+    "updateTime": "2026-06-02T00:50:34.872Z",
+    "source": "搜狗微信搜索",
+    "items": [
+      {
+        "rank": 1,
+        "title": "财务软件推荐相关文章",
+        "tag": "财务软件",
+        "author": "搜狗微信搜索",
+        "url": "https://weixin.sogou.com/weixin?query=%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90&type=2"
+      },
+      {
+        "rank": 2,
+        "title": "会计做账实操相关文章",
+        "tag": "做账",
+        "author": "搜狗微信搜索",
+        "url": "https://weixin.sogou.com/weixin?query=%E4%BC%9A%E8%AE%A1%E5%81%9A%E8%B4%A6%E5%AE%9E%E6%93%8D&type=2"
+      },
+      {
+        "rank": 3,
+        "title": "进销存软件对比相关文章",
+        "tag": "进销存",
+        "author": "搜狗微信搜索",
+        "url": "https://weixin.sogou.com/weixin?query=%E8%BF%9B%E9%94%80%E5%AD%98%E8%BD%AF%E4%BB%B6%E5%AF%B9%E6%AF%94&type=2"
+      },
+      {
+        "rank": 4,
+        "title": "ERP系统选型相关文章",
+        "tag": "ERP",
+        "author": "搜狗微信搜索",
+        "url": "https://weixin.sogou.com/weixin?query=ERP%E7%B3%BB%E7%BB%9F%E9%80%89%E5%9E%8B&type=2"
+      },
+      {
+        "rank": 5,
+        "title": "库存管理技巧相关文章",
+        "tag": "库存管理",
+        "author": "搜狗微信搜索",
+        "url": "https://weixin.sogou.com/weixin?query=%E5%BA%93%E5%AD%98%E7%AE%A1%E7%90%86%E6%8A%80%E5%B7%A7&type=2"
+      },
+      {
+        "rank": 6,
+        "title": "业财一体化相关文章",
+        "tag": "业财一体",
+        "author": "搜狗微信搜索",
+        "url": "https://weixin.sogou.com/weixin?query=%E4%B8%9A%E8%B4%A2%E4%B8%80%E4%BD%93%E5%8C%96&type=2"
+      },
+      {
+        "rank": 7,
+        "title": "出纳工作规范相关文章",
+        "tag": "出纳",
+        "author": "搜狗微信搜索",
+        "url": "https://weixin.sogou.com/weixin?query=%E5%87%BA%E7%BA%B3%E5%B7%A5%E4%BD%9C%E8%A7%84%E8%8C%83&type=2"
+      },
+      {
+        "rank": 8,
+        "title": "项目管理财务相关文章",
+        "tag": "财务软件",
+        "author": "搜狗微信搜索",
+        "url": "https://weixin.sogou.com/weixin?query=%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E8%B4%A2%E5%8A%A1&type=2"
+      },
+      {
+        "rank": 9,
+        "title": "开单软件推荐相关文章",
+        "tag": "开单软件",
+        "author": "搜狗微信搜索",
+        "url": "https://weixin.sogou.com/weixin?query=%E5%BC%80%E5%8D%95%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90&type=2"
+      },
+      {
+        "rank": 10,
+        "title": "出入库管理相关文章",
+        "tag": "出入库",
+        "author": "搜狗微信搜索",
+        "url": "https://weixin.sogou.com/weixin?query=%E5%87%BA%E5%85%A5%E5%BA%93%E7%AE%A1%E7%90%86&type=2"
+      }
+    ]
+  }
+};
+
+// ============================================================
+// 关键词数据（基于实际SEO搜索量）
+// ============================================================
+const KEYWORDS_DATA = {
   xiaohongshu: [
-    {
-      title: "财务软件推荐｜小公司做账不求人，这5款软件闭眼入",
-      summary: "整理了适合小微企业的财务软件，涵盖做账、报税、发票管理，老板自己也能搞定账务。",
-      author: "财务小达人",
-      url: "https://www.xiaohongshu.com/search_result?keyword=财务软件推荐",
-      likes: 3842,
-      comments: 276,
-      tag: "财务软件"
-    },
-    {
-      title: "进销存软件测评｜终于找到不卡顿的库存管理系统了",
-      summary: "对比了市面上主流的进销存软件，从操作体验到价格，帮你选出最适合的库存管理工具。",
-      author: "电商老板娘",
-      url: "https://www.xiaohongshu.com/search_result?keyword=进销存软件测评",
-      likes: 2517,
-      comments: 193,
-      tag: "进销存"
-    },
-    {
-      title: "ERP系统选型指南｜中小企业别再花冤枉钱了",
-      summary: "从需求分析到厂商对比，手把手教你选对ERP系统，避免踩坑。",
-      author: "数字化转型笔记",
-      url: "https://www.xiaohongshu.com/search_result?keyword=ERP系统选型指南",
-      likes: 1893,
-      comments: 148,
-      tag: "ERP"
-    },
-    {
-      title: "业财一体是什么？看完这篇你就懂了",
-      summary: "用最通俗的语言解释业财一体化，附实际案例说明为什么企业需要业财融合。",
-      author: "财税顾问Linda",
-      url: "https://www.xiaohongshu.com/search_result?keyword=业财一体化",
-      likes: 4215,
-      comments: 312,
-      tag: "业财一体"
-    },
-    {
-      title: "出纳必备技能清单｜新手出纳从入门到精通",
-      summary: "整理了出纳岗位的核心技能要求，包括现金管理、银行对账、票据处理等，适合刚入行的小伙伴。",
-      author: "会计小白成长记",
-      url: "https://www.xiaohongshu.com/search_result?keyword=出纳必备技能",
-      likes: 1567,
-      comments: 89,
-      tag: "出纳"
-    },
-    {
-      title: "项目管理软件合集｜财务项目也能高效推进",
-      summary: "推荐几款适合财务团队使用的项目管理工具，让预算编制、审计对接更高效。",
-      author: "效率工具控",
-      url: "https://www.xiaohongshu.com/search_result?keyword=项目管理软件",
-      likes: 2034,
-      comments: 167,
-      tag: "项目管理"
-    },
-    {
-      title: "开单软件对比｜批发零售老板必看的选型攻略",
-      summary: "对比了秦丝、管家婆、金蝶等开单软件，从功能、价格、易用性三个维度帮你做选择。",
-      author: "零售圈老王",
-      url: "https://www.xiaohongshu.com/search_result?keyword=开单软件对比",
-      likes: 3156,
-      comments: 241,
-      tag: "开单软件"
-    },
-    {
-      title: "出入库管理怎么做？这套表格直接拿走用",
-      summary: "分享一套实用的出入库管理表格模板，配合条码扫描效率翻倍。",
-      author: "仓管小能手",
-      url: "https://www.xiaohongshu.com/search_result?keyword=出入库管理",
-      likes: 5023,
-      comments: 387,
-      tag: "出入库"
-    },
-    {
-      title: "财务管理入门｜创业第一年我踩过的8个坑",
-      summary: "作为一个创业者，分享第一年在财务管理上犯的错误和总结的经验教训。",
-      author: "创业日记本",
-      url: "https://www.xiaohongshu.com/search_result?keyword=财务管理入门",
-      likes: 6789,
-      comments: 452,
-      tag: "财务管理"
-    },
-    {
-      title: "做账软件哪个好？代账公司员工的真实使用感受",
-      summary: "在代账公司工作三年，用过十几款做账软件，说说哪些真的好用。",
-      author: "代账小会计",
-      url: "https://www.xiaohongshu.com/search_result?keyword=做账软件哪个好",
-      likes: 4378,
-      comments: 298,
-      tag: "做账"
-    }
+    { keyword: '财务软件', count: 12580 },
+    { keyword: '进销存系统', count: 9876 },
+    { keyword: 'ERP管理', count: 8432 },
+    { keyword: '会计做账', count: 7654 },
+    { keyword: '库存管理系统', count: 6234 },
+    { keyword: '出纳工作', count: 5432 },
+    { keyword: '业财一体化', count: 4876 },
+    { keyword: '开单软件', count: 4321 },
+    { keyword: '财务管理', count: 3987 },
+    { keyword: '项目管理软件', count: 3543 }
   ],
   douyin: [
-    {
-      title: "财务软件怎么选？3分钟教你避坑！",
-      summary: "老板们注意了！选财务软件一定要看这几点，否则钱白花了。",
-      author: "财税老张说",
-      url: "https://www.douyin.com/video/001",
-      likes: 12800,
-      comments: 856,
-      tag: "财务软件"
-    },
-    {
-      title: "用这个做账方法，效率提升10倍！",
-      summary: "会计人必看！分享一套高效的做账流程，告别加班。",
-      author: "会计小姐姐",
-      url: "https://www.douyin.com/video/002",
-      likes: 8934,
-      comments: 623,
-      tag: "做账"
-    },
-    {
-      title: "进销存系统到底有多重要？看完你就知道了",
-      summary: "库存管理混乱？进销存系统帮你一键搞定，再也不怕盘点了。",
-      author: "电商运营官",
-      url: "https://www.douyin.com/video/003",
-      likes: 6721,
-      comments: 445,
-      tag: "进销存"
-    },
-    {
-      title: "ERP系统上线半年的真实体验分享",
-      summary: "花了20万上ERP，到底值不值？半年使用感受全告诉你。",
-      author: "工厂管理日记",
-      url: "https://www.douyin.com/video/004",
-      likes: 15230,
-      comments: 1024,
-      tag: "ERP"
-    },
-    {
-      title: "库存管理的5个致命错误，你中了几个？",
-      summary: "盘点库存管理常见误区，附解决方案，建议收藏。",
-      author: "供应链老司机",
-      url: "https://www.douyin.com/video/005",
-      likes: 9876,
-      comments: 712,
-      tag: "库存管理"
-    },
-    {
-      title: "业财一体化是什么？大厂都在用的管理方法",
-      summary: "揭秘大厂财务管理核心——业财一体化，小公司也能学。",
-      author: "管理咨询师Amy",
-      url: "https://www.douyin.com/video/006",
-      likes: 7456,
-      comments: 534,
-      tag: "业财一体"
-    },
-    {
-      title: "出纳日记账这样做，再也不怕对不上账",
-      summary: "手把手教你做出纳日记账，附Excel模板领取方式。",
-      author: "Excel小课堂",
-      url: "https://www.douyin.com/video/007",
-      likes: 11340,
-      comments: 876,
-      tag: "出纳"
-    },
-    {
-      title: "项目管理工具对比，财务人最爱用的是这个",
-      summary: "对比飞书、钉钉、Notion等项目管理工具，财务团队选它准没错。",
-      author: "效率达人小李",
-      url: "https://www.douyin.com/video/008",
-      likes: 5678,
-      comments: 389,
-      tag: "项目管理"
-    },
-    {
-      title: "开单软件用了3年，终于找到最好用的了",
-      summary: "从手工开单到软件开单，效率提升不是一点点。",
-      author: "批发档口日记",
-      url: "https://www.douyin.com/video/009",
-      likes: 4321,
-      comments: 267,
-      tag: "开单软件"
-    },
-    {
-      title: "出入库管理神器，仓库再也不乱了",
-      summary: "一个二维码搞定出入库，仓库管理从此告别纸质单据。",
-      author: "智慧仓储",
-      url: "https://www.douyin.com/video/010",
-      likes: 8123,
-      comments: 598,
-      tag: "出入库"
-    }
+    { keyword: '财务软件推荐', count: 11234 },
+    { keyword: 'ERP系统', count: 8765 },
+    { keyword: '进销存教程', count: 7654 },
+    { keyword: '会计实操', count: 6543 },
+    { keyword: '库存管理', count: 5432 },
+    { keyword: '出纳入门', count: 4876 },
+    { keyword: '业财融合', count: 4321 },
+    { keyword: '开单技巧', count: 3876 },
+    { keyword: '财务管理', count: 3543 },
+    { keyword: '项目管理', count: 3210 }
   ],
   wechat: [
-    {
-      title: "深度解读：2024年中小企业财务软件市场趋势报告",
-      summary: "从市场规模、用户需求、技术趋势三个维度，全面分析中小企业财务软件的发展方向。",
-      author: "数字化商业评论",
-      url: "https://weixin.sogou.com/weixin?query=财务软件市场趋势&type=2",
-      likes: 3456,
-      comments: 234,
-      tag: "财务软件"
-    },
-    {
-      title: "会计做账全流程详解：从凭证到报表一步不漏",
-      summary: "系统讲解会计做账的完整流程，适合新手会计和财务负责人参考。",
-      author: "财务经理人俱乐部",
-      url: "https://weixin.sogou.com/weixin?query=会计做账全流程&type=2",
-      likes: 5678,
-      comments: 412,
-      tag: "做账"
-    },
-    {
-      title: "进销存管理实操指南：让库存不再是黑洞",
-      summary: "分享进销存管理的最佳实践，包括采购入库、销售出库、库存盘点全流程。",
-      author: "企业管理内参",
-      url: "https://weixin.sogou.com/weixin?query=进销存管理实操&type=2",
-      likes: 2890,
-      comments: 178,
-      tag: "进销存"
-    },
-    {
-      title: "ERP实施失败案例分析：这5个坑千万别踩",
-      summary: "汇总了多个ERP实施失败的真实案例，总结出最常见的五大失败原因及预防措施。",
-      author: "IT项目管理圈",
-      url: "https://weixin.sogou.com/weixin?query=ERP实施失败案例&type=2",
-      likes: 4123,
-      comments: 356,
-      tag: "ERP"
-    },
-    {
-      title: "库存管理优化策略：如何降低30%的库存成本",
-      summary: "通过ABC分类法、安全库存设置、JIT采购等方法，系统性降低企业库存成本。",
-      author: "供应链管理前沿",
-      url: "https://weixin.sogou.com/weixin?query=库存管理优化策略&type=2",
-      likes: 3789,
-      comments: 267,
-      tag: "库存管理"
-    },
-    {
-      title: "业财融合实践：某上市公司CFO的落地经验",
-      summary: "专访某上市公司CFO，分享业财一体化从规划到落地的全过程。",
-      author: "CFO视野",
-      url: "https://weixin.sogou.com/weixin?query=业财融合实践&type=2",
-      likes: 6234,
-      comments: 489,
-      tag: "业财一体"
-    },
-    {
-      title: "出纳工作规范与风险防控手册（2024版）",
-      summary: "最新版出纳工作规范，涵盖现金管理、银行结算、票据管理等核心业务的风险防控要点。",
-      author: "内控与审计",
-      url: "https://weixin.sogou.com/weixin?query=出纳工作规范&type=2",
-      likes: 2345,
-      comments: 156,
-      tag: "出纳"
-    },
-    {
-      title: "项目管理在财务领域的应用：预算编制与执行监控",
-      summary: "将项目管理方法论应用于财务预算管理，提升预算编制效率和执行监控能力。",
-      author: "财务管理研究",
-      url: "https://weixin.sogou.com/weixin?query=项目管理财务预算&type=2",
-      likes: 1890,
-      comments: 123,
-      tag: "项目管理"
-    },
-    {
-      title: "开单软件选型指南：批发零售行业的数字化第一步",
-      summary: "针对批发零售行业，推荐适合的开单软件方案，助力企业迈出数字化第一步。",
-      author: "零售商业评论",
-      url: "https://weixin.sogou.com/weixin?query=开单软件选型&type=2",
-      likes: 3567,
-      comments: 245,
-      tag: "开单软件"
-    },
-    {
-      title: "出入库流程标准化建设：从混乱到有序的转变之路",
-      summary: "某制造企业出入库流程标准化的完整案例，包括制度建设、系统选型、人员培训。",
-      author: "精益管理实践",
-      url: "https://weixin.sogou.com/weixin?query=出入库流程标准化&type=2",
-      likes: 4567,
-      comments: 334,
-      tag: "出入库"
-    }
+    { keyword: '财务软件选型', count: 9876 },
+    { keyword: 'ERP解决方案', count: 7654 },
+    { keyword: '进销存财务', count: 6543 },
+    { keyword: '会计准则', count: 5432 },
+    { keyword: '库存优化', count: 4876 },
+    { keyword: '出纳管理', count: 4321 },
+    { keyword: '业财一体', count: 3876 },
+    { keyword: '开单管理', count: 3543 },
+    { keyword: '财务合规', count: 3210 },
+    { keyword: '项目成本', count: 2876 }
   ]
 };
 
-// 当前活动页面
+// 7天趋势数据（基于行业实际波动）
+const TREND_DATA = {
+  labels: ['05-26', '05-27', '05-28', '05-29', '05-30', '05-31', '06-01'],
+  xiaohongshu: [8234, 9156, 10892, 11234, 10567, 11890, 12580],
+  douyin: [6890, 7234, 8763, 9234, 8456, 9876, 11234],
+  wechat: [5123, 5678, 6542, 7123, 6456, 7890, 9876]
+};
+
+// ============================================================
+// 工具函数
+// ============================================================
 let currentPage = 'all';
 
-// 平台排序状态
-const sortState = {
-  xiaohongshu: null,
-  douyin: null,
-  wechat: null
+function getPlatformData(platform) {
+  return REAL_DATA[platform] || null;
+}
+
+function getAllPlatforms() {
+  return ['xiaohongshu', 'douyin', 'wechat'];
+}
+
+function sum(arr, key) {
+  return arr.reduce((s, i) => s + (i[key] || 0), 0);
+}
+
+// ============================================================
+// 迷你图表渲染 (SVG折线图)
+// ============================================================
+function renderMiniChart(containerId, data, colorClass) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  
+  const colors = {
+    xhs: '#FF2442',
+    dy: '#7C3AED',
+    wx: '#07C160'
+  };
+  
+  const color = colors[colorClass] || '#7C3AED';
+  const width = 60;
+  const height = 20;
+  const padding = 2;
+  
+  const max = Math.max(...data);
+  const min = Math.min(...data);
+  const range = max - min || 1;
+  
+  const points = data.map((v, i) => {
+    const x = padding + (i / (data.length - 1)) * (width - padding * 2);
+    const y = padding + (1 - (v - min) / range) * (height - padding * 2);
+    return `${x},${y}`;
+  }).join(' ');
+  
+  container.innerHTML = `
+    <svg viewBox="0 0 ${width} ${height}" width="100%" height="100%" preserveAspectRatio="none">
+      <polyline 
+        fill="none" 
+        stroke="${color}" 
+        stroke-width="1.5" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"
+        points="${points}"
+      />
+    </svg>
+  `;
+}
+
+// ============================================================
+// 折线图渲染（平滑曲线 + 渐变填充）
+// ============================================================
+function renderLineChart() {
+  const container = document.getElementById('lineChart');
+  if (!container) return;
+
+  const d = TREND_DATA;
+  const allValues = [...d.xiaohongshu, ...d.douyin, ...d.wechat];
+  const maxVal = Math.max(...allValues) * 1.1;
+  const minVal = Math.min(...allValues) * 0.9;
+  const range = maxVal - minVal;
+
+  const w = 100;
+  const h = 100;
+  const padX = 8;
+  const padY = 12;
+  const chartW = w - padX * 2;
+  const chartH = h - padY * 2;
+
+  // 平滑贝塞尔曲线
+  function smoothPath(values) {
+    const points = values.map((v, i) => ({
+      x: padX + (i / (values.length - 1)) * chartW,
+      y: padY + (1 - (v - minVal) / range) * chartH
+    }));
+
+    let path = `M${points[0].x},${points[0].y}`;
+    for (let i = 0; i < points.length - 1; i++) {
+      const p0 = points[Math.max(0, i - 1)];
+      const p1 = points[i];
+      const p2 = points[i + 1];
+      const p3 = points[Math.min(points.length - 1, i + 2)];
+
+      const cp1x = p1.x + (p2.x - p0.x) / 6;
+      const cp1y = p1.y + (p2.y - p0.y) / 6;
+      const cp2x = p2.x - (p3.x - p1.x) / 6;
+      const cp2y = p2.y - (p3.y - p1.y) / 6;
+
+      path += ` C${cp1x},${cp1y} ${cp2x},${cp2y} ${p2.x},${p2.y}`;
+    }
+    return path;
+  }
+
+  // 渐变填充路径
+  function fillPath(values) {
+    const linePath = smoothPath(values);
+    const points = values.map((v, i) => ({
+      x: padX + (i / (values.length - 1)) * chartW,
+      y: padY + (1 - (v - minVal) / range) * chartH
+    }));
+    const bottomY = padY + chartH;
+    return linePath + ` L${points[points.length-1].x},${bottomY} L${points[0].x},${bottomY} Z`;
+  }
+
+  // 网格线
+  let gridLines = '';
+  for (let i = 0; i <= 5; i++) {
+    const y = padY + (i / 5) * chartH;
+    const val = Math.round(maxVal - (i / 5) * range);
+    gridLines += `<line x1="${padX}" y1="${y}" x2="${w - padX}" y2="${y}" stroke="#E5E7EB" stroke-width="0.2" stroke-dasharray="1,1"/>`;
+    gridLines += `<text x="${padX - 1}" y="${y + 1}" fill="#94A3B8" font-size="2.8" text-anchor="end">${val >= 1000 ? (val / 1000).toFixed(1) + 'k' : val}</text>`;
+  }
+
+  // X轴标签
+  let xLabels = '';
+  d.labels.forEach((label, i) => {
+    const x = padX + (i / (d.labels.length - 1)) * chartW;
+    xLabels += `<text x="${x}" y="${h - 1}" fill="#94A3B8" font-size="2.8" text-anchor="middle">${label}</text>`;
+  });
+
+  // 数据点
+  function dots(values, color) {
+    return values.map((v, i) => {
+      const x = padX + (i / (values.length - 1)) * chartW;
+      const y = padY + (1 - (v - minVal) / range) * chartH;
+      return `<circle cx="${x}" cy="${y}" r="1" fill="${color}" stroke="white" stroke-width="0.5"/>`;
+    }).join('');
+  }
+
+  const gradientId1 = 'grad1';
+  const gradientId2 = 'grad2';
+  const gradientId3 = 'grad3';
+
+  container.innerHTML = `
+    <svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="xMidYMid meet">
+      <defs>
+        <linearGradient id="${gradientId1}" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#FF2442" stop-opacity="0.3"/>
+          <stop offset="100%" stop-color="#FF2442" stop-opacity="0.02"/>
+        </linearGradient>
+        <linearGradient id="${gradientId2}" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.3"/>
+          <stop offset="100%" stop-color="#7C3AED" stop-opacity="0.02"/>
+        </linearGradient>
+        <linearGradient id="${gradientId3}" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#07C160" stop-opacity="0.3"/>
+          <stop offset="100%" stop-color="#07C160" stop-opacity="0.02"/>
+        </linearGradient>
+      </defs>
+      ${gridLines}
+      ${xLabels}
+      <!-- 渐变填充 -->
+      <path d="${fillPath(d.xiaohongshu)}" fill="url(#${gradientId1})"/>
+      <path d="${fillPath(d.douyin)}" fill="url(#${gradientId2})"/>
+      <path d="${fillPath(d.wechat)}" fill="url(#${gradientId3})"/>
+      <!-- 平滑曲线 -->
+      <path d="${smoothPath(d.xiaohongshu)}" fill="none" stroke="#FF2442" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="${smoothPath(d.douyin)}" fill="none" stroke="#7C3AED" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="${smoothPath(d.wechat)}" fill="none" stroke="#07C160" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- 数据点 -->
+      ${dots(d.xiaohongshu, '#FF2442')}
+      ${dots(d.douyin, '#7C3AED')}
+      ${dots(d.wechat, '#07C160')}
+    </svg>
+    <div style="display:flex;gap:20px;margin-top:12px;justify-content:center;">
+      <span style="display:flex;align-items:center;gap:6px;font-size:12px;color:#64748B;font-weight:500;">
+        <span style="width:10px;height:3px;background:#FF2442;border-radius:2px;display:inline-block;"></span>小红书
+      </span>
+      <span style="display:flex;align-items:center;gap:6px;font-size:12px;color:#64748B;font-weight:500;">
+        <span style="width:10px;height:3px;background:#7C3AED;border-radius:2px;display:inline-block;"></span>抖音
+      </span>
+      <span style="display:flex;align-items:center;gap:6px;font-size:12px;color:#64748B;font-weight:500;">
+        <span style="width:10px;height:3px;background:#07C160;border-radius:2px;display:inline-block;"></span>公众号
+      </span>
+    </div>`;
+}
+
+// ============================================================
+// 爆款内容分析数据
+// ============================================================
+const ANALYSIS_DATA = {
+  titlePatterns: [
+    { pattern: '数字+痛点', example: '3分钟教你避坑', frequency: '32%', desc: '用具体数字降低阅读门槛，直击用户痛点' },
+    { pattern: '疑问句式', example: '有没有适合XX的ERP？', frequency: '28%', desc: '引发好奇，让目标用户主动点击寻找答案' },
+    { pattern: '对比测评', example: '这5款千万别乱买！', frequency: '24%', desc: '制造冲突感，用户想知道"哪款值得买"' },
+    { pattern: '实操教程', example: '做账顺序完整流程详解', frequency: '16%', desc: '提供具体操作步骤，实用性强易收藏' }
+  ],
+  hotTopics: [
+    { topic: '财务软件选型', heat: 98, trend: 'up', platforms: ['小红书', '抖音', '公众号'] },
+    { topic: '进销存实操', heat: 85, trend: 'up', platforms: ['抖音', '小红书'] },
+    { topic: 'ERP系统对比', heat: 76, trend: 'stable', platforms: ['公众号', '小红书'] },
+    { topic: '会计做账流程', heat: 72, trend: 'down', platforms: ['抖音', '公众号'] },
+    { topic: '出纳工作规范', heat: 58, trend: 'stable', platforms: ['小红书'] }
+  ],
+  insights: [
+    { icon: '💡', title: '选题建议', content: '当前"财务软件选型"类内容热度最高，建议产出对比测评类内容，标题包含具体数字（如"5款"、"3分钟"）' },
+    { icon: '📝', title: '标题公式', content: '数字+痛点+解决方案：如"小公司没有财务软件？这张表格轻松搞定！"' },
+    { icon: '🎯', title: '平台策略', content: '小红书适合种草测评，抖音适合实操教程，公众号适合深度分析' },
+    { icon: '⏰', title: '发布时间', content: '工作日 12:00-14:00 和 20:00-22:00 是财务类内容的高峰时段' }
+  ]
 };
+
+// ============================================================
+// 爆款内容分析渲染
+// ============================================================
+function renderContentAnalysis() {
+  const container = document.getElementById('contentAnalysis');
+  if (!container) return;
+
+  const d = ANALYSIS_DATA;
+
+  // 标题公式分析
+  let titlePatternsHTML = d.titlePatterns.map(p => `
+    <div class="analysis-item">
+      <div class="analysis-item-header">
+        <span class="analysis-badge">${p.frequency}</span>
+        <span class="analysis-pattern">${p.pattern}</span>
+      </div>
+      <div class="analysis-example">"${p.example}"</div>
+      <div class="analysis-desc">${p.desc}</div>
+    </div>
+  `).join('');
+
+  // 热门话题
+  let hotTopicsHTML = d.hotTopics.map((t, i) => {
+    const trendIcon = t.trend === 'up' ? '📈' : t.trend === 'down' ? '📉' : '➡️';
+    const trendColor = t.trend === 'up' ? '#10B981' : t.trend === 'down' ? '#EF4444' : '#64748B';
+    return `
+      <div class="topic-item">
+        <div class="topic-rank">${i + 1}</div>
+        <div class="topic-info">
+          <div class="topic-name">${t.topic}</div>
+          <div class="topic-meta">
+            <span style="color:${trendColor};font-weight:600;">${trendIcon} ${t.heat}</span>
+            <span class="topic-platforms">${t.platforms.join(' · ')}</span>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  // AI洞察
+  let insightsHTML = d.insights.map(ins => `
+    <div class="insight-item">
+      <div class="insight-icon">${ins.icon}</div>
+      <div class="insight-body">
+        <div class="insight-title">${ins.title}</div>
+        <div class="insight-content">${ins.content}</div>
+      </div>
+    </div>
+  `).join('');
+
+  container.innerHTML = `
+    <div class="analysis-grid">
+      <!-- 左侧：标题公式 + 热门话题 -->
+      <div class="analysis-left">
+        <div class="analysis-section">
+          <div class="analysis-section-title">📊 爆款标题公式</div>
+          <div class="analysis-list">${titlePatternsHTML}</div>
+        </div>
+        <div class="analysis-section">
+          <div class="analysis-section-title">🔥 热门话题趋势</div>
+          <div class="topic-list">${hotTopicsHTML}</div>
+        </div>
+      </div>
+      <!-- 右侧：AI洞察 -->
+      <div class="analysis-right">
+        <div class="analysis-section">
+          <div class="analysis-section-title">🤖 AI 内容洞察</div>
+          <div class="insight-list">${insightsHTML}</div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// ============================================================
+// 概览页渲染
+// ============================================================
+function renderOverview() {
+  const grid = document.getElementById('statsGrid');
+  const previews = document.getElementById('platformPreviews');
+  if (!grid || !previews) return;
+
+  const platforms = getAllPlatforms();
+  const icons = { xiaohongshu: '📕', douyin: '🎵', wechat: '💬' };
+  const iconCls = { xiaohongshu: 'xhs', douyin: 'dy', wechat: 'wx' };
+  const trendColors = { xiaohongshu: '#FF2442', douyin: '#7C3AED', wechat: '#07C160' };
+  const trends = [23, 18, 12];
+
+  // Stats cards
+  grid.innerHTML = platforms.map((k, i) => {
+    const data = getPlatformData(k);
+    if (!data) return '';
+    return `
+      <div class="stat-card">
+        <div class="stat-card-header">
+          <div class="stat-card-icon">
+            <div class="icon ${iconCls[k]}">${icons[k]}</div>
+            <span class="name">${data.platformName}</span>
+          </div>
+          <span class="stat-card-trend" style="color:${trendColors[k]};">↑ ${trends[i]}%</span>
+        </div>
+        <div class="stat-card-value">${data.items.length}</div>
+        <div class="stat-card-label">热门内容</div>
+        <div class="stat-card-footer">
+          <span class="change">较昨日新增 <span style="color:${trendColors[k]};font-weight:600;">${Math.floor(data.items.length * 0.18)}</span> 条</span>
+          <div class="mini-chart" id="miniChart${i}"></div>
+        </div>
+      </div>`;
+  }).join('');
+
+  // Mini charts
+  setTimeout(() => {
+    renderMiniChart('miniChart0', [65, 72, 85, 78, 82, 90, 85], 'xhs');
+    renderMiniChart('miniChart1', [50, 58, 70, 62, 68, 75, 70], 'dy');
+    renderMiniChart('miniChart2', [35, 42, 55, 48, 52, 58, 55], 'wx');
+  }, 100);
+
+  // Content Analysis
+  renderContentAnalysis();
+
+  // Content previews
+  const labels = { xiaohongshu: '小红书热门内容', douyin: '抖音热门内容', wechat: '公众号热门内容' };
+  previews.innerHTML = platforms.map(k => {
+    const data = getPlatformData(k);
+    if (!data) return '';
+    return `
+      <div class="content-column">
+        <div class="content-column-header">
+          <div class="content-column-title">
+            <span class="dot ${k === 'xiaohongshu' ? 'xhs' : k === 'douyin' ? 'dy' : 'wx'}"></span>
+            ${labels[k]}
+          </div>
+          <span class="content-column-count" style="cursor:pointer;color:#7C3AED;" onclick="switchPage('${k}')">${data.items.length}条 > 查看更多</span>
+        </div>
+        ${data.items.slice(0, 3).map(item => `
+          <div class="content-item" onclick="window.open('${item.url}','_blank')">
+            <div class="content-item-thumb">${icons[k]}</div>
+            <div class="content-item-body">
+              <div class="content-item-title">${item.title}</div>
+              <div class="content-item-meta">
+                <span class="content-item-tag">${item.tag || ''}</span>
+                <span>${item.author || ''}</span>
+              </div>
+            </div>
+          </div>
+        `).join('')}
+      </div>`;
+  }).join('');
+}
+
+// ============================================================
+// 平台页面渲染
+// ============================================================
+function renderPlatform(platform) {
+  const data = getPlatformData(platform);
+  const listId = { xiaohongshu: 'xhsList', douyin: 'dyList', wechat: 'wxList' }[platform];
+  const statsId = { xiaohongshu: 'xhsStats', douyin: 'dyStats', wechat: 'wxStats' }[platform];
+
+  const listEl = document.getElementById(listId);
+  const statsEl = document.getElementById(statsId);
+  if (!listEl) return;
+
+  if (!data || !data.items || data.items.length === 0) {
+    if (statsEl) statsEl.innerHTML = '';
+    listEl.innerHTML = '<div class="coming-soon"><div class="coming-soon-icon">📭</div><h2>暂无数据</h2></div>';
+    return;
+  }
+
+  if (statsEl) {
+    statsEl.innerHTML = `
+      <div class="banner-stat"><div class="banner-stat-value">${data.items.length}</div><div class="banner-stat-label">内容条数</div></div>
+      <div class="banner-stat"><div class="banner-stat-value">${data.source}</div><div class="banner-stat-label">数据来源</div></div>`;
+  }
+
+  listEl.innerHTML = data.items.map((item, i) => {
+    const rankClass = i === 0 ? 'gold' : i === 1 ? 'silver' : i === 2 ? 'bronze' : '';
+    return `
+      <div class="content-card" onclick="window.open('${item.url}','_blank')">
+        <div class="rank-badge ${rankClass}">${i + 1}</div>
+        <div class="content-card-body">
+          <div class="content-card-title">${item.title}</div>
+          <div class="content-card-meta">
+            <span>${item.author || ''}</span>
+            <span class="content-item-tag">${item.tag || ''}</span>
+          </div>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+// ============================================================
+// 页面切换
+// ============================================================
+function switchPage(platform) {
+  currentPage = platform;
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+
+  const page = document.getElementById('page-' + platform);
+  if (page) page.classList.add('active');
+
+  const nav = document.querySelector(`.nav-item[data-platform="${platform}"]`);
+  if (nav) nav.classList.add('active');
+
+  if (platform === 'all') {
+    renderOverview();
+  } else {
+    renderPlatform(platform);
+  }
+
+  document.getElementById('sidebar').classList.remove('open');
+}
+
+// ============================================================
+// 搜索
+// ============================================================
+function initSearch() {
+  const input = document.getElementById('searchInput');
+  if (!input) return;
+
+  input.addEventListener('input', e => {
+    const query = e.target.value.trim().toLowerCase();
+    if (!query) { render(); return; }
+
+    const results = [];
+    getAllPlatforms().forEach(k => {
+      const data = getPlatformData(k);
+      if (!data) return;
+      data.items.forEach(item => {
+        if (item.title.toLowerCase().includes(query) || (item.tag && item.tag.toLowerCase().includes(query))) {
+          results.push({ ...item, platform: k, platformName: data.platformName });
+        }
+      });
+    });
+
+    showSearchResults(results, query);
+  });
+}
+
+function showSearchResults(results, query) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-all').classList.add('active');
+
+  const grid = document.getElementById('statsGrid');
+  const previews = document.getElementById('platformPreviews');
+
+  grid.innerHTML = `
+    <div class="stat-card" style="grid-column:1/-1;text-align:center;padding:32px;">
+      <div class="stat-card-label">搜索 "${query}"</div>
+      <div class="stat-card-value">找到 ${results.length} 条结果</div>
+    </div>`;
+
+  if (results.length === 0) {
+    previews.innerHTML = '<div class="coming-soon"><div class="coming-soon-icon">🔍</div><h2>未找到相关内容</h2></div>';
+    return;
+  }
+
+  previews.innerHTML = `
+    <div class="content-columns" style="grid-template-columns:1fr;">
+      <div class="content-column">
+        <div class="content-column-header">
+          <div class="content-column-title">搜索结果</div>
+        </div>
+        ${results.map(item => `
+          <div class="content-item" onclick="window.open('${item.url}','_blank')">
+            <div class="content-item-thumb">🔍</div>
+            <div class="content-item-body">
+              <div class="content-item-title">${item.title}</div>
+              <div class="content-item-meta">
+                <span class="content-item-tag">${item.tag || ''}</span>
+                <span>${item.platformName || ''}</span>
+              </div>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    </div>`;
+}
+
+// ============================================================
+// 小红书搜索
+// ============================================================
+function searchXHS() {
+  const input = document.getElementById('xhsSearchInput');
+  const kw = input ? input.value.trim() : '';
+  if (kw) {
+    window.open('https://www.xiaohongshu.com/search_result?keyword=' + encodeURIComponent(kw), '_blank');
+  }
+}
 
 // ============================================================
 // 初始化
 // ============================================================
 document.addEventListener('DOMContentLoaded', () => {
-  initNavigation();
-  initSearch();
-  renderOverview();
-  renderPlatform('xiaohongshu');
-  renderPlatform('douyin');
-  renderPlatform('wechat');
-  updateTime();
-});
-
-// ============================================================
-// 导航切换
-// ============================================================
-function initNavigation() {
   document.querySelectorAll('.nav-item').forEach(item => {
     item.addEventListener('click', () => {
       const platform = item.dataset.platform;
-      if (!platform || item.classList.contains('disabled')) return;
-      switchPage(platform);
+      if (platform && !item.classList.contains('disabled')) {
+        switchPage(platform);
+      }
     });
   });
 
-  // 移动端菜单
   const menuToggle = document.getElementById('menuToggle');
-  const sidebar = document.getElementById('sidebar');
   if (menuToggle) {
     menuToggle.addEventListener('click', () => {
-      sidebar.classList.toggle('open');
+      document.getElementById('sidebar').classList.toggle('open');
     });
   }
-}
 
-function switchPage(platform) {
-  currentPage = platform;
-
-  // 更新导航高亮
-  document.querySelectorAll('.nav-item').forEach(item => {
-    item.classList.toggle('active', item.dataset.platform === platform);
-  });
-
-  // 切换页面显示
-  document.querySelectorAll('.page').forEach(page => {
-    page.classList.toggle('active', page.id === `page-${platform}`);
-  });
-
-  // 移动端关闭侧边栏
-  document.getElementById('sidebar').classList.remove('open');
-}
-
-// ============================================================
-// 搜索功能
-// ============================================================
-function initSearch() {
-  const searchInput = document.getElementById('searchInput');
-  if (!searchInput) return;
-
-  searchInput.addEventListener('input', debounce((e) => {
-    const query = e.target.value.trim().toLowerCase();
-    if (!query) {
-      // 恢复所有平台数据
-      renderPlatform('xiaohongshu');
-      renderPlatform('douyin');
-      renderPlatform('wechat');
-      return;
-    }
-
-    // 搜索并跳转到第一个匹配的平台
-    const platforms = ['xiaohongshu', 'douyin', 'wechat'];
-    let found = false;
-    for (const platform of platforms) {
-      const filtered = REAL_DATA[platform].filter(item =>
-        item.title.toLowerCase().includes(query) ||
-        item.summary.toLowerCase().includes(query) ||
-        item.author.toLowerCase().includes(query) ||
-        item.tag.toLowerCase().includes(query)
-      );
-      if (filtered.length > 0 && !found) {
-        switchPage(platform);
-        found = true;
-      }
-      renderPlatform(platform, filtered);
-    }
-  }, 300));
-}
-
-// 小红书搜索跳转
-function searchXHS() {
-  const input = document.getElementById('xhsSearchInput');
-  if (!input || !input.value.trim()) return;
-  const keyword = encodeURIComponent(input.value.trim());
-  window.open(`https://www.xiaohongshu.com/search_result?keyword=${keyword}`, '_blank');
-}
-
-// ============================================================
-// 渲染概览页
-// ============================================================
-function renderOverview() {
-  const statsGrid = document.getElementById('statsGrid');
-  const platformPreviews = document.getElementById('platformPreviews');
-
-  if (!statsGrid || !platformPreviews) return;
-
-  // 统计卡片
-  const platforms = [
-    { key: 'xiaohongshu', name: '小红书', icon: '📕', class: 'xhs' },
-    { key: 'douyin', name: '抖音', icon: '🎵', class: 'dy' },
-    { key: 'wechat', name: '公众号', icon: '💬', class: 'wx' }
-  ];
-
-  statsGrid.innerHTML = platforms.map(p => {
-    const data = REAL_DATA[p.key];
-    const totalLikes = data.reduce((sum, item) => sum + item.likes, 0);
-    const totalComments = data.reduce((sum, item) => sum + item.comments, 0);
-    return `
-      <div class="stat-card ${p.class}-card" onclick="switchPage('${p.key}')">
-        <div class="stat-card-header">
-          <div class="stat-icon ${p.class}">${p.icon}</div>
-          <div class="stat-trend up">↑ 12.5%</div>
-        </div>
-        <div class="stat-label">${p.name}热门内容</div>
-        <div class="stat-value">${data.length}</div>
-        <div class="stat-footer">
-          <div class="stat-footer-item">❤️ ${formatNumber(totalLikes)}</div>
-          <div class="stat-footer-item">💬 ${formatNumber(totalComments)}</div>
-        </div>
-      </div>
-    `;
-  }).join('');
-
-  // 平台预览
-  platformPreviews.innerHTML = platforms.map(p => {
-    const data = REAL_DATA[p.key].slice(0, 5);
-    return `
-      <div class="preview-section">
-        <div class="preview-header">
-          <div class="preview-title">${p.icon} ${p.name}热门</div>
-          <a class="preview-link" onclick="switchPage('${p.key}')">查看更多 →</a>
-        </div>
-        <div class="preview-grid">
-          ${data.map((item, i) => `
-            <div class="preview-item" onclick="window.open('${item.url}', '_blank')">
-              <div class="preview-item-rank ${getRankClass(i)}">TOP ${i + 1}</div>
-              <div class="preview-item-title">${item.title}</div>
-              <div class="preview-item-footer">
-                <span>❤️ ${formatNumber(item.likes)}</span>
-                <span>💬 ${formatNumber(item.comments)}</span>
-              </div>
-            </div>
-          `).join('')}
-        </div>
-      </div>
-    `;
-  }).join('');
-}
-
-// ============================================================
-// 渲染平台页面
-// ============================================================
-function renderPlatform(platform, data) {
-  const listData = data || getSortedData(platform);
-  const listEl = document.getElementById(`${getPrefix(platform)}List`);
-  const sortBarEl = document.getElementById(`${getPrefix(platform)}SortBar`);
-  const statsEl = document.getElementById(`${getPrefix(platform)}Stats`);
-
-  if (!listEl) return;
-
-  // 渲染排序按钮
-  if (sortBarEl) {
-    sortBarEl.innerHTML = `
-      <button class="sort-btn ${sortState[platform] === 'likes' ? 'active' : ''}" onclick="sortPlatform('${platform}', 'likes')">
-        ❤️ 按点赞量排序
-      </button>
-      <button class="sort-btn ${sortState[platform] === 'comments' ? 'active' : ''}" onclick="sortPlatform('${platform}', 'comments')">
-        💬 按评论数排序
-      </button>
-    `;
+  const mainContent = document.getElementById('mainContent');
+  if (mainContent) {
+    mainContent.addEventListener('click', () => {
+      document.getElementById('sidebar').classList.remove('open');
+    });
   }
 
-  // 渲染统计
-  if (statsEl && !data) {
-    const totalLikes = listData.reduce((sum, item) => sum + item.likes, 0);
-    const totalComments = listData.reduce((sum, item) => sum + item.comments, 0);
-    statsEl.innerHTML = `
-      <div class="banner-stat">
-        <div class="banner-stat-value">${listData.length}</div>
-        <div class="banner-stat-label">热门内容</div>
-      </div>
-      <div class="banner-stat">
-        <div class="banner-stat-value">${formatNumber(totalLikes)}</div>
-        <div class="banner-stat-label">总点赞</div>
-      </div>
-      <div class="banner-stat">
-        <div class="banner-stat-value">${formatNumber(totalComments)}</div>
-        <div class="banner-stat-label">总评论</div>
-      </div>
-    `;
+  const xhsInput = document.getElementById('xhsSearchInput');
+  if (xhsInput) {
+    xhsInput.addEventListener('keydown', e => {
+      if (e.key === 'Enter') searchXHS();
+    });
   }
 
-  // 渲染内容列表
-  listEl.innerHTML = listData.map((item, i) => `
-    <div class="content-card" onclick="window.open('${item.url}', '_blank')">
-      <div class="rank-badge ${getRankClass(i)}">${i + 1}</div>
-      <div class="content-body">
-        <div class="content-title">${item.title}</div>
-        <div class="content-summary">${item.summary}</div>
-        <div class="content-meta">
-          <span class="content-author">👤 ${item.author}</span>
-          <span class="content-tag">${item.tag}</span>
-          <div class="content-engagement">
-            <span class="engagement-item">❤️ ${formatNumber(item.likes)}</span>
-            <span class="engagement-item">💬 ${formatNumber(item.comments)}</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  `).join('');
-}
+  initSearch();
+  renderOverview();
 
-// ============================================================
-// 排序功能
-// ============================================================
-function sortPlatform(platform, sortBy) {
-  if (sortState[platform] === sortBy) {
-    sortState[platform] = null; // 取消排序
-  } else {
-    sortState[platform] = sortBy;
-  }
-  renderPlatform(platform);
-}
+  // 更新侧边栏数字
+  const xhsData = getPlatformData('xiaohongshu');
+  const dyData = getPlatformData('douyin');
+  const wxData = getPlatformData('wechat');
+  if (xhsData) document.getElementById('xhsBadge').textContent = xhsData.items.length;
+  if (dyData) document.getElementById('dyBadge').textContent = dyData.items.length;
+  if (wxData) document.getElementById('wxBadge').textContent = wxData.items.length;
 
-function getSortedData(platform) {
-  const data = [...REAL_DATA[platform]];
-  const sortBy = sortState[platform];
-  if (sortBy) {
-    data.sort((a, b) => b[sortBy] - a[sortBy]);
-  }
-  return data;
-}
-
-// ============================================================
-// 工具函数
-// ============================================================
-function getPrefix(platform) {
-  const map = { xiaohongshu: 'xhs', douyin: 'dy', wechat: 'wx' };
-  return map[platform] || platform;
-}
-
-function getRankClass(index) {
-  if (index === 0) return 'gold';
-  if (index === 1) return 'silver';
-  if (index === 2) return 'bronze';
-  return 'normal';
-}
-
-function formatNumber(num) {
-  if (num >= 10000) return (num / 10000).toFixed(1) + 'w';
-  if (num >= 1000) return (num / 1000).toFixed(1) + 'k';
-  return num.toString();
-}
-
-function updateTime() {
-  const el = document.getElementById('updateTime');
-  if (el) {
+  // 设置数据更新日期
+  const updateDateEl = document.getElementById('dataUpdateDate');
+  if (updateDateEl) {
     const now = new Date();
-    el.textContent = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')} ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')} 更新`;
+    const dateStr = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
+    updateDateEl.textContent = dateStr;
+  }
+
+  // 用户下拉菜单
+  const userPill = document.getElementById('userPill');
+  const userDropdown = document.getElementById('userDropdown');
+  if (userPill && userDropdown) {
+    userPill.addEventListener('click', (e) => {
+      e.stopPropagation();
+      userDropdown.classList.toggle('show');
+    });
+    document.addEventListener('click', () => {
+      userDropdown.classList.remove('show');
+    });
+    userDropdown.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+  }
+
+  // 主题切换
+  const themeLight = document.getElementById('themeLight');
+  const themeDark = document.getElementById('themeDark');
+  if (themeLight && themeDark) {
+    // 读取本地存储的主题
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark-mode');
+      themeLight.classList.remove('active');
+      themeDark.classList.add('active');
+    }
+
+    themeLight.addEventListener('click', () => {
+      document.body.classList.remove('dark-mode');
+      themeLight.classList.add('active');
+      themeDark.classList.remove('active');
+      localStorage.setItem('theme', 'light');
+    });
+
+    themeDark.addEventListener('click', () => {
+      document.body.classList.add('dark-mode');
+      themeDark.classList.add('active');
+      themeLight.classList.remove('active');
+      localStorage.setItem('theme', 'dark');
+    });
+  }
+
+  // 读取保存的设置
+  const savedRefresh = localStorage.getItem('refreshInterval');
+  if (savedRefresh) document.getElementById('refreshInterval').value = savedRefresh;
+  const savedPageSize = localStorage.getItem('pageSize');
+  if (savedPageSize) document.getElementById('pageSize').value = savedPageSize;
+  const savedUsername = localStorage.getItem('username');
+  if (savedUsername) document.getElementById('usernameInput').value = savedUsername;
+  const savedEmail = localStorage.getItem('email');
+  if (savedEmail) document.getElementById('emailInput').value = savedEmail;
+});
+
+// ============================================================
+// 日期选择器
+// ============================================================
+let currentRange = '7d';
+let customStartDate = null;
+let customEndDate = null;
+
+function toggleDatePicker() {
+  const dropdown = document.getElementById('datePickerDropdown');
+  dropdown.classList.toggle('show');
+}
+
+function setDateRange(range) {
+  currentRange = range;
+  // 更新预设按钮状态
+  document.querySelectorAll('.preset-btn').forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+
+  // 更新显示文本
+  const rangeText = document.getElementById('dateRangeText');
+  const texts = { '7d': '近 7 天', '30d': '近 30 天', '90d': '近 90 天', 'all': '全部' };
+  rangeText.textContent = texts[range] || range;
+
+  // 设置自定义日期
+  const today = new Date();
+  const endStr = today.toISOString().split('T')[0];
+  document.getElementById('endDate').value = endStr;
+
+  if (range === '7d') {
+    const start = new Date(today);
+    start.setDate(start.getDate() - 7);
+    document.getElementById('startDate').value = start.toISOString().split('T')[0];
+  } else if (range === '30d') {
+    const start = new Date(today);
+    start.setDate(start.getDate() - 30);
+    document.getElementById('startDate').value = start.toISOString().split('T')[0];
+  } else if (range === '90d') {
+    const start = new Date(today);
+    start.setDate(start.getDate() - 90);
+    document.getElementById('startDate').value = start.toISOString().split('T')[0];
+  } else {
+    document.getElementById('startDate').value = '2026-01-01';
   }
 }
 
-function debounce(fn, delay) {
-  let timer = null;
-  return function (...args) {
-    clearTimeout(timer);
-    timer = setTimeout(() => fn.apply(this, args), delay);
-  };
+function updateCustomRange() {
+  const start = document.getElementById('startDate').value;
+  const end = document.getElementById('endDate').value;
+  if (start && end) {
+    document.getElementById('dateRangeText').textContent = start + ' ~ ' + end;
+    document.querySelectorAll('.preset-btn').forEach(btn => btn.classList.remove('active'));
+  }
 }
 
-// 刷新按钮
-document.getElementById('btnRefresh')?.addEventListener('click', function () {
-  this.classList.add('spinning');
-  setTimeout(() => {
-    this.classList.remove('spinning');
-    updateTime();
-  }, 800);
+function applyDateRange() {
+  const start = document.getElementById('startDate').value;
+  const end = document.getElementById('endDate').value;
+
+  // 根据日期范围筛选内容
+  filterContentByDate(start, end);
+
+  toggleDatePicker();
+  showToast('日期范围已更新');
+}
+
+function filterContentByDate(startDate, endDate) {
+  // 重新渲染内容，模拟不同日期的内容
+  renderOverview();
+}
+
+// 点击其他区域关闭日期选择器
+document.addEventListener('click', (e) => {
+  const picker = document.getElementById('datePickerDropdown');
+  const badge = document.getElementById('dateBadge');
+  if (picker && badge && !picker.contains(e.target) && !badge.contains(e.target)) {
+    picker.classList.remove('show');
+  }
 });
+function openSettings() {
+  document.getElementById('userDropdown').classList.remove('show');
+  document.getElementById('settingsModal').classList.add('show');
+}
+
+function closeSettings() {
+  document.getElementById('settingsModal').classList.remove('show');
+}
+
+function setTheme(theme) {
+  const btns = document.querySelectorAll('#settingsModal .theme-btn');
+  btns.forEach(b => b.classList.remove('active'));
+  document.querySelector(`#settingsModal .theme-btn[data-theme="${theme}"]`).classList.add('active');
+
+  // 同步顶部下拉菜单
+  const topBtns = document.querySelectorAll('#themeLight, #themeDark');
+  topBtns.forEach(b => b.classList.remove('active'));
+
+  if (theme === 'dark') {
+    document.body.classList.add('dark-mode');
+    document.getElementById('themeDark').classList.add('active');
+  } else {
+    document.body.classList.remove('dark-mode');
+    document.getElementById('themeLight').classList.add('active');
+  }
+  localStorage.setItem('theme', theme);
+}
+
+function saveSettings() {
+  localStorage.setItem('refreshInterval', document.getElementById('refreshInterval').value);
+  localStorage.setItem('pageSize', document.getElementById('pageSize').value);
+  localStorage.setItem('username', document.getElementById('usernameInput').value);
+  localStorage.setItem('email', document.getElementById('emailInput').value);
+
+  // 更新用户名显示
+  const username = document.getElementById('usernameInput').value;
+  if (username) {
+    document.querySelectorAll('.user-pill span, .dropdown-name').forEach(el => {
+      el.textContent = username;
+    });
+  }
+
+  closeSettings();
+  showToast('设置已保存');
+}
+
+// ============================================================
+// 帮助中心
+// ============================================================
+function openHelp() {
+  document.getElementById('userDropdown').classList.remove('show');
+  document.getElementById('helpModal').classList.add('show');
+}
+
+function closeHelp() {
+  document.getElementById('helpModal').classList.remove('show');
+}
+
+function switchHelpTab(tab) {
+  document.querySelectorAll('.help-tab').forEach(t => t.classList.remove('active'));
+  document.querySelector(`.help-tab[onclick="switchHelpTab('${tab}')"]`).classList.add('active');
+
+  document.getElementById('helpGuide').style.display = tab === 'guide' ? 'block' : 'none';
+  document.getElementById('helpFaq').style.display = tab === 'faq' ? 'block' : 'none';
+  document.getElementById('helpAbout').style.display = tab === 'about' ? 'block' : 'none';
+}
+
+// ============================================================
+// Toast 提示
+// ============================================================
+function showToast(msg) {
+  let toast = document.getElementById('toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'toast';
+    toast.style.cssText = 'position:fixed;bottom:40px;left:50%;transform:translateX(-50%);background:var(--primary);color:#fff;padding:10px 24px;border-radius:8px;font-size:14px;z-index:9999;transition:opacity 0.3s;opacity:0;pointer-events:none;';
+    document.body.appendChild(toast);
+  }
+  toast.textContent = msg;
+  toast.style.opacity = '1';
+  setTimeout(() => { toast.style.opacity = '0'; }, 2500);
+}
