@@ -6,7 +6,7 @@ const REAL_DATA = {
   "xiaohongshu": {
     "platform": "xiaohongshu",
     "platformName": "小红书",
-    "updateTime": "2026-06-02T00:50:34.872Z",
+    "updateTime": "2026-06-02T01:23:42.666Z",
     "source": "小红书搜索",
     "items": [
       {
@@ -84,7 +84,7 @@ const REAL_DATA = {
   "douyin": {
     "platform": "douyin",
     "platformName": "抖音",
-    "updateTime": "2026-06-02T00:50:34.870Z",
+    "updateTime": "2026-06-02T01:23:42.665Z",
     "source": "抖音搜索",
     "items": [
       {
@@ -162,7 +162,7 @@ const REAL_DATA = {
   "wechat": {
     "platform": "wechat",
     "platformName": "公众号",
-    "updateTime": "2026-06-02T00:50:34.872Z",
+    "updateTime": "2026-06-02T01:23:42.666Z",
     "source": "搜狗微信搜索",
     "items": [
       {
