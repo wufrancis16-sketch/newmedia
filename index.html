@@ -52,6 +52,11 @@
         <span class="nav-label">选题方向</span>
         <span class="nav-tag">NEW</span>
       </a>
+      <a class="nav-item" data-platform="titles" onclick="switchPage('titles')">
+        <span class="nav-icon">📝</span>
+        <span class="nav-label">标题推荐</span>
+        <span class="nav-tag">NEW</span>
+      </a>
       <a class="nav-item disabled" data-platform="publish">
         <span class="nav-icon">🚀</span>
         <span class="nav-label">内容分发</span>
@@ -439,6 +444,23 @@
 
       <!-- 选题分析 -->
       <div class="topic-analysis" id="topicAnalysis"></div>
+    </div>
+
+    <!-- Title Recommendations Page -->
+    <div class="page" id="page-titles">
+      <div class="page-header">
+        <div class="page-header-left">
+          <h1>📝 标题推荐</h1>
+          <p>基于爆款公式，为你推荐不同角度的吸睛标题</p>
+        </div>
+      </div>
+      <div class="title-filter-bar">
+        <select id="titleCategoryFilter" class="title-filter-select" onchange="filterTitles()">
+          <option value="all">全部分类（66个标题）</option>
+        </select>
+        <div class="title-filter-count" id="titleFilterCount">显示 66 个标题</div>
+      </div>
+      <div id="titleRecommendations"></div>
     </div>
   </main>
 

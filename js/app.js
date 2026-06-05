@@ -6,7 +6,7 @@ const REAL_DATA = {
   "xiaohongshu": {
     "platform": "xiaohongshu",
     "platformName": "小红书",
-    "updateTime": "2026-06-04T01:03:13.418Z",
+    "updateTime": "2026-06-05T00:50:46.312Z",
     "source": "小红书搜索",
     "items": [
       {
@@ -329,7 +329,7 @@ const REAL_DATA = {
   "douyin": {
     "platform": "douyin",
     "platformName": "抖音",
-    "updateTime": "2026-06-04T01:03:13.419Z",
+    "updateTime": "2026-06-05T00:50:46.314Z",
     "source": "搜狗搜索",
     "items": [
       {
@@ -729,7 +729,7 @@ const REAL_DATA = {
   "wechat": {
     "platform": "wechat",
     "platformName": "公众号",
-    "updateTime": "2026-06-04T01:03:13.419Z",
+    "updateTime": "2026-06-05T00:50:46.314Z",
     "source": "搜狗微信搜索",
     "items": [
       {
@@ -1681,6 +1681,41 @@ const TOPIC_DATA = {
       desc: '毕业季来临，新人求职类内容需求激增',
       reason: '6月毕业季，应届生求职高峰',
       tag: '出纳'
+    },
+    {
+      title: '做账软件哪个好用？免费vs付费对比',
+      type: 'hot',
+      desc: '免费vs付费是永恒话题，对比类内容互动率高',
+      reason: '成本敏感型用户占比大',
+      tag: '做账'
+    },
+    {
+      title: 'ERP系统上线踩过的那些坑',
+      type: 'trending',
+      desc: '真实踩坑经历更容易引发共鸣',
+      reason: '避坑类内容收藏率高',
+      tag: 'ERP'
+    },
+    {
+      title: '库存管理自动化：告别手动Excel',
+      type: 'new',
+      desc: '效率工具类内容实用性强',
+      reason: '数字化转型需求旺盛',
+      tag: '库存管理'
+    },
+    {
+      title: '业财一体化是什么？小白也能懂',
+      type: 'hot',
+      desc: '概念科普类内容适合新手用户',
+      reason: '搜索量持续上升',
+      tag: '业财一体'
+    },
+    {
+      title: '项目管理财务：怎么控制预算不超支',
+      type: 'trending',
+      desc: '项目管理+财务的交叉领域，蓝海机会',
+      reason: '竞争小，需求大',
+      tag: '项目管理'
     }
   ],
   douyin: [
@@ -1704,6 +1739,41 @@ const TOPIC_DATA = {
       desc: '避坑类内容容易引发讨论和转发，适合短视频形式',
       reason: '负面话题更容易引发关注和讨论',
       tag: '库存管理'
+    },
+    {
+      title: '小公司该不该买财务软件？算笔账',
+      type: 'hot',
+      desc: '算账类内容直观，适合短视频演示',
+      reason: '成本话题引发讨论',
+      tag: '财务软件'
+    },
+    {
+      title: '进销存软件实操：1分钟搞定出入库',
+      type: 'trending',
+      desc: '快速教程类视频，展示软件操作',
+      reason: '实用性强，容易获得收藏',
+      tag: '进销存'
+    },
+    {
+      title: '会计做账常见错误，你中了几个？',
+      type: 'new',
+      desc: '错误盘点类内容引发互动',
+      reason: '互动性强，用户会评论自己的经历',
+      tag: '做账'
+    },
+    {
+      title: '财务软件免费版真的能用吗？',
+      type: 'hot',
+      desc: '免费话题永远有流量',
+      reason: '争议性话题引发讨论',
+      tag: '财务软件'
+    },
+    {
+      title: '出纳工作一天实录',
+      type: 'trending',
+      desc: 'Vlog形式展示真实工作场景',
+      reason: '真实感强，完播率高',
+      tag: '出纳'
     }
   ],
   wechat: [
@@ -1727,9 +1797,409 @@ const TOPIC_DATA = {
       desc: '对比分析类内容帮助用户做决策，专业性强',
       reason: '中小企业数字化转型需求旺盛',
       tag: '进销存'
+    },
+    {
+      title: 'ERP系统选型：用友vs金蝶vs浪潮',
+      type: 'hot',
+      desc: '品牌对比类文章是长青内容',
+      reason: '用户决策前必看内容',
+      tag: 'ERP'
+    },
+    {
+      title: '库存管理优化：从混乱到有序',
+      type: 'trending',
+      desc: '案例故事类内容可读性强',
+      reason: '成功案例引发转发',
+      tag: '库存管理'
+    },
+    {
+      title: '小公司财务管理的10个实用技巧',
+      type: 'new',
+      desc: '干货清单类内容收藏率高',
+      reason: '实用性强，适合收藏',
+      tag: '财务软件'
+    },
+    {
+      title: '做账报税全流程详解（2026最新版）',
+      type: 'hot',
+      desc: '流程类内容是刚需，需要定期更新',
+      reason: '搜索量稳定，长尾流量',
+      tag: '做账'
+    },
+    {
+      title: '出纳工作规范与常见问题解答',
+      type: 'trending',
+      desc: 'FAQ形式内容解决具体问题',
+      reason: '搜索量大，转化率高',
+      tag: '出纳'
     }
   ]
 };
+
+// ============================================================
+// 标题推荐数据
+// ============================================================
+const TITLE_DATA = [
+  {
+    category: '疑问引导型',
+    icon: '❓',
+    titles: [
+      { text: '"金蝶和用友到底选哪个？用了5年的我告诉你！"', tags: ['小红书', '公众号'], analysis: '利用品牌对比引发好奇心，"用了5年"增加可信度' },
+      { text: '"做账做不好，是你没用对方法！"', tags: ['抖音', '小红书'], analysis: '指出用户痛点，暗示有解决方案' },
+      { text: '"小公司真的需要财务软件吗？"', tags: ['小红书', '抖音'], analysis: '疑问句式引发目标用户思考' },
+      { text: '"免费的财务软件真的能用吗？"', tags: ['抖音', '小红书'], analysis: '针对免费用户群体，解答疑虑' },
+      { text: '"会计做账为什么总是出错？"', tags: ['小红书', '公众号'], analysis: '直击痛点，引发共鸣' },
+      { text: '"进销存软件选错，一年白干！"', tags: ['抖音', '小红书'], analysis: '夸张表达引起重视' },
+      { text: '"老板为什么要你用财务软件？"', tags: ['公众号', '抖音'], analysis: '从老板角度切入，增加权威性' },
+      { text: '"为什么你的财务报表总是被退回？"', tags: ['小红书', '公众号'], analysis: '针对具体场景，引发共鸣' },
+      { text: '"出纳和会计到底有什么区别？"', tags: ['抖音', '小红书'], analysis: '基础概念科普，适合新手' },
+      { text: '"ERP系统真的适合小公司吗？"', tags: ['公众号', '小红书'], analysis: '针对中小企业痛点' },
+      { text: '"你的库存为什么总是对不上账？"', tags: ['抖音', '小红书'], analysis: '直击库存管理痛点' },
+      { text: '"做账软件免费和付费差在哪？"', tags: ['小红书', '公众号'], analysis: '对比类疑问，引发点击' },
+      { text: '"为什么会计都推荐这款软件？"', tags: ['抖音', '小红书'], analysis: '利用从众心理' },
+      { text: '"财务软件真的能提高效率吗？"', tags: ['公众号', '抖音'], analysis: '针对效率焦虑' },
+      { text: '"报税总是出错怎么办？"', tags: ['小红书', '抖音'], analysis: '报税痛点，实用性强' },
+      { text: '"小公司财务管理为什么这么难？"', tags: ['抖音', '公众号'], analysis: '引发小公司老板共鸣' },
+      { text: '"Excel做账真的够用吗？"', tags: ['小红书', '抖音'], analysis: '针对Excel用户群体' },
+      { text: '"业财一体化到底是什么意思？"', tags: ['公众号', '小红书'], analysis: '概念科普，适合长文' },
+      { text: '"项目管理怎么做才能不超预算？"', tags: ['抖音', '小红书'], analysis: '项目管理痛点' },
+      { text: '"开单软件哪个最适合批发行业？"', tags: ['小红书', '公众号'], analysis: '针对特定行业' }
+    ]
+  },
+  {
+    category: '数字冲击型',
+    icon: '🔢',
+    titles: [
+      { text: '"15年会计经验！用对软件效率翻3倍！"', tags: ['小红书', '公众号'], analysis: '数字+经验背书，增加可信度' },
+      { text: '"5个做账错误，90%的新人都犯过"', tags: ['抖音', '小红书'], analysis: '具体数字+高比例，引发关注' },
+      { text: '"3分钟搞定月结！这个神器太强了"', tags: ['抖音', '小红书'], analysis: '时间数字突出效率' },
+      { text: '"用了10年Excel，不如这个财务软件！"', tags: ['小红书', '公众号'], analysis: '时间对比突出优势' },
+      { text: '"30天学会做账！小白变大神！"', tags: ['抖音', '小红书'], analysis: '时间承诺+身份转变' },
+      { text: '"10款财务软件测评，老板必看"', tags: ['小红书', '公众号'], analysis: '数量+目标用户明确' },
+      { text: '"每月省下2000元！这个软件太值了"', tags: ['抖音', '小红书'], analysis: '具体金额吸引注意' },
+      { text: '"7天从零学会财务软件！"', tags: ['小红书', '抖音'], analysis: '短期承诺，降低门槛' },
+      { text: '"1000+企业都在用的ERP系统！"', tags: ['公众号', '抖音'], analysis: '用户数量背书' },
+      { text: '"效率提升80%！会计人必备神器！"', tags: ['抖音', '小红书'], analysis: '高比例数字冲击' },
+      { text: '"3步搞定财务报表！新手也能学会"', tags: ['小红书', '公众号'], analysis: '步骤数字简化难度' },
+      { text: '"5分钟学会用财务软件做账"', tags: ['抖音', '小红书'], analysis: '时间承诺+快速见效' },
+      { text: '"2026年最值得入手的5款软件！"', tags: ['小红书', '抖音'], analysis: '年份+数量，时效性强' },
+      { text: '"1年省下10万成本！这个软件做到了"', tags: ['公众号', '小红书'], analysis: '大金额吸引老板关注' },
+      { text: '"8个财务软件功能对比，一目了然"', tags: ['小红书', '公众号'], analysis: '数量+简洁明了' },
+      { text: '"从100人公司到1000人，财务系统怎么选？"', tags: ['公众号', '抖音'], analysis: '规模数字对比' },
+      { text: '"90%的会计都不知道的隐藏功能！"', tags: ['抖音', '小红书'], analysis: '高比例+好奇心' },
+      { text: '"24小时自动记账！这个功能太牛了"', tags: ['小红书', '抖音'], analysis: '时间数字突出自动化' },
+      { text: '"做账时间从3天缩短到3小时！"', tags: ['抖音', '公众号'], analysis: '时间对比突出效率' },
+      { text: '"618必备！进销存软件这样用省50%时间"', tags: ['小红书', '抖音'], analysis: '热点+数字+利益点' }
+    ]
+  },
+  {
+    category: '情绪共鸣型',
+    icon: '💬',
+    titles: [
+      { text: '"公司倒闭了才明白：财务软件不能省！"', tags: ['小红书', '公众号'], analysis: '悲剧故事引发共鸣和警醒' },
+      { text: '"做了10年会计，后悔没早点用这个软件！"', tags: ['抖音', '小红书'], analysis: '后悔情绪引发好奇心' },
+      { text: '"被老板骂哭后，我发现了这个神器！"', tags: ['小红书', '抖音'], analysis: '情感故事+转折' },
+      { text: '"会计人的苦，只有自己知道！"', tags: ['抖音', '小红书'], analysis: '群体认同感' },
+      { text: '"加班到深夜？是你方法不对！"', tags: ['小红书', '公众号'], analysis: '痛点+解决方案暗示' },
+      { text: '"离职后才知道：这些软件技能太重要了！"', tags: ['抖音', '小红书'], analysis: '后悔情绪+经验教训' },
+      { text: '"终于不用加班了！这个软件救了我！"', tags: ['小红书', '抖音'], analysis: '解脱情绪+推荐' },
+      { text: '"看到同事用这个软件，我酸了！"', tags: ['抖音', '小红书'], analysis: '羡慕情绪引发好奇' },
+      { text: '"老板让我做财务分析，我差点哭出来"', tags: ['小红书', '公众号'], analysis: '焦虑情绪+共鸣' },
+      { text: '"会计妈妈的日常：工作与家庭如何平衡？"', tags: ['抖音', '小红书'], analysis: '身份共鸣' },
+      { text: '"从焦虑到淡定，我只用了一个软件！"', tags: ['小红书', '公众号'], analysis: '情绪转变+解决方案' },
+      { text: '"再也不怕被审计了！这个软件太给力"', tags: ['抖音', '小红书'], analysis: '恐惧+解脱' },
+      { text: '"做账做到崩溃？试试这个方法！"', tags: ['小红书', '抖音'], analysis: '崩溃情绪+解决方案' },
+      { text: '"同事都在偷偷用的财务软件！"', tags: ['抖音', '公众号'], analysis: '好奇心+从众心理' },
+      { text: '"这个软件让我少加了50%的班！"', tags: ['小红书', '抖音'], analysis: '解脱情绪+具体利益' },
+      { text: '"被税务局约谈后，我学到了这些！"', tags: ['公众号', '小红书'], analysis: '恐惧情绪+经验教训' },
+      { text: '"看到这个功能，我直接哭了！"', tags: ['抖音', '小红书'], analysis: '惊喜情绪+夸张表达' },
+      { text: '"做账做不好，连觉都睡不好！"', tags: ['小红书', '公众号'], analysis: '焦虑情绪共鸣' },
+      { text: '"终于找到适合小公司的软件了！"', tags: ['抖音', '小红书'], analysis: '如释重负+推荐' },
+      { text: '"从讨厌做账到爱上做账，我经历了什么？"', tags: ['小红书', '公众号'], analysis: '情绪转变故事' }
+    ]
+  },
+  {
+    category: '焦虑制造型',
+    icon: '😰',
+    titles: [
+      { text: '"还在用Excel做账？小心被替代！"', tags: ['抖音', '小红书'], analysis: '制造替代焦虑' },
+      { text: '"不懂这个财务软件，升职加薪无望！"', tags: ['小红书', '公众号'], analysis: '职业发展焦虑' },
+      { text: '"同行都在用AI做账了，你还在手工记？"', tags: ['抖音', '小红书'], analysis: '技术落后焦虑' },
+      { text: '"再不学这个，会计要被淘汰了！"', tags: ['小红书', '公众号'], analysis: '行业淘汰焦虑' },
+      { text: '"老板让你做财务分析，你只会Excel？"', tags: ['抖音', '小红书'], analysis: '能力不足焦虑' },
+      { text: '"同行都用ERP了，你还在用纸质账本？"', tags: ['小红书', '抖音'], analysis: '技术差距焦虑' },
+      { text: '"金税四期来了！这些做账方法必须改！"', tags: ['公众号', '小红书'], analysis: '政策变化焦虑' },
+      { text: '"不会这个软件，面试直接被刷！"', tags: ['抖音', '小红书'], analysis: '求职焦虑' },
+      { text: '"竞争对手都在用智能财务系统了！"', tags: ['小红书', '公众号'], analysis: '竞争焦虑' },
+      { text: '"你的财务数据安全吗？看完吓一跳！"', tags: ['抖音', '小红书'], analysis: '数据安全焦虑' },
+      { text: '"还在手动盘点库存？效率太低了！"', tags: ['小红书', '抖音'], analysis: '效率焦虑' },
+      { text: '"不会用财务软件的会计，迟早被淘汰！"', tags: ['抖音', '公众号'], analysis: '职业危机焦虑' },
+      { text: '"你的同行已经数字化转型了，你呢？"', tags: ['小红书', '抖音'], analysis: '转型焦虑' },
+      { text: '"不会报税软件？小心被罚款！"', tags: ['抖音', '小红书'], analysis: '罚款焦虑' },
+      { text: '"老板要求用ERP，你怎么办？"', tags: ['小红书', '公众号'], analysis: '技能需求焦虑' },
+      { text: '"AI时代，传统会计何去何从？"', tags: ['公众号', '抖音'], analysis: '行业变革焦虑' },
+      { text: '"不会这个功能，做账效率差10倍！"', tags: ['抖音', '小红书'], analysis: '效率差距焦虑' },
+      { text: '"你的库存管理还在用Excel？太危险了！"', tags: ['小红书', '抖音'], analysis: '数据安全焦虑' },
+      { text: '"同行效率比你高3倍，秘密在这里！"', tags: ['抖音', '公众号'], analysis: '竞争差距焦虑' },
+      { text: '"再不升级财务系统，公司要出大问题！"', tags: ['小红书', '公众号'], analysis: '经营风险焦虑' }
+    ]
+  },
+  {
+    category: '利益驱动型',
+    icon: '💰',
+    titles: [
+      { text: '"用对财务软件，每年省下5万块！"', tags: ['小红书', '公众号'], analysis: '具体金额吸引注意' },
+      { text: '"免费！这个财务软件太香了！"', tags: ['抖音', '小红书'], analysis: '免费利益点直接' },
+      { text: '"效率提升3倍！会计人必备神器！"', tags: ['小红书', '抖音'], analysis: '效率提升利益' },
+      { text: '"老板看了都点赞的财务报表！"', tags: ['公众号', '小红书'], analysis: '获得认可的利益' },
+      { text: '"这个软件让我少加了50%的班！"', tags: ['抖音', '小红书'], analysis: '时间利益' },
+      { text: '"学会这个技能，工资直接翻倍！"', tags: ['小红书', '公众号'], analysis: '薪资提升利益' },
+      { text: '"一键生成报表！再也不用手动做！"', tags: ['抖音', '小红书'], analysis: '自动化利益' },
+      { text: '"库存准确率提升到99%！就靠这个！"', tags: ['小红书', '抖音'], analysis: '准确率利益' },
+      { text: '"做账时间缩短80%！这个功能太牛了"', tags: ['抖音', '公众号'], analysis: '时间节省利益' },
+      { text: '"免费试用！这个财务软件真的好用！"', tags: ['小红书', '抖音'], analysis: '免费试用降低门槛' },
+      { text: '"这个功能帮你自动报税！省时省力"', tags: ['公众号', '小红书'], analysis: '自动化利益' },
+      { text: '"用这个软件，老板主动给你加薪！"', tags: ['抖音', '小红书'], analysis: '职业发展利益' },
+      { text: '"一键对账！再也不用加班到深夜！"', tags: ['小红书', '抖音'], analysis: '时间利益+情绪解脱' },
+      { text: '"这个软件帮你省下一个人的工资！"', tags: ['抖音', '公众号'], analysis: '成本节省利益' },
+      { text: '"自动预警！再也不怕库存积压！"', tags: ['小红书', '抖音'], analysis: '风险防控利益' },
+      { text: '"老板最看重的财务指标，一键生成！"', tags: ['公众号', '小红书'], analysis: '获得认可利益' },
+      { text: '"这个功能让财务分析变简单了！"', tags: ['抖音', '小红书'], analysis: '简化工作利益' },
+      { text: '"月结从3天缩短到3小时！就靠这个！"', tags: ['小红书', '抖音'], analysis: '时间效率利益' },
+      { text: '"财务数据实时同步！再也不用等！"', tags: ['抖音', '公众号'], analysis: '实时性利益' },
+      { text: '"这个软件让我的工作效率翻了3倍！"', tags: ['小红书', '抖音'], analysis: '效率提升利益' }
+    ]
+  },
+  {
+    category: '蹭热点型',
+    icon: '🔥',
+    titles: [
+      { text: '"AI时代，会计人怎么用ChatGPT做账？"', tags: ['抖音', '小红书'], analysis: 'AI热点+实用性' },
+      { text: '"618来了！进销存系统这样用才省钱！"', tags: ['小红书', '抖音'], analysis: '电商热点+实用' },
+      { text: '"毕业季！出纳入门必看攻略！"', tags: ['小红书', '公众号'], analysis: '季节热点+刚需' },
+      { text: '"两会后！小企业财务这样管理！"', tags: ['公众号', '抖音'], analysis: '政策热点+指导' },
+      { text: '"金税四期！这些做账方法必须改！"', tags: ['小红书', '公众号'], analysis: '税务热点+紧迫性' },
+      { text: '"年终了！财务软件这样选最划算！"', tags: ['抖音', '小红书'], analysis: '时间节点+决策' },
+      { text: '"数字化转型热潮下，财务怎么跟上？"', tags: ['公众号', '小红书'], analysis: '行业热点+趋势' },
+      { text: '"疫情后时代，远程做账怎么实现？"', tags: ['抖音', '小红书'], analysis: '社会热点+需求' },
+      { text: '"ChatGPT能替代会计吗？看完你就懂了！"', tags: ['小红书', '抖音'], analysis: 'AI热点+职业思考' },
+      { text: '"双十一备战！库存管理这样做不出错！"', tags: ['抖音', '小红书'], analysis: '电商热点+实操' },
+      { text: '"新规来了！财务软件必须升级！"', tags: ['公众号', '小红书'], analysis: '政策热点+紧迫性' },
+      { text: '"2026年最火的财务软件是哪个？"', tags: ['小红书', '抖音'], analysis: '年度热点+推荐' },
+      { text: '"AI做账时代来了！你准备好了吗？"', tags: ['抖音', '公众号'], analysis: '技术热点+趋势' },
+      { text: '"618大促！进销存系统必备功能！"', tags: ['小红书', '抖音'], analysis: '电商热点+功能' },
+      { text: '"智能财务时代，传统会计怎么办？"', tags: ['公众号', '小红书'], analysis: '行业热点+转型' },
+      { text: '"年终盘点！财务软件这样用最高效！"', tags: ['抖音', '小红书'], analysis: '时间节点+效率' },
+      { text: '"开学季！会计新人必备软件清单！"', tags: ['小红书', '抖音'], analysis: '季节热点+清单' },
+      { text: '"企业数字化转型，财务是第一步！"', tags: ['公众号', '抖音'], analysis: '行业趋势+指导' },
+      { text: '"智能时代！这些财务技能必须掌握！"', tags: ['小红书', '抖音'], analysis: '技术趋势+技能' },
+      { text: '"2026年财务软件排行榜出炉！"', tags: ['抖音', '公众号'], analysis: '年度热点+排名' }
+    ]
+  },
+  {
+    category: '反差对比型',
+    icon: '⚖️',
+    titles: [
+      { text: '"以前做账要3天，现在只要30分钟！"', tags: ['抖音', '小红书'], analysis: '时间对比突出效率' },
+      { text: '"从月薪3000到月薪过万，只因学会了这个！"', tags: ['小红书', '公众号'], analysis: '薪资对比+转折' },
+      { text: '"同事用Excel加班到10点，我5点就下班了！"', tags: ['抖音', '小红书'], analysis: '工作状态对比' },
+      { text: '"免费软件vs收费软件，结果出乎意料！"', tags: ['小红书', '抖音'], analysis: '产品对比+反转' },
+      { text: '"手工记账vs财务软件，效率差了10倍！"', tags: ['抖音', '小红书'], analysis: '方式对比+数字' },
+      { text: '"小公司vs大公司，财务管理差在哪？"', tags: ['小红书', '公众号'], analysis: '规模对比+分析' },
+      { text: '"以前怕审计，现在盼审计！只因用了这个！"', tags: ['抖音', '小红书'], analysis: '态度对比+转折' },
+      { text: '"以前库存总是对不上，现在准确率99%！"', tags: ['小红书', '抖音'], analysis: '准确率对比' },
+      { text: '"以前月结要加班3天，现在半天搞定！"', tags: ['抖音', '公众号'], analysis: '时间对比突出效率' },
+      { text: '"以前老板总催报表，现在老板自己看！"', tags: ['小红书', '抖音'], analysis: '工作方式对比' },
+      { text: '"以前做账靠记忆，现在靠系统！"', tags: ['抖音', '小红书'], analysis: '方式对比+升级' },
+      { text: '"以前怕报税，现在爱报税！就因为这个软件！"', tags: ['小红书', '公众号'], analysis: '态度对比+转折' },
+      { text: '"以前10个人干的活，现在2个人就够了！"', tags: ['抖音', '小红书'], analysis: '人力对比+效率' },
+      { text: '"以前Excel表格满天飞，现在一个系统搞定！"', tags: ['小红书', '抖音'], analysis: '工具对比+整合' },
+      { text: '"以前做财务分析要3天，现在1小时！"', tags: ['抖音', '公众号'], analysis: '时间对比+效率' },
+      { text: '"以前库存积压严重，现在零库存！"', tags: ['小红书', '抖音'], analysis: '库存对比+成果' },
+      { text: '"以前报表总出错，现在100%准确！"', tags: ['抖音', '小红书'], analysis: '准确率对比' },
+      { text: '"以前手工开单慢，现在秒开！"', tags: ['小红书', '抖音'], analysis: '速度对比+效率' },
+      { text: '"以前财务和业务脱节，现在一体化！"', tags: ['公众号', '小红书'], analysis: '模式对比+升级' },
+      { text: '"以前怕查账，现在随时查！"', tags: ['抖音', '小红书'], analysis: '心态对比+自信' }
+    ]
+  },
+  {
+    category: '情感故事型',
+    icon: '📖',
+    titles: [
+      { text: '"我是如何从出纳做到财务总监的！"', tags: ['小红书', '公众号'], analysis: '成长故事+激励' },
+      { text: '"10年会计生涯，最后悔的一件事！"', tags: ['公众号', '小红书'], analysis: '后悔故事+教训' },
+      { text: '"创业失败后，我才明白财务有多重要！"', tags: ['小红书', '抖音'], analysis: '失败故事+感悟' },
+      { text: '"会计妈妈的日常：工作与家庭如何平衡？"', tags: ['抖音', '小红书'], analysis: '生活故事+共鸣' },
+      { text: '"从会计小白到财务主管的成长之路！"', tags: ['小红书', '公众号'], analysis: '成长故事+激励' },
+      { text: '"那些年，我踩过的财务软件坑！"', tags: ['抖音', '小红书'], analysis: '踩坑故事+教训' },
+      { text: '"转行做会计，我经历了什么？"', tags: ['小红书', '抖音'], analysis: '转行故事+经验' },
+      { text: '"30岁转行做会计，现在怎么样了？"', tags: ['抖音', '公众号'], analysis: '转行故事+现状' },
+      { text: '"从讨厌数字到爱上财务，我的转变！"', tags: ['小红书', '抖音'], analysis: '心态转变故事' },
+      { text: '"兼职会计的辛酸史，你经历过吗？"', tags: ['抖音', '小红书'], analysis: '辛酸故事+共鸣' },
+      { text: '"第一份财务工作，我差点放弃！"', tags: ['小红书', '公众号'], analysis: '初入职场故事' },
+      { text: '"被客户投诉后，我学到了这些！"', tags: ['抖音', '小红书'], analysis: '挫折故事+成长' },
+      { text: '"从手工记账到智能财务，我的10年！"', tags: ['小红书', '公众号'], analysis: '时代变迁故事' },
+      { text: '"会计考证的那些日子，你还记得吗？"', tags: ['抖音', '小红书'], analysis: '考证故事+共鸣' },
+      { text: '"第一次用财务软件，我惊呆了！"', tags: ['小红书', '抖音'], analysis: '初体验故事+惊喜' },
+      { text: '"从害怕做账到成为做账高手！"', tags: ['抖音', '公众号'], analysis: '成长故事+激励' },
+      { text: '"那些年，我们一起做过的账！"', tags: ['小红书', '抖音'], analysis: '集体回忆+共鸣' },
+      { text: '"财务人的24小时，你中了几条？"', tags: ['抖音', '小红书'], analysis: '日常生活+共鸣' },
+      { text: '"从Excel到ERP，我的进化史！"', tags: ['小红书', '公众号'], analysis: '工具进化故事' },
+      { text: '"做了5年会计，我想说说心里话！"', tags: ['抖音', '小红书'], analysis: '心声故事+共鸣' }
+    ]
+  },
+  {
+    category: '实用干货型',
+    icon: '📚',
+    titles: [
+      { text: '"会计人必学的5个Excel技巧！"', tags: ['小红书', '抖音'], analysis: '技能清单+实用性' },
+      { text: '"做账完整流程，新手必看！"', tags: ['抖音', '公众号'], analysis: '流程指南+新手友好' },
+      { text: '"财务报表模板，直接套用！"', tags: ['小红书', '公众号'], analysis: '模板分享+实用性' },
+      { text: '"进销存管理实操教程，一看就会！"', tags: ['抖音', '小红书'], analysis: '实操教程+易学' },
+      { text: '"报税流程详解，再也不怕税务局！"', tags: ['公众号', '小红书'], analysis: '流程详解+实用' },
+      { text: '"库存管理的10个实用技巧！"', tags: ['抖音', '小红书'], analysis: '技巧清单+实用' },
+      { text: '"财务软件快捷键大全，效率翻倍！"', tags: ['小红书', '抖音'], analysis: '工具技巧+效率' },
+      { text: '"做账常见错误及解决方案！"', tags: ['抖音', '公众号'], analysis: '问题解决+实用' },
+      { text: '"财务分析模板，直接用！"', tags: ['小红书', '公众号'], analysis: '模板分享+实用' },
+      { text: '"ERP系统操作手册，新手必备！"', tags: ['抖音', '小红书'], analysis: '操作指南+新手' },
+      { text: '"出纳工作规范，一看就懂！"', tags: ['小红书', '抖音'], analysis: '规范指南+易懂' },
+      { text: '"做账顺序详解，新手必收藏！"', tags: ['抖音', '公众号'], analysis: '流程详解+收藏' },
+      { text: '"财务软件设置指南，一看就会！"', tags: ['小红书', '抖音'], analysis: '设置指南+易学' },
+      { text: '"做账技巧大全，会计人必备！"', tags: ['抖音', '小红书'], analysis: '技巧集合+全面' },
+      { text: '"财务报表分析方法，老板必看！"', tags: ['公众号', '小红书'], analysis: '分析方法+目标用户' },
+      { text: '"进销存系统设置教程，一看就会！"', tags: ['抖音', '小红书'], analysis: '设置教程+易学' },
+      { text: '"报税时间表，再也不怕错过！"', tags: ['小红书', '抖音'], analysis: '时间管理+实用' },
+      { text: '"财务软件数据备份方法，必看！"', tags: ['抖音', '公众号'], analysis: '数据安全+实用' },
+      { text: '"做账凭证模板，直接下载！"', tags: ['小红书', '抖音'], analysis: '模板分享+实用' },
+      { text: '"财务软件常见问题解答！"', tags: ['抖音', '小红书'], analysis: 'FAQ+实用' }
+    ]
+  },
+  {
+    category: '权威背书型',
+    icon: '🏆',
+    titles: [
+      { text: '"15年财务总监推荐：这3款软件最好用！"', tags: ['小红书', '公众号'], analysis: '资历+推荐' },
+      { text: '"四大审计师都在用的财务工具！"', tags: ['公众号', '小红书'], analysis: '权威背书+从众' },
+      { text: '"税务局认可的做账方法！"', tags: ['小红书', '抖音'], analysis: '官方背书+信任' },
+      { text: '"500强企业都在用的ERP系统！"', tags: ['公众号', '抖音'], analysis: '大企业背书' },
+      { text: '"注册会计师推荐的财务软件！"', tags: ['小红书', '公众号'], analysis: '专业资格背书' },
+      { text: '"财务专家教你如何选对软件！"', tags: ['抖音', '小红书'], analysis: '专家背书+指导' },
+      { text: '"上市公司都在用的财务系统！"', tags: ['小红书', '公众号'], analysis: '上市公司背书' },
+      { text: '"10年老会计推荐的做账软件！"', tags: ['抖音', '小红书'], analysis: '经验背书+推荐' },
+      { text: '"财务经理都在用的效率工具！"', tags: ['小红书', '抖音'], analysis: '管理层背书' },
+      { text: '"税务局指定的报税软件！"', tags: ['公众号', '小红书'], analysis: '官方背书+信任' },
+      { text: '"会计培训机构推荐的学习软件！"', tags: ['抖音', '小红书'], analysis: '机构背书+学习' },
+      { text: '"财务顾问推荐的管理工具！"', tags: ['小红书', '公众号'], analysis: '顾问背书+专业' },
+      { text: '"行业大佬都在用的财务系统！"', tags: ['抖音', '小红书'], analysis: '大佬背书+从众' },
+      { text: '"财务软件排行榜第一名！"', tags: ['小红书', '抖音'], analysis: '排名背书+权威' },
+      { text: '"会计协会推荐的做账软件！"', tags: ['公众号', '小红书'], analysis: '协会背书+权威' },
+      { text: '"财务专家亲测：这款软件最好用！"', tags: ['抖音', '小红书'], analysis: '亲测背书+信任' },
+      { text: '"大厂财务都在用的效率工具！"', tags: ['小红书', '抖音'], analysis: '大厂背书+从众' },
+      { text: '"财务总监私藏的5个工具！"', tags: ['抖音', '公众号'], analysis: '私藏+好奇心' },
+      { text: '"会计考试培训机构推荐的软件！"', tags: ['小红书', '抖音'], analysis: '机构背书+学习' },
+      { text: '"财务软件用户好评率99%！"', tags: ['小红书', '公众号'], analysis: '用户口碑背书' }
+    ]
+  },
+  {
+    category: '热点话题型',
+    icon: '🔥',
+    titles: [
+      { text: '"金税四期来了！这些做账习惯必须改！"', tags: ['小红书', '公众号'], analysis: '税务热点+紧迫性' },
+      { text: '"AI冲击下，会计人如何保住饭碗？"', tags: ['抖音', '小红书'], analysis: 'AI热点+职业焦虑' },
+      { text: '"2026年最值得入手的财务软件！"', tags: ['小红书', '抖音'], analysis: '年度热点+推荐' },
+      { text: '"中小企业数字化转型，从财务开始！"', tags: ['公众号', '小红书'], analysis: '数字化热点+指导' },
+      { text: '"电商大促！进销存系统这样用才高效！"', tags: ['抖音', '小红书'], analysis: '电商热点+效率' },
+      { text: '"毕业季！会计新人求职必备技能！"', tags: ['小红书', '抖音'], analysis: '毕业季热点+技能' },
+      { text: '"ChatGPT能替代会计吗？深度分析！"', tags: ['公众号', '抖音'], analysis: 'AI热点+分析' },
+      { text: '"智能财务时代来了！你准备好了吗？"', tags: ['小红书', '抖音'], analysis: '技术趋势+准备' },
+      { text: '"2026年财务软件排行榜出炉！"', tags: ['抖音', '公众号'], analysis: '年度热点+排名' },
+      { text: '"数字化转型，财务人怎么跟上？"', tags: ['小红书', '抖音'], analysis: '转型热点+指导' },
+      { text: '"AI做账时代，传统会计怎么办？"', tags: ['抖音', '小红书'], analysis: 'AI热点+转型' },
+      { text: '"智能ERP系统，2026年最火！"', tags: ['小红书', '公众号'], analysis: '产品热点+推荐' },
+      { text: '"财务共享中心，你了解吗？"', tags: ['公众号', '抖音'], analysis: '概念热点+科普' },
+      { text: '"RPA财务自动化，你用上了吗？"', tags: ['小红书', '抖音'], analysis: '技术热点+应用' },
+      { text: '"区块链+财务，未来趋势！"', tags: ['抖音', '公众号'], analysis: '技术热点+趋势' },
+      { text: '"云计算财务软件，为什么这么火？"', tags: ['小红书', '抖音'], analysis: '技术热点+原因' },
+      { text: '"大数据财务分析，你学会了吗？"', tags: ['抖音', '小红书'], analysis: '技术热点+学习' },
+      { text: '"移动办公时代，财务软件怎么选？"', tags: ['小红书', '公众号'], analysis: '办公热点+选择' },
+      { text: '"无纸化办公，财务怎么做？"', tags: ['抖音', '小红书'], analysis: '环保热点+实践' },
+      { text: '"2026年财务行业十大趋势！"', tags: ['小红书', '抖音'], analysis: '年度趋势+预测' }
+    ]
+  }
+];
+
+// ============================================================
+// 标题推荐渲染
+// ============================================================
+function renderTitlesPage(filterCategory) {
+  const container = document.getElementById('titleRecommendations');
+  const filterSelect = document.getElementById('titleCategoryFilter');
+  const countEl = document.getElementById('titleFilterCount');
+  if (!container) return;
+
+  // 初始化下拉框
+  if (filterSelect && filterSelect.options.length <= 1) {
+    TITLE_DATA.forEach(cat => {
+      const option = document.createElement('option');
+      option.value = cat.category;
+      option.textContent = `${cat.icon} ${cat.category}（${cat.titles.length}个标题）`;
+      filterSelect.appendChild(option);
+    });
+  }
+
+  // 筛选数据
+  const filteredData = filterCategory && filterCategory !== 'all' 
+    ? TITLE_DATA.filter(cat => cat.category === filterCategory)
+    : TITLE_DATA;
+
+  // 计算总数
+  const totalCount = filteredData.reduce((sum, cat) => sum + cat.titles.length, 0);
+  if (countEl) {
+    countEl.textContent = `显示 ${totalCount} 个标题`;
+  }
+
+  container.innerHTML = filteredData.map(cat => `
+    <div class="title-category">
+      <div class="title-category-header">
+        <span class="title-category-icon">${cat.icon}</span>
+        <span class="title-category-name">${cat.category}</span>
+        <span class="title-category-count">${cat.titles.length} 个标题</span>
+      </div>
+      <div class="title-list">
+        ${cat.titles.map(t => `
+          <div class="title-item">
+            <div class="title-item-text">${t.text}</div>
+            ${t.analysis ? `<div class="title-analysis">💡 ${t.analysis}</div>` : ''}
+            <div class="title-item-meta">
+              <div class="title-item-tags">
+                ${t.tags.map(tag => `<span class="title-tag">${tag}</span>`).join('')}
+              </div>
+              <button class="title-item-copy" onclick="copyTitle('${t.text.replace(/'/g, "\\'")}')">复制</button>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+function filterTitles() {
+  const select = document.getElementById('titleCategoryFilter');
+  if (select) {
+    renderTitlesPage(select.value);
+  }
+}
+
+function copyTitle(text) {
+  navigator.clipboard.writeText(text).then(() => {
+    // 显示复制成功提示
+    const toast = document.createElement('div');
+    toast.style.cssText = 'position:fixed;top:20px;right:20px;background:#10B981;color:#fff;padding:10px 20px;border-radius:8px;font-size:13px;z-index:9999;';
+    toast.textContent = '✅ 已复制到剪贴板';
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 1500);
+  });
+}
 
 const ANALYSIS_INSIGHTS = [
   {
@@ -1828,7 +2298,6 @@ function renderTopicPage() {
               </div>
             </div>
           `).join('')}
-          <div class="topic-view-all">查看全部 ${TOPIC_DATA[p.key].length} 个选题 →</div>
         </div>
       </div>
     `).join('');
@@ -1918,12 +2387,6 @@ function renderOverview() {
           <span class="content-column-count" style="cursor:pointer;color:#7C3AED;" onclick="switchPage('${k}')">${data.items.length}条 > 查看更多</span>
         </div>
         ${data.items.slice(0, 5).map(item => {
-          // 生成模拟互动数据
-          const views = Math.floor(Math.random() * 50000) + 5000;
-          const likes = Math.floor(views * (0.02 + Math.random() * 0.08));
-          const comments = Math.floor(likes * (0.05 + Math.random() * 0.1));
-          const viewsText = views >= 10000 ? (views / 10000).toFixed(1) + '万' : views.toLocaleString();
-          const likesText = likes >= 10000 ? (likes / 10000).toFixed(1) + '万' : likes.toLocaleString();
           return `
           <div class="content-item" onclick="window.open('${item.url}','_blank')">
             <div class="content-item-thumb">${icons[k]}</div>
@@ -1932,11 +2395,6 @@ function renderOverview() {
               <div class="content-item-meta">
                 <span class="content-item-tag">${item.tag || ''}</span>
                 <span>${item.author || ''}</span>
-              </div>
-              <div class="content-item-stats">
-                <span>👁 ${viewsText}</span>
-                <span>❤️ ${likesText}</span>
-                <span>💬 ${comments}</span>
               </div>
             </div>
           </div>`;
@@ -2003,6 +2461,8 @@ function switchPage(platform) {
     renderOverview();
   } else if (platform === 'analytics') {
     renderTopicPage();
+  } else if (platform === 'titles') {
+    renderTitlesPage();
   } else {
     renderPlatform(platform);
   }
