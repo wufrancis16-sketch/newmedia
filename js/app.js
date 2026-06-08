@@ -6,7 +6,7 @@ const REAL_DATA = {
   "xiaohongshu": {
     "platform": "xiaohongshu",
     "platformName": "小红书",
-    "updateTime": "2026-06-05T00:50:46.312Z",
+    "updateTime": "2026-06-08T00:50:43.232Z",
     "source": "小红书搜索",
     "items": [
       {
@@ -329,7 +329,7 @@ const REAL_DATA = {
   "douyin": {
     "platform": "douyin",
     "platformName": "抖音",
-    "updateTime": "2026-06-05T00:50:46.314Z",
+    "updateTime": "2026-06-08T00:50:43.233Z",
     "source": "搜狗搜索",
     "items": [
       {
@@ -729,7 +729,7 @@ const REAL_DATA = {
   "wechat": {
     "platform": "wechat",
     "platformName": "公众号",
-    "updateTime": "2026-06-05T00:50:46.314Z",
+    "updateTime": "2026-06-08T00:50:43.233Z",
     "source": "搜狗微信搜索",
     "items": [
       {
@@ -1527,7 +1527,11 @@ const ANALYSIS_DATA = {
     { pattern: '数字+痛点', example: '3分钟教你避坑', frequency: '32%', desc: '用具体数字降低阅读门槛，直击用户痛点' },
     { pattern: '疑问句式', example: '有没有适合XX的ERP？', frequency: '28%', desc: '引发好奇，让目标用户主动点击寻找答案' },
     { pattern: '对比测评', example: '这5款千万别乱买！', frequency: '24%', desc: '制造冲突感，用户想知道"哪款值得买"' },
-    { pattern: '实操教程', example: '做账顺序完整流程详解', frequency: '16%', desc: '提供具体操作步骤，实用性强易收藏' }
+    { pattern: '实操教程', example: '做账顺序完整流程详解', frequency: '16%', desc: '提供具体操作步骤，实用性强易收藏' },
+    { pattern: '情绪共鸣', example: '做了10年会计，后悔没早点用这个！', frequency: '18%', desc: '引发情感共鸣，用户更愿意分享和互动' },
+    { pattern: '避坑指南', example: '买财务软件前必看！这5个坑千万别踩', frequency: '22%', desc: '负面话题更容易引发关注和讨论' },
+    { pattern: '利益驱动', example: '用对财务软件，每年省下5万块！', frequency: '15%', desc: '直接点明利益点，吸引用户关注' },
+    { pattern: '权威背书', example: '15年财务总监推荐：这3款最好用', frequency: '12%', desc: '借助权威增加可信度，提升转化率' }
   ],
   hotTopics: [
     { topic: '财务软件选型', heat: 98, trend: 'up', platforms: ['小红书', '抖音', '公众号'], explanation: '中小企业数字化转型加速，财务软件成为刚需。选型类内容帮助用户做决策，收藏率高。' },
@@ -1617,43 +1621,6 @@ function renderContentAnalysis() {
       </div>
     </div>
   `;
-}
-
-// ============================================================
-// 热门话题网格渲染
-// ============================================================
-function renderHotTopicsGrid() {
-  const grid = document.getElementById('hotTopicsGrid');
-  if (!grid) return;
-
-  const topics = ANALYSIS_DATA.hotTopics;
-  grid.innerHTML = topics.map((t, i) => {
-    const trendIcon = t.trend === 'up' ? '↑' : t.trend === 'down' ? '↓' : '→';
-    const trendClass = t.trend === 'up' ? 'up' : t.trend === 'down' ? 'down' : 'stable';
-    const trendPercent = t.trend === 'up' ? '+' + Math.floor(Math.random() * 10 + 5) + '%' :
-                         t.trend === 'down' ? '-' + Math.floor(Math.random() * 5 + 1) + '%' :
-                         '持平';
-    const rankClass = i === 0 ? 'rank-1' : i === 1 ? 'rank-2' : i === 2 ? 'rank-3' : '';
-    
-    // 生成迷你趋势图数据
-    const chartData = Array.from({length: 7}, () => Math.floor(Math.random() * 30) + 70);
-    
-    return `
-      <div class="hot-topic-card">
-        <div class="hot-topic-rank ${rankClass}">${i + 1}</div>
-        <div class="hot-topic-name">${t.topic}</div>
-        <div class="hot-topic-heat">热度指数 ${t.heat}</div>
-        <div class="hot-topic-trend ${trendClass}">${trendIcon} ${trendPercent}</div>
-        <div class="hot-topic-chart">
-          <svg viewBox="0 0 100 24" preserveAspectRatio="none">
-            <polyline points="${chartData.map((v, j) => `${j * (100/6)},${24 - (v/100) * 24}`).join(' ')}" 
-              fill="none" stroke="${t.trend === 'up' ? '#10B981' : t.trend === 'down' ? '#EF4444' : '#94A3B8'}" 
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-      </div>
-    `;
-  }).join('');
 }
 
 // ============================================================
@@ -2135,7 +2102,16 @@ function renderTitlesPage(filterCategory) {
   const container = document.getElementById('titleRecommendations');
   const filterSelect = document.getElementById('titleCategoryFilter');
   const countEl = document.getElementById('titleFilterCount');
+  const dateEl = document.getElementById('titleDate');
   if (!container) return;
+
+  // 更新日期
+  if (dateEl) {
+    const now = new Date();
+    const dateStr = `${now.getFullYear()}年${now.getMonth() + 1}月${now.getDate()}日`;
+    const weekdays = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
+    dateEl.textContent = `📅 ${dateStr} ${weekdays[now.getDay()]} · 基于爆款公式，为你推荐不同角度的吸睛标题`;
+  }
 
   // 初始化下拉框
   if (filterSelect && filterSelect.options.length <= 1) {
@@ -2166,7 +2142,7 @@ function renderTitlesPage(filterCategory) {
         <span class="title-category-count">${cat.titles.length} 个标题</span>
       </div>
       <div class="title-list">
-        ${cat.titles.map(t => `
+        ${cat.titles.map((t, i) => `
           <div class="title-item">
             <div class="title-item-text">${t.text}</div>
             ${t.analysis ? `<div class="title-analysis">💡 ${t.analysis}</div>` : ''}
@@ -2174,7 +2150,7 @@ function renderTitlesPage(filterCategory) {
               <div class="title-item-tags">
                 ${t.tags.map(tag => `<span class="title-tag">${tag}</span>`).join('')}
               </div>
-              <button class="title-item-copy" onclick="copyTitle('${t.text.replace(/'/g, "\\'")}')">复制</button>
+              <button class="title-item-copy" data-title="${encodeURIComponent(t.text)}" onclick="copyTitle(this.dataset.title)">复制</button>
             </div>
           </div>
         `).join('')}
@@ -2190,7 +2166,8 @@ function filterTitles() {
   }
 }
 
-function copyTitle(text) {
+function copyTitle(encodedText) {
+  const text = decodeURIComponent(encodedText);
   navigator.clipboard.writeText(text).then(() => {
     // 显示复制成功提示
     const toast = document.createElement('div');
@@ -2198,7 +2175,58 @@ function copyTitle(text) {
     toast.textContent = '✅ 已复制到剪贴板';
     document.body.appendChild(toast);
     setTimeout(() => toast.remove(), 1500);
+  }).catch(err => {
+    // 如果clipboard API失败，使用备用方法
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+    
+    const toast = document.createElement('div');
+    toast.style.cssText = 'position:fixed;top:20px;right:20px;background:#10B981;color:#fff;padding:10px 20px;border-radius:8px;font-size:13px;z-index:9999;';
+    toast.textContent = '✅ 已复制到剪贴板';
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 1500);
   });
+}
+
+function exportTitlesToExcel() {
+  // 准备数据
+  let csvContent = '\uFEFF'; // BOM for UTF-8
+  csvContent += '分类,标题,适用平台,分析说明\n';
+  
+  const now = new Date();
+  const dateStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+  
+  TITLE_DATA.forEach(cat => {
+    cat.titles.forEach(t => {
+      const title = t.text.replace(/"/g, '""');
+      const tags = t.tags.join('、');
+      const analysis = (t.analysis || '').replace(/"/g, '""');
+      csvContent += `"${cat.category}","${title}","${tags}","${analysis}"\n`;
+    });
+  });
+  
+  // 创建下载链接
+  const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = `标题推荐_${dateStr}.csv`;
+  link.click();
+  
+  // 显示导出成功提示
+  const toast = document.createElement('div');
+  toast.style.cssText = 'position:fixed;top:20px;right:20px;background:#10B981;color:#fff;padding:10px 20px;border-radius:8px;font-size:13px;z-index:9999;';
+  toast.textContent = '✅ 导出成功！';
+  document.body.appendChild(toast);
+  setTimeout(() => toast.remove(), 1500);
+  
+  URL.revokeObjectURL(url);
 }
 
 const ANALYSIS_INSIGHTS = [
@@ -2324,12 +2352,178 @@ function renderTopicPage() {
 }
 
 // ============================================================
+// 问候语渲染
+// ============================================================
+function renderGreeting() {
+  const titleEl = document.getElementById('greetingTitle');
+  const subtitleEl = document.getElementById('greetingSubtitle');
+  if (!titleEl || !subtitleEl) return;
+
+  const now = new Date();
+  const hours = now.getHours();
+  let greeting = '你好';
+  if (hours < 6) greeting = '夜深了';
+  else if (hours < 9) greeting = '早上好';
+  else if (hours < 12) greeting = '上午好';
+  else if (hours < 14) greeting = '中午好';
+  else if (hours < 18) greeting = '下午好';
+  else greeting = '晚上好';
+
+  const dateStr = `${now.getFullYear()}年${now.getMonth() + 1}月${now.getDate()}日`;
+  const weekdays = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
+  const weekday = weekdays[now.getDay()];
+
+  titleEl.textContent = `👋 ${greeting}，小白WU`;
+  subtitleEl.textContent = `今天是 ${dateStr} ${weekday}，AI 正在为你捕捉全网热点`;
+}
+
+// ============================================================
+// 趋势分析渲染
+// ============================================================
+function renderTrendingContent() {
+  const container = document.getElementById('trendingContent');
+  if (!container) return;
+
+  // 默认显示词云
+  renderKeywordCloud(container);
+
+  // 添加tab切换事件
+  document.querySelectorAll('.trending-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.trending-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      
+      const tabType = tab.dataset.tab;
+      if (tabType === 'hot') renderHotTrend(container);
+      else if (tabType === 'platform') renderPlatformDist(container);
+      else if (tabType === 'keyword') renderKeywordCloud(container);
+    });
+  });
+}
+
+function renderHotTrend(container) {
+  const xhsData = getPlatformData('xiaohongshu');
+  const dyData = getPlatformData('douyin');
+  const wxData = getPlatformData('wechat');
+  
+  container.innerHTML = `
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+      <div style="text-align: center; padding: 20px; background: var(--bg); border-radius: 10px;">
+        <div style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">📕 小红书</div>
+        <div style="font-size: 28px; font-weight: 700; color: #FF2442;">${xhsData ? xhsData.items.length : 0}</div>
+        <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">内容总量</div>
+      </div>
+      <div style="text-align: center; padding: 20px; background: var(--bg); border-radius: 10px;">
+        <div style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">🎵 抖音</div>
+        <div style="font-size: 28px; font-weight: 700; color: #7C3AED;">${dyData ? dyData.items.length : 0}</div>
+        <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">内容总量</div>
+      </div>
+      <div style="text-align: center; padding: 20px; background: var(--bg); border-radius: 10px;">
+        <div style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">💬 公众号</div>
+        <div style="font-size: 28px; font-weight: 700; color: #07C160;">${wxData ? wxData.items.length : 0}</div>
+        <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">内容总量</div>
+      </div>
+    </div>
+  `;
+}
+
+function renderPlatformDist(container) {
+  const xhsCount = getPlatformData('xiaohongshu')?.items.length || 0;
+  const dyCount = getPlatformData('douyin')?.items.length || 0;
+  const wxCount = getPlatformData('wechat')?.items.length || 0;
+  const total = xhsCount + dyCount + wxCount;
+  
+  container.innerHTML = `
+    <div style="padding: 20px 0;">
+      <div style="display: flex; height: 24px; border-radius: 12px; overflow: hidden; margin-bottom: 20px;">
+        <div style="width: ${total > 0 ? (xhsCount/total*100) : 33}%; background: #FF2442;"></div>
+        <div style="width: ${total > 0 ? (dyCount/total*100) : 33}%; background: #7C3AED;"></div>
+        <div style="width: ${total > 0 ? (wxCount/total*100) : 34}%; background: #07C160;"></div>
+      </div>
+      <div style="display: flex; justify-content: center; gap: 30px; font-size: 13px;">
+        <span style="display: flex; align-items: center; gap: 6px;"><span style="width: 12px; height: 12px; background: #FF2442; border-radius: 3px;"></span>小红书 ${xhsCount}条 (${total > 0 ? Math.round(xhsCount/total*100) : 33}%)</span>
+        <span style="display: flex; align-items: center; gap: 6px;"><span style="width: 12px; height: 12px; background: #7C3AED; border-radius: 3px;"></span>抖音 ${dyCount}条 (${total > 0 ? Math.round(dyCount/total*100) : 33}%)</span>
+        <span style="display: flex; align-items: center; gap: 6px;"><span style="width: 12px; height: 12px; background: #07C160; border-radius: 3px;"></span>公众号 ${wxCount}条 (${total > 0 ? Math.round(wxCount/total*100) : 34}%)</span>
+      </div>
+    </div>
+  `;
+}
+
+function renderKeywordCloud(container) {
+  // 全网热门关键词
+  const trendingKeywords = [
+    { text: '2026高考', weight: 100 },
+    { text: '芒种', weight: 95 },
+    { text: '油价调整', weight: 92 },
+    { text: '高考加油', weight: 90 },
+    { text: '奚梦瑶婚礼', weight: 88 },
+    { text: '中国小电驴', weight: 85 },
+    { text: '燃油车价格跳水', weight: 82 },
+    { text: '金饰降价', weight: 80 },
+    { text: '特朗普', weight: 78 },
+    { text: '泽连斯基', weight: 75 },
+    { text: 'AI对话', weight: 73 },
+    { text: '豆包', weight: 70 },
+    { text: '人形机器人', weight: 68 },
+    { text: '台风', weight: 65 },
+    { text: '高考倒计时', weight: 63 },
+    { text: '高考物品清单', weight: 60 },
+    { text: '股市', weight: 58 },
+    { text: '防晒', weight: 55 },
+    { text: '减肥', weight: 53 },
+    { text: '游泳', weight: 50 },
+    { text: '苹果折叠屏', weight: 48 },
+    { text: '英伟达', weight: 45 },
+    { text: '健身', weight: 43 },
+    { text: '心理健康', weight: 40 },
+    { text: '运动', weight: 38 },
+    { text: '高考', weight: 95 },
+    { text: '旅游', weight: 35 },
+    { text: '美食', weight: 33 },
+    { text: '护肤', weight: 30 },
+    { text: '穿搭', weight: 28 },
+    { text: '科技', weight: 25 },
+    { text: '新能源', weight: 23 },
+    { text: '直播', weight: 20 },
+    { text: '短视频', weight: 18 },
+    { text: '电商', weight: 15 },
+    { text: '职场', weight: 13 },
+    { text: '理财', weight: 10 }
+  ];
+
+  // 随机打乱顺序
+  const shuffled = [...trendingKeywords].sort(() => Math.random() - 0.5);
+
+  // 词云布局样式
+  container.innerHTML = `
+    <div class="word-cloud">
+      <div class="cloud-title">今日全网热点词云</div>
+      <div class="cloud-container">
+        ${shuffled.map((kw, i) => {
+          const size = 10 + (kw.weight / 100) * 22;
+          const colors = ['#1E40AF', '#3B82F6', '#60A5FA', '#93C5FD', '#BFDBFE', '#7C3AED', '#8B5CF6', '#A78BFA'];
+          const color = colors[i % colors.length];
+          const opacity = 0.6 + (kw.weight / 100) * 0.4;
+          return `<span class="cloud-word" style="font-size: ${size}px; color: ${color}; opacity: ${opacity}; font-weight: ${kw.weight > 70 ? '700' : kw.weight > 40 ? '500' : '400'};">${kw.text}</span>`;
+        }).join('')}
+      </div>
+    </div>
+  `;
+}
+
+// ============================================================
 // 概览页渲染
 // ============================================================
 function renderOverview() {
   const grid = document.getElementById('statsGrid');
   const previews = document.getElementById('platformPreviews');
   if (!grid || !previews) return;
+
+  // 渲染问候语
+  renderGreeting();
+
+  // 渲染趋势分析
+  renderTrendingContent();
 
   const platforms = getAllPlatforms();
   const icons = { xiaohongshu: '📕', douyin: '🎵', wechat: '💬' };
@@ -2368,9 +2562,6 @@ function renderOverview() {
 
   // Content Analysis
   renderContentAnalysis();
-
-  // Hot Topics Grid
-  renderHotTopicsGrid();
 
   // Content previews
   const labels = { xiaohongshu: '小红书热门内容', douyin: '抖音热门内容', wechat: '公众号热门内容' };

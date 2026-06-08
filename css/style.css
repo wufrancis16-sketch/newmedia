@@ -712,6 +712,173 @@ body.dark-mode .content-item:hover {
   border-color: var(--primary);
 }
 
+/* ============================================================
+   Greeting Section
+   ============================================================ */
+.greeting-section {
+  background: linear-gradient(135deg, var(--primary-bg), var(--bg-card));
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.greeting-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.greeting-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+}
+
+.greeting-subtitle {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.greeting-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ============================================================
+   Trending Section
+   ============================================================ */
+.trending-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.trending-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.trending-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.trending-icon {
+  font-size: 18px;
+}
+
+.trending-tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.trending-tab {
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.trending-tab:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.trending-tab.active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+.trending-content {
+  padding: 20px;
+  min-height: 200px;
+}
+
+/* ============================================================
+   Word Cloud
+   ============================================================ */
+.word-cloud {
+  width: 100%;
+}
+
+.cloud-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.cloud-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px 16px;
+  padding: 30px 20px;
+  min-height: 280px;
+}
+
+.cloud-word {
+  display: inline-block;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.cloud-word:hover {
+  transform: scale(1.15);
+  filter: brightness(1.2);
+}
+
+.btn-export {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-export:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-export:active {
+  transform: translateY(0);
+}
+
 /* Date Picker Dropdown */
 .date-picker-wrap {
   position: relative;

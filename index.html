@@ -309,12 +309,14 @@
 
     <!-- Overview Page -->
     <div class="page active" id="page-all">
-      <div class="page-header">
-        <div class="page-header-left">
-          <h1>数据概览</h1>
-          <p>小红书 · 抖音 · 公众号 — 三大平台热门内容一目了然</p>
+
+      <!-- Greeting Section -->
+      <div class="greeting-section" id="greetingSection">
+        <div class="greeting-content">
+          <h2 class="greeting-title" id="greetingTitle">👋 你好，小白WU</h2>
+          <p class="greeting-subtitle" id="greetingSubtitle">今天是 2026年6月5日，AI 正在为你捕捉全网热点</p>
         </div>
-        <div class="page-header-actions">
+        <div class="greeting-actions">
           <div class="date-picker-wrap">
             <div class="date-badge" id="dateBadge" onclick="toggleDatePicker()">
               📅 <span id="dateRangeText">近 7 天</span>
@@ -353,6 +355,22 @@
       <!-- Stats Cards -->
       <div class="stats-grid" id="statsGrid"></div>
 
+      <!-- Trending Analysis -->
+      <div class="trending-section">
+        <div class="trending-header">
+          <div class="trending-title">
+            <span class="trending-icon">📊</span>
+            <span>趋势分析</span>
+          </div>
+          <div class="trending-tabs">
+            <button class="trending-tab active" data-tab="keyword">关键词云</button>
+            <button class="trending-tab" data-tab="hot">热度趋势</button>
+            <button class="trending-tab" data-tab="platform">平台分布</button>
+          </div>
+        </div>
+        <div class="trending-content" id="trendingContent"></div>
+      </div>
+
       <!-- Content Analysis Section -->
       <div class="charts-section">
         <div class="chart-card" style="grid-column: 1 / -1;">
@@ -362,15 +380,6 @@
           </div>
           <div id="contentAnalysis"></div>
         </div>
-      </div>
-
-      <!-- Hot Topics Trend -->
-      <div class="hot-topics-section">
-        <div class="content-section-header">
-          <div class="content-section-title">🔥 热门话题趋势</div>
-          <a class="content-section-link" onclick="switchPage('analytics')">查看完整趋势 →</a>
-        </div>
-        <div class="hot-topics-grid" id="hotTopicsGrid"></div>
       </div>
 
       <!-- Content Preview -->
@@ -450,8 +459,13 @@
     <div class="page" id="page-titles">
       <div class="page-header">
         <div class="page-header-left">
-          <h1>📝 标题推荐</h1>
-          <p>基于爆款公式，为你推荐不同角度的吸睛标题</p>
+          <h1>📝 今日标题推荐</h1>
+          <p id="titleDate">基于爆款公式，为你推荐不同角度的吸睛标题</p>
+        </div>
+        <div class="page-header-actions">
+          <button class="btn-export" onclick="exportTitlesToExcel()">
+            📥 导出Excel
+          </button>
         </div>
       </div>
       <div class="title-filter-bar">
