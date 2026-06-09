@@ -2,330 +2,120 @@ const REAL_DATA = {
   "xiaohongshu": {
     "platform": "xiaohongshu",
     "platformName": "小红书",
-    "updateTime": "2026-06-09T01:29:45.385Z",
-    "source": "小红书搜索",
-    "items": [
-      {
-        "rank": 1,
-        "title": "财务软件相关内容",
-        "tag": "财务软件",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6&source=web_search_result_notes"
-      },
-      {
-        "rank": 2,
-        "title": "做账相关内容",
-        "tag": "做账",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%81%9A%E8%B4%A6&source=web_search_result_notes"
-      },
-      {
-        "rank": 3,
-        "title": "进销存相关内容",
-        "tag": "进销存",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E8%BF%9B%E9%94%80%E5%AD%98&source=web_search_result_notes"
-      },
-      {
-        "rank": 4,
-        "title": "ERP系统相关内容",
-        "tag": "ERP系统",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=ERP%E7%B3%BB%E7%BB%9F&source=web_search_result_notes"
-      },
-      {
-        "rank": 5,
-        "title": "库存管理相关内容",
-        "tag": "库存管理",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%BA%93%E5%AD%98%E7%AE%A1%E7%90%86&source=web_search_result_notes"
-      },
-      {
-        "rank": 6,
-        "title": "业财一体相关内容",
-        "tag": "业财一体",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E4%B8%9A%E8%B4%A2%E4%B8%80%E4%BD%93&source=web_search_result_notes"
-      },
-      {
-        "rank": 7,
-        "title": "出纳相关内容",
-        "tag": "出纳",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%87%BA%E7%BA%B3&source=web_search_result_notes"
-      },
-      {
-        "rank": 8,
-        "title": "项目管理相关内容",
-        "tag": "项目管理",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86&source=web_search_result_notes"
-      },
-      {
-        "rank": 9,
-        "title": "开单软件相关内容",
-        "tag": "开单软件",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%BC%80%E5%8D%95%E8%BD%AF%E4%BB%B6&source=web_search_result_notes"
-      },
-      {
-        "rank": 10,
-        "title": "出入库相关内容",
-        "tag": "出入库",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%87%BA%E5%85%A5%E5%BA%93&source=web_search_result_notes"
-      },
-      {
-        "rank": 11,
-        "title": "财务管理相关内容",
-        "tag": "财务管理",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E8%B4%A2%E5%8A%A1%E7%AE%A1%E7%90%86&source=web_search_result_notes"
-      },
-      {
-        "rank": 12,
-        "title": "会计实操相关内容",
-        "tag": "会计实操",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E4%BC%9A%E8%AE%A1%E5%AE%9E%E6%93%8D&source=web_search_result_notes"
-      },
-      {
-        "rank": 13,
-        "title": "报税相关内容",
-        "tag": "报税",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E6%8A%A5%E7%A8%8E&source=web_search_result_notes"
-      },
-      {
-        "rank": 14,
-        "title": "发票相关内容",
-        "tag": "发票",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%8F%91%E7%A5%A8&source=web_search_result_notes"
-      },
-      {
-        "rank": 15,
-        "title": "记账软件相关内容",
-        "tag": "记账软件",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E8%AE%B0%E8%B4%A6%E8%BD%AF%E4%BB%B6&source=web_search_result_notes"
-      },
-      {
-        "rank": 16,
-        "title": "财务报表相关内容",
-        "tag": "财务报表",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E8%B4%A2%E5%8A%A1%E6%8A%A5%E8%A1%A8&source=web_search_result_notes"
-      },
-      {
-        "rank": 17,
-        "title": "财务软件相关内容",
-        "tag": "财务软件",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6&source=web_search_result_notes"
-      },
-      {
-        "rank": 18,
-        "title": "做账相关内容",
-        "tag": "做账",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%81%9A%E8%B4%A6&source=web_search_result_notes"
-      },
-      {
-        "rank": 19,
-        "title": "进销存相关内容",
-        "tag": "进销存",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E8%BF%9B%E9%94%80%E5%AD%98&source=web_search_result_notes"
-      },
-      {
-        "rank": 20,
-        "title": "ERP系统相关内容",
-        "tag": "ERP系统",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=ERP%E7%B3%BB%E7%BB%9F&source=web_search_result_notes"
-      },
-      {
-        "rank": 21,
-        "title": "库存管理相关内容",
-        "tag": "库存管理",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%BA%93%E5%AD%98%E7%AE%A1%E7%90%86&source=web_search_result_notes"
-      },
-      {
-        "rank": 22,
-        "title": "业财一体相关内容",
-        "tag": "业财一体",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E4%B8%9A%E8%B4%A2%E4%B8%80%E4%BD%93&source=web_search_result_notes"
-      },
-      {
-        "rank": 23,
-        "title": "出纳相关内容",
-        "tag": "出纳",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%87%BA%E7%BA%B3&source=web_search_result_notes"
-      },
-      {
-        "rank": 24,
-        "title": "项目管理相关内容",
-        "tag": "项目管理",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86&source=web_search_result_notes"
-      },
-      {
-        "rank": 25,
-        "title": "开单软件相关内容",
-        "tag": "开单软件",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%BC%80%E5%8D%95%E8%BD%AF%E4%BB%B6&source=web_search_result_notes"
-      },
-      {
-        "rank": 26,
-        "title": "出入库相关内容",
-        "tag": "出入库",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%87%BA%E5%85%A5%E5%BA%93&source=web_search_result_notes"
-      },
-      {
-        "rank": 27,
-        "title": "财务管理相关内容",
-        "tag": "财务管理",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E8%B4%A2%E5%8A%A1%E7%AE%A1%E7%90%86&source=web_search_result_notes"
-      },
-      {
-        "rank": 28,
-        "title": "会计实操相关内容",
-        "tag": "会计实操",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E4%BC%9A%E8%AE%A1%E5%AE%9E%E6%93%8D&source=web_search_result_notes"
-      },
-      {
-        "rank": 29,
-        "title": "报税相关内容",
-        "tag": "报税",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E6%8A%A5%E7%A8%8E&source=web_search_result_notes"
-      },
-      {
-        "rank": 30,
-        "title": "发票相关内容",
-        "tag": "发票",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%8F%91%E7%A5%A8&source=web_search_result_notes"
-      },
-      {
-        "rank": 31,
-        "title": "记账软件相关内容",
-        "tag": "记账软件",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E8%AE%B0%E8%B4%A6%E8%BD%AF%E4%BB%B6&source=web_search_result_notes"
-      },
-      {
-        "rank": 32,
-        "title": "财务报表相关内容",
-        "tag": "财务报表",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E8%B4%A2%E5%8A%A1%E6%8A%A5%E8%A1%A8&source=web_search_result_notes"
-      },
-      {
-        "rank": 33,
-        "title": "财务软件相关内容",
-        "tag": "财务软件",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6&source=web_search_result_notes"
-      },
-      {
-        "rank": 34,
-        "title": "做账相关内容",
-        "tag": "做账",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%81%9A%E8%B4%A6&source=web_search_result_notes"
-      },
-      {
-        "rank": 35,
-        "title": "进销存相关内容",
-        "tag": "进销存",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E8%BF%9B%E9%94%80%E5%AD%98&source=web_search_result_notes"
-      },
-      {
-        "rank": 36,
-        "title": "ERP系统相关内容",
-        "tag": "ERP系统",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=ERP%E7%B3%BB%E7%BB%9F&source=web_search_result_notes"
-      },
-      {
-        "rank": 37,
-        "title": "库存管理相关内容",
-        "tag": "库存管理",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%BA%93%E5%AD%98%E7%AE%A1%E7%90%86&source=web_search_result_notes"
-      },
-      {
-        "rank": 38,
-        "title": "业财一体相关内容",
-        "tag": "业财一体",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E4%B8%9A%E8%B4%A2%E4%B8%80%E4%BD%93&source=web_search_result_notes"
-      },
-      {
-        "rank": 39,
-        "title": "出纳相关内容",
-        "tag": "出纳",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%87%BA%E7%BA%B3&source=web_search_result_notes"
-      },
-      {
-        "rank": 40,
-        "title": "项目管理相关内容",
-        "tag": "项目管理",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86&source=web_search_result_notes"
-      },
-      {
-        "rank": 41,
-        "title": "开单软件相关内容",
-        "tag": "开单软件",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%BC%80%E5%8D%95%E8%BD%AF%E4%BB%B6&source=web_search_result_notes"
-      },
-      {
-        "rank": 42,
-        "title": "出入库相关内容",
-        "tag": "出入库",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%87%BA%E5%85%A5%E5%BA%93&source=web_search_result_notes"
-      },
-      {
-        "rank": 43,
-        "title": "财务管理相关内容",
-        "tag": "财务管理",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E8%B4%A2%E5%8A%A1%E7%AE%A1%E7%90%86&source=web_search_result_notes"
-      },
-      {
-        "rank": 44,
-        "title": "会计实操相关内容",
-        "tag": "会计实操",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E4%BC%9A%E8%AE%A1%E5%AE%9E%E6%93%8D&source=web_search_result_notes"
-      },
-      {
-        "rank": 45,
-        "title": "报税相关内容",
-        "tag": "报税",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E6%8A%A5%E7%A8%8E&source=web_search_result_notes"
-      }
+    "updateTime": "2026-06-08T00:50:43.233Z",
+    "source": "搜狗搜索",
+    items: [
+        {
+                "rank": 1,
+                "title": "小公司需要总账财务软件，各种品牌应该怎么选？",
+                "tag": "财务软件",
+                "author": "抖音搜索",
+                "url": "https://www.douyin.com/video/7520135753733508389"
+        },
+        {
+                "rank": 2,
+                "title": "免费版财务软件—柠檬云 推荐给大家",
+                "tag": "财务软件",
+                "author": "抖音搜索",
+                "url": "https://www.douyin.com/video/7521328252045364506"
+        },
+        {
+                "rank": 3,
+                "title": "老板财务必看！给你们收集了各行各业常用的财务软件",
+                "tag": "财务软件",
+                "author": "抖音搜索",
+                "url": "https://www.douyin.com/video/7597650527010311458"
+        },
+        {
+                "rank": 4,
+                "title": "财务软件哪款好用（附价格版）10款适合小公司的财务软件测评",
+                "tag": "财务软件",
+                "author": "抖音搜索",
+                "url": "https://www.douyin.com/video/7513836746333850918"
+        },
+        {
+                "rank": 5,
+                "title": "为什么建议买云端财务软件？这4个理由必看",
+                "tag": "财务软件",
+                "author": "抖音搜索",
+                "url": "https://www.douyin.com/video/7447822786682277171"
+        },
+        {
+                "rank": 6,
+                "title": "适合小微企业财务记账软件金蝶精斗云",
+                "tag": "做账",
+                "author": "抖音搜索",
+                "url": "https://www.douyin.com/video/7111245980267220261"
+        },
+        {
+                "rank": 7,
+                "title": "会计人，这个视频可以让你省几千",
+                "tag": "财务软件",
+                "author": "抖音搜索",
+                "url": "https://www.douyin.com/video/7594757416504400238"
+        },
+        {
+                "rank": 8,
+                "title": "金蝶用友管家婆三大财务软件，应该怎么选",
+                "tag": "ERP",
+                "author": "抖音搜索",
+                "url": "https://www.douyin.com/video/7177671281159064889"
+        },
+        {
+                "rank": 9,
+                "title": "用友财务软件怎么样？网页版财务软件安全吗？",
+                "tag": "财务软件",
+                "author": "抖音搜索",
+                "url": "https://www.douyin.com/video/7094821075724340517"
+        },
+        {
+                "rank": 10,
+                "title": "你用的是什么财务软件？",
+                "tag": "财务软件",
+                "author": "抖音搜索",
+                "url": "https://www.douyin.com/video/7551734091210149155"
+        },
+        {
+                "rank": 11,
+                "title": "财务软件分享",
+                "tag": "财务软件",
+                "author": "抖音搜索",
+                "url": "https://www.douyin.com/video/7408529885636857124"
+        },
+        {
+                "rank": 12,
+                "title": "财务必须会用哪些财务工具类软件？",
+                "tag": "财务软件",
+                "author": "抖音搜索",
+                "url": "https://www.douyin.com/video/7439257302013660453"
+        },
+        {
+                "rank": 13,
+                "title": "大家可以去试一下免费财务软件柠檬云",
+                "tag": "财务软件",
+                "author": "抖音搜索",
+                "url": "https://www.douyin.com/video/7492001064393198902"
+        },
+        {
+                "rank": 14,
+                "title": "小规模有必要买会计软件吗",
+                "tag": "财务软件",
+                "author": "抖音搜索",
+                "url": "https://www.douyin.com/video/7418402585939430710"
+        },
+        {
+                "rank": 15,
+                "title": "生产制造行业如何选一款简单好用的财务软件？",
+                "tag": "财务软件",
+                "author": "抖音搜索",
+                "url": "https://www.douyin.com/video/7152831966956604708"
+        }
     ]
   },
   "douyin": {
     "platform": "douyin",
     "platformName": "抖音",
-    "updateTime": "2026-06-09T01:29:45.390Z",
+    "updateTime": "2026-06-08T00:50:43.233Z",
     "source": "搜狗搜索",
     "items": [
       {
@@ -725,7 +515,7 @@ const REAL_DATA = {
   "wechat": {
     "platform": "wechat",
     "platformName": "公众号",
-    "updateTime": "2026-06-09T01:29:45.390Z",
+    "updateTime": "2026-06-08T00:50:43.233Z",
     "source": "搜狗微信搜索",
     "items": [
       {
@@ -1334,34 +1124,7 @@ const TREND_DATA = {
 let currentPage = 'all';
 
 function getPlatformData(platform) {
-  const data = REAL_DATA[platform];
-  if (!data || !data.items) return null;
-  
-  // 基于日期生成每天不同的随机数量（最少30条，最多100条）
-  const now = new Date();
-  const dateSeed = now.getFullYear() * 10000 + (now.getMonth() + 1) * 100 + now.getDate();
-  
-  // 为每个平台生成不同的随机数
-  const platformSeeds = {
-    'xiaohongshu': dateSeed + 1,
-    'douyin': dateSeed + 2,
-    'wechat': dateSeed + 3
-  };
-  
-  let seed = platformSeeds[platform] || dateSeed;
-  // 简单的伪随机数生成器
-  seed = (seed * 1103515245 + 12345) & 0x7fffffff;
-  
-  // 生成30到100之间的随机数
-  const minCount = 30;
-  const maxCount = Math.min(data.items.length, 100);
-  const randomCount = minCount + (seed % (maxCount - minCount + 1));
-  
-  // 返回随机子集
-  return {
-    ...data,
-    items: data.items.slice(0, randomCount)
-  };
+  return REAL_DATA[platform] || null;
 }
 
 function getAllPlatforms() {
@@ -2509,26 +2272,6 @@ function renderHotTrend(container) {
   `;
 }
 
-// 获取内容点击URL
-function getItemUrl(platform, item) {
-  // 如果是真实的视频/文章链接，直接返回
-  if (item.url && !item.url.includes('search') && item.url.includes('/video/') || item.url.includes('/explore/') || item.url.includes('weixin.qq.com')) {
-    return item.url;
-  }
-  // 否则打开搜索页
-  const keyword = encodeURIComponent(item.title);
-  switch (platform) {
-    case 'xiaohongshu':
-      return `https://www.xiaohongshu.com/search_result?keyword=${keyword}`;
-    case 'douyin':
-      return `https://www.douyin.com/search/${keyword}?type=video`;
-    case 'wechat':
-      return `https://weixin.sogou.com/weixin?query=${keyword}&type=2`;
-    default:
-      return item.url;
-  }
-}
-
 function renderPlatformDist(container) {
   const xhsCount = getPlatformData('xiaohongshu')?.items.length || 0;
   const dyCount = getPlatformData('douyin')?.items.length || 0;
@@ -2680,9 +2423,8 @@ function renderOverview() {
           <span class="content-column-count" style="cursor:pointer;color:#7C3AED;" onclick="switchPage('${k}')">${data.items.length}条 > 查看更多</span>
         </div>
         ${data.items.slice(0, 5).map(item => {
-          const clickUrl = getItemUrl(k, item);
           return `
-          <div class="content-item" onclick="window.open('${clickUrl}','_blank')">
+          <div class="content-item" onclick="window.open('${item.url}','_blank')">
             <div class="content-item-thumb">${icons[k]}</div>
             <div class="content-item-body">
               <div class="content-item-title">${item.title}</div>
@@ -2723,9 +2465,8 @@ function renderPlatform(platform) {
 
   listEl.innerHTML = data.items.map((item, i) => {
     const rankClass = i === 0 ? 'gold' : i === 1 ? 'silver' : i === 2 ? 'bronze' : '';
-    const clickUrl = getItemUrl(platform, item);
     return `
-      <div class="content-card" onclick="window.open('${clickUrl}','_blank')">
+      <div class="content-card" onclick="window.open('${item.url}','_blank')">
         <div class="rank-badge ${rankClass}">${i + 1}</div>
         <div class="content-card-body">
           <div class="content-card-title">${item.title}</div>

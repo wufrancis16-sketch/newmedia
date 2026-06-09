@@ -1881,8 +1881,8 @@ body.dark-mode .content-item:hover {
 /* Title Filter Bar */
 .title-filter-bar {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 16px;
   margin-bottom: 24px;
   padding: 16px 20px;
   background: var(--bg-card);
@@ -1890,20 +1890,33 @@ body.dark-mode .content-item:hover {
   border-radius: 12px;
 }
 
-.title-filter-select {
-  padding: 10px 16px;
+.title-filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.title-filter-tab {
+  padding: 8px 16px;
   border: 1px solid var(--border);
   border-radius: 8px;
   background: var(--bg);
-  color: var(--text);
-  font-size: 14px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
   font-family: inherit;
   cursor: pointer;
-  min-width: 250px;
+  transition: all 0.15s;
 }
 
-.title-filter-select:focus {
-  outline: none;
+.title-filter-tab:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.title-filter-tab.active {
+  background: var(--primary);
+  color: #fff;
   border-color: var(--primary);
 }
 
