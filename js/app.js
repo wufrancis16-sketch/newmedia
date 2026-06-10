@@ -2,7 +2,7 @@ const REAL_DATA = {
   "xiaohongshu": {
     "platform": "xiaohongshu",
     "platformName": "小红书",
-    "updateTime": "2026-06-10T03:08:58.617Z",
+    "updateTime": "2026-06-10T03:17:37.542Z",
     "source": "小红书搜索",
     "items": [
       {
@@ -304,36 +304,36 @@ const REAL_DATA = {
   "douyin": {
     "platform": "douyin",
     "platformName": "抖音",
-    "updateTime": "2026-06-10T03:08:58.617Z",
+    "updateTime": "2026-06-10T03:17:37.542Z",
     "source": "搜狗搜索",
     "items": [
       {
         "rank": 1,
-        "title": "财务软件相关视频 1",
+        "title": "小公司没有财务软件该如何记账？一张表格轻松搞定！",
         "tag": "财务软件",
-        "author": "抖音搜索",
-        "url": "https://www.douyin.com/video/7571072187227032859"
+        "author": "我的评价是不如养猪",
+        "url": "https://www.douyin.com/video/7644511811819715270"
       },
       {
         "rank": 2,
-        "title": "财务软件相关视频 2",
-        "tag": "做账",
-        "author": "抖音搜索",
-        "url": "https://www.douyin.com/video/7470815620867607823"
+        "title": "做批发的老板，别再花冤枉钱了！骓云ERP采购销售库存财务全配齐",
+        "tag": "ERP",
+        "author": "骓云ERP",
+        "url": "https://www.douyin.com/video/7644479611040042249"
       },
       {
         "rank": 3,
-        "title": "财务软件相关视频 3",
-        "tag": "进销存",
-        "author": "抖音搜索",
-        "url": "https://www.douyin.com/video/7506834110833331508"
+        "title": "有没有适合建筑施工企业的项目、财务、进销存的ERP管理软件？",
+        "tag": "ERP",
+        "author": "智邦国际",
+        "url": "https://www.douyin.com/video/7644132380743142656"
       },
       {
         "rank": 4,
-        "title": "财务软件相关视频 4",
-        "tag": "ERP系统",
-        "author": "抖音搜索",
-        "url": "https://www.douyin.com/video/7507160641094880527"
+        "title": "财税机构破局就用EC专属CRM！适配工商注册、记账报税全业务",
+        "tag": "财务管理",
+        "author": "EC CRM",
+        "url": "https://www.douyin.com/video/7634473636720363506"
       },
       {
         "rank": 5,
@@ -592,7 +592,7 @@ const REAL_DATA = {
   "wechat": {
     "platform": "wechat",
     "platformName": "公众号",
-    "updateTime": "2026-06-10T03:08:58.617Z",
+    "updateTime": "2026-06-10T03:17:37.542Z",
     "source": "搜狗微信搜索",
     "items": [
       {
