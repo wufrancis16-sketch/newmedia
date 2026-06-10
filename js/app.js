@@ -2,7 +2,7 @@ const REAL_DATA = {
   "xiaohongshu": {
     "platform": "xiaohongshu",
     "platformName": "小红书",
-    "updateTime": "2026-06-10T00:50:48.911Z",
+    "updateTime": "2026-06-10T03:08:58.617Z",
     "source": "小红书搜索",
     "items": [
       {
@@ -298,34 +298,13 @@ const REAL_DATA = {
         "tag": "出入库",
         "author": "小红书搜索",
         "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%87%BA%E5%85%A5%E5%BA%93&source=web_search_result_notes"
-      },
-      {
-        "rank": 43,
-        "title": "财务管理相关内容",
-        "tag": "财务管理",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E8%B4%A2%E5%8A%A1%E7%AE%A1%E7%90%86&source=web_search_result_notes"
-      },
-      {
-        "rank": 44,
-        "title": "会计实操相关内容",
-        "tag": "会计实操",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E4%BC%9A%E8%AE%A1%E5%AE%9E%E6%93%8D&source=web_search_result_notes"
-      },
-      {
-        "rank": 45,
-        "title": "报税相关内容",
-        "tag": "报税",
-        "author": "小红书搜索",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E6%8A%A5%E7%A8%8E&source=web_search_result_notes"
       }
     ]
   },
   "douyin": {
     "platform": "douyin",
     "platformName": "抖音",
-    "updateTime": "2026-06-10T00:50:48.912Z",
+    "updateTime": "2026-06-10T03:08:58.617Z",
     "source": "搜狗搜索",
     "items": [
       {
@@ -607,125 +586,13 @@ const REAL_DATA = {
         "tag": "进销存",
         "author": "进销存教程",
         "url": "https://www.douyin.com/video/7537622960523038010"
-      },
-      {
-        "rank": 41,
-        "title": "小公司没有财务软件该如何记账？一张表格轻松搞定！",
-        "tag": "财务软件",
-        "author": "我的评价是不如养猪",
-        "url": "https://www.douyin.com/video/7644511811819715270"
-      },
-      {
-        "rank": 42,
-        "title": "做批发的老板，别再花冤枉钱了！骓云ERP采购销售库存财务全配齐",
-        "tag": "ERP",
-        "author": "骓云ERP",
-        "url": "https://www.douyin.com/video/7644479611040042249"
-      },
-      {
-        "rank": 43,
-        "title": "有没有适合建筑施工企业的项目、财务、进销存的ERP管理软件？",
-        "tag": "ERP",
-        "author": "智邦国际",
-        "url": "https://www.douyin.com/video/7644132380743142656"
-      },
-      {
-        "rank": 44,
-        "title": "财税机构破局就用EC专属CRM！适配工商注册、记账报税全业务",
-        "tag": "财务管理",
-        "author": "EC CRM",
-        "url": "https://www.douyin.com/video/7634473636720363506"
-      },
-      {
-        "rank": 45,
-        "title": "金蝶操作技巧：如何快速对账，提高收款效率",
-        "tag": "财务软件",
-        "author": "金蝶小妙招",
-        "url": "https://www.douyin.com/video/7318057917649868299"
-      },
-      {
-        "rank": 46,
-        "title": "SAP软件 新建会计科目",
-        "tag": "ERP",
-        "author": "SAP教程",
-        "url": "https://www.douyin.com/video/7213410104539931939"
-      },
-      {
-        "rank": 47,
-        "title": "个人所得税申报全流程注意事项",
-        "tag": "做账",
-        "author": "会计实操",
-        "url": "https://www.douyin.com/video/7410637989610381096"
-      },
-      {
-        "rank": 48,
-        "title": "Deepseek如何帮助会计人工作",
-        "tag": "财务软件",
-        "author": "AI会计",
-        "url": "https://www.douyin.com/video/7213351125964033295"
-      },
-      {
-        "rank": 49,
-        "title": "财务软件怎么选？3分钟教你避坑！",
-        "tag": "财务软件",
-        "author": "财税老张说",
-        "url": "https://www.douyin.com/video/7309125058482441513"
-      },
-      {
-        "rank": 50,
-        "title": "进销存教程：出入库单据自动填充",
-        "tag": "进销存",
-        "author": "进销存教程",
-        "url": "https://www.douyin.com/video/7537622960523038010"
-      },
-      {
-        "rank": 51,
-        "title": "小公司没有财务软件该如何记账？一张表格轻松搞定！",
-        "tag": "财务软件",
-        "author": "我的评价是不如养猪",
-        "url": "https://www.douyin.com/video/7644511811819715270"
-      },
-      {
-        "rank": 52,
-        "title": "做批发的老板，别再花冤枉钱了！骓云ERP采购销售库存财务全配齐",
-        "tag": "ERP",
-        "author": "骓云ERP",
-        "url": "https://www.douyin.com/video/7644479611040042249"
-      },
-      {
-        "rank": 53,
-        "title": "有没有适合建筑施工企业的项目、财务、进销存的ERP管理软件？",
-        "tag": "ERP",
-        "author": "智邦国际",
-        "url": "https://www.douyin.com/video/7644132380743142656"
-      },
-      {
-        "rank": 54,
-        "title": "财税机构破局就用EC专属CRM！适配工商注册、记账报税全业务",
-        "tag": "财务管理",
-        "author": "EC CRM",
-        "url": "https://www.douyin.com/video/7634473636720363506"
-      },
-      {
-        "rank": 55,
-        "title": "金蝶操作技巧：如何快速对账，提高收款效率",
-        "tag": "财务软件",
-        "author": "金蝶小妙招",
-        "url": "https://www.douyin.com/video/7318057917649868299"
-      },
-      {
-        "rank": 56,
-        "title": "SAP软件 新建会计科目",
-        "tag": "ERP",
-        "author": "SAP教程",
-        "url": "https://www.douyin.com/video/7213410104539931939"
       }
     ]
   },
   "wechat": {
     "platform": "wechat",
     "platformName": "公众号",
-    "updateTime": "2026-06-10T00:50:48.912Z",
+    "updateTime": "2026-06-10T03:08:58.617Z",
     "source": "搜狗微信搜索",
     "items": [
       {
@@ -1014,265 +881,6 @@ const REAL_DATA = {
         "tag": "财务软件",
         "author": "会计教练网校",
         "url": "https://weixin.sogou.com/weixin?query=%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6+%E8%AE%B0%E8%B4%A6&type=2"
-      },
-      {
-        "rank": 42,
-        "title": "进销存和财务软件分开好还是一起好？",
-        "tag": "进销存",
-        "author": "象过河",
-        "url": "https://weixin.sogou.com/weixin?query=%E8%BF%9B%E9%94%80%E5%AD%98+%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6&type=2"
-      },
-      {
-        "rank": 43,
-        "title": "各行业会计账务处理大全",
-        "tag": "做账",
-        "author": "浩博财税",
-        "url": "https://weixin.sogou.com/weixin?query=%E4%BC%9A%E8%AE%A1+%E8%B4%A6%E5%8A%A1%E5%A4%84%E7%90%86&type=2"
-      },
-      {
-        "rank": 44,
-        "title": "有了财务软件还要进销存软件吗？",
-        "tag": "进销存",
-        "author": "百卓采购网",
-        "url": "https://weixin.sogou.com/weixin?query=%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6+%E8%BF%9B%E9%94%80%E5%AD%98&type=2"
-      },
-      {
-        "rank": 45,
-        "title": "WMS与ERP在仓库管理中的区别与联系",
-        "tag": "ERP",
-        "author": "仓库管理",
-        "url": "https://weixin.sogou.com/weixin?query=WMS+ERP+%E4%BB%93%E5%BA%93%E7%AE%A1%E7%90%86&type=2"
-      },
-      {
-        "rank": 46,
-        "title": "ERP系统中仓库分类管理的五大误区",
-        "tag": "ERP",
-        "author": "ERP顾问",
-        "url": "https://weixin.sogou.com/weixin?query=ERP+%E4%BB%93%E5%BA%93%E5%88%86%E7%B1%BB&type=2"
-      },
-      {
-        "rank": 47,
-        "title": "会计做账适合用什么样的财务软件？",
-        "tag": "做账",
-        "author": "会计说",
-        "url": "https://weixin.sogou.com/weixin?query=%E4%BC%9A%E8%AE%A1%E5%81%9A%E8%B4%A6+%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6&type=2"
-      },
-      {
-        "rank": 48,
-        "title": "小微企业会计实操避坑指南",
-        "tag": "做账",
-        "author": "财税顾问",
-        "url": "https://weixin.sogou.com/weixin?query=%E5%B0%8F%E5%BE%AE%E4%BC%81%E4%B8%9A+%E4%BC%9A%E8%AE%A1%E5%AE%9E%E6%93%8D&type=2"
-      },
-      {
-        "rank": 49,
-        "title": "管家婆财贸ERP：从库存管理出发",
-        "tag": "ERP",
-        "author": "管家婆",
-        "url": "https://weixin.sogou.com/weixin?query=%E7%AE%A1%E5%AE%B6%E5%A9%86+ERP+%E5%BA%93%E5%AD%98&type=2"
-      },
-      {
-        "rank": 50,
-        "title": "初创公司成长秘籍：如何巧用ERP软件加速飞跃",
-        "tag": "ERP",
-        "author": "创业指南",
-        "url": "https://weixin.sogou.com/weixin?query=%E5%88%9D%E5%88%9B%E5%85%AC%E5%8F%B8+ERP%E8%BD%AF%E4%BB%B6&type=2"
-      },
-      {
-        "rank": 51,
-        "title": "全自动财务记账管理系统(包含记账、进销存、发票等等)",
-        "tag": "财务软件",
-        "author": "会计教练网校",
-        "url": "https://weixin.sogou.com/weixin?query=%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6+%E8%AE%B0%E8%B4%A6&type=2"
-      },
-      {
-        "rank": 52,
-        "title": "进销存和财务软件分开好还是一起好？",
-        "tag": "进销存",
-        "author": "象过河",
-        "url": "https://weixin.sogou.com/weixin?query=%E8%BF%9B%E9%94%80%E5%AD%98+%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6&type=2"
-      },
-      {
-        "rank": 53,
-        "title": "各行业会计账务处理大全",
-        "tag": "做账",
-        "author": "浩博财税",
-        "url": "https://weixin.sogou.com/weixin?query=%E4%BC%9A%E8%AE%A1+%E8%B4%A6%E5%8A%A1%E5%A4%84%E7%90%86&type=2"
-      },
-      {
-        "rank": 54,
-        "title": "有了财务软件还要进销存软件吗？",
-        "tag": "进销存",
-        "author": "百卓采购网",
-        "url": "https://weixin.sogou.com/weixin?query=%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6+%E8%BF%9B%E9%94%80%E5%AD%98&type=2"
-      },
-      {
-        "rank": 55,
-        "title": "WMS与ERP在仓库管理中的区别与联系",
-        "tag": "ERP",
-        "author": "仓库管理",
-        "url": "https://weixin.sogou.com/weixin?query=WMS+ERP+%E4%BB%93%E5%BA%93%E7%AE%A1%E7%90%86&type=2"
-      },
-      {
-        "rank": 56,
-        "title": "ERP系统中仓库分类管理的五大误区",
-        "tag": "ERP",
-        "author": "ERP顾问",
-        "url": "https://weixin.sogou.com/weixin?query=ERP+%E4%BB%93%E5%BA%93%E5%88%86%E7%B1%BB&type=2"
-      },
-      {
-        "rank": 57,
-        "title": "会计做账适合用什么样的财务软件？",
-        "tag": "做账",
-        "author": "会计说",
-        "url": "https://weixin.sogou.com/weixin?query=%E4%BC%9A%E8%AE%A1%E5%81%9A%E8%B4%A6+%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6&type=2"
-      },
-      {
-        "rank": 58,
-        "title": "小微企业会计实操避坑指南",
-        "tag": "做账",
-        "author": "财税顾问",
-        "url": "https://weixin.sogou.com/weixin?query=%E5%B0%8F%E5%BE%AE%E4%BC%81%E4%B8%9A+%E4%BC%9A%E8%AE%A1%E5%AE%9E%E6%93%8D&type=2"
-      },
-      {
-        "rank": 59,
-        "title": "管家婆财贸ERP：从库存管理出发",
-        "tag": "ERP",
-        "author": "管家婆",
-        "url": "https://weixin.sogou.com/weixin?query=%E7%AE%A1%E5%AE%B6%E5%A9%86+ERP+%E5%BA%93%E5%AD%98&type=2"
-      },
-      {
-        "rank": 60,
-        "title": "初创公司成长秘籍：如何巧用ERP软件加速飞跃",
-        "tag": "ERP",
-        "author": "创业指南",
-        "url": "https://weixin.sogou.com/weixin?query=%E5%88%9D%E5%88%9B%E5%85%AC%E5%8F%B8+ERP%E8%BD%AF%E4%BB%B6&type=2"
-      },
-      {
-        "rank": 61,
-        "title": "全自动财务记账管理系统(包含记账、进销存、发票等等)",
-        "tag": "财务软件",
-        "author": "会计教练网校",
-        "url": "https://weixin.sogou.com/weixin?query=%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6+%E8%AE%B0%E8%B4%A6&type=2"
-      },
-      {
-        "rank": 62,
-        "title": "进销存和财务软件分开好还是一起好？",
-        "tag": "进销存",
-        "author": "象过河",
-        "url": "https://weixin.sogou.com/weixin?query=%E8%BF%9B%E9%94%80%E5%AD%98+%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6&type=2"
-      },
-      {
-        "rank": 63,
-        "title": "各行业会计账务处理大全",
-        "tag": "做账",
-        "author": "浩博财税",
-        "url": "https://weixin.sogou.com/weixin?query=%E4%BC%9A%E8%AE%A1+%E8%B4%A6%E5%8A%A1%E5%A4%84%E7%90%86&type=2"
-      },
-      {
-        "rank": 64,
-        "title": "有了财务软件还要进销存软件吗？",
-        "tag": "进销存",
-        "author": "百卓采购网",
-        "url": "https://weixin.sogou.com/weixin?query=%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6+%E8%BF%9B%E9%94%80%E5%AD%98&type=2"
-      },
-      {
-        "rank": 65,
-        "title": "WMS与ERP在仓库管理中的区别与联系",
-        "tag": "ERP",
-        "author": "仓库管理",
-        "url": "https://weixin.sogou.com/weixin?query=WMS+ERP+%E4%BB%93%E5%BA%93%E7%AE%A1%E7%90%86&type=2"
-      },
-      {
-        "rank": 66,
-        "title": "ERP系统中仓库分类管理的五大误区",
-        "tag": "ERP",
-        "author": "ERP顾问",
-        "url": "https://weixin.sogou.com/weixin?query=ERP+%E4%BB%93%E5%BA%93%E5%88%86%E7%B1%BB&type=2"
-      },
-      {
-        "rank": 67,
-        "title": "会计做账适合用什么样的财务软件？",
-        "tag": "做账",
-        "author": "会计说",
-        "url": "https://weixin.sogou.com/weixin?query=%E4%BC%9A%E8%AE%A1%E5%81%9A%E8%B4%A6+%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6&type=2"
-      },
-      {
-        "rank": 68,
-        "title": "小微企业会计实操避坑指南",
-        "tag": "做账",
-        "author": "财税顾问",
-        "url": "https://weixin.sogou.com/weixin?query=%E5%B0%8F%E5%BE%AE%E4%BC%81%E4%B8%9A+%E4%BC%9A%E8%AE%A1%E5%AE%9E%E6%93%8D&type=2"
-      },
-      {
-        "rank": 69,
-        "title": "管家婆财贸ERP：从库存管理出发",
-        "tag": "ERP",
-        "author": "管家婆",
-        "url": "https://weixin.sogou.com/weixin?query=%E7%AE%A1%E5%AE%B6%E5%A9%86+ERP+%E5%BA%93%E5%AD%98&type=2"
-      },
-      {
-        "rank": 70,
-        "title": "初创公司成长秘籍：如何巧用ERP软件加速飞跃",
-        "tag": "ERP",
-        "author": "创业指南",
-        "url": "https://weixin.sogou.com/weixin?query=%E5%88%9D%E5%88%9B%E5%85%AC%E5%8F%B8+ERP%E8%BD%AF%E4%BB%B6&type=2"
-      },
-      {
-        "rank": 71,
-        "title": "全自动财务记账管理系统(包含记账、进销存、发票等等)",
-        "tag": "财务软件",
-        "author": "会计教练网校",
-        "url": "https://weixin.sogou.com/weixin?query=%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6+%E8%AE%B0%E8%B4%A6&type=2"
-      },
-      {
-        "rank": 72,
-        "title": "进销存和财务软件分开好还是一起好？",
-        "tag": "进销存",
-        "author": "象过河",
-        "url": "https://weixin.sogou.com/weixin?query=%E8%BF%9B%E9%94%80%E5%AD%98+%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6&type=2"
-      },
-      {
-        "rank": 73,
-        "title": "各行业会计账务处理大全",
-        "tag": "做账",
-        "author": "浩博财税",
-        "url": "https://weixin.sogou.com/weixin?query=%E4%BC%9A%E8%AE%A1+%E8%B4%A6%E5%8A%A1%E5%A4%84%E7%90%86&type=2"
-      },
-      {
-        "rank": 74,
-        "title": "有了财务软件还要进销存软件吗？",
-        "tag": "进销存",
-        "author": "百卓采购网",
-        "url": "https://weixin.sogou.com/weixin?query=%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6+%E8%BF%9B%E9%94%80%E5%AD%98&type=2"
-      },
-      {
-        "rank": 75,
-        "title": "WMS与ERP在仓库管理中的区别与联系",
-        "tag": "ERP",
-        "author": "仓库管理",
-        "url": "https://weixin.sogou.com/weixin?query=WMS+ERP+%E4%BB%93%E5%BA%93%E7%AE%A1%E7%90%86&type=2"
-      },
-      {
-        "rank": 76,
-        "title": "ERP系统中仓库分类管理的五大误区",
-        "tag": "ERP",
-        "author": "ERP顾问",
-        "url": "https://weixin.sogou.com/weixin?query=ERP+%E4%BB%93%E5%BA%93%E5%88%86%E7%B1%BB&type=2"
-      },
-      {
-        "rank": 77,
-        "title": "会计做账适合用什么样的财务软件？",
-        "tag": "做账",
-        "author": "会计说",
-        "url": "https://weixin.sogou.com/weixin?query=%E4%BC%9A%E8%AE%A1%E5%81%9A%E8%B4%A6+%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6&type=2"
-      },
-      {
-        "rank": 78,
-        "title": "小微企业会计实操避坑指南",
-        "tag": "做账",
-        "author": "财税顾问",
-        "url": "https://weixin.sogou.com/weixin?query=%E5%B0%8F%E5%BE%AE%E4%BC%81%E4%B8%9A+%E4%BC%9A%E8%AE%A1%E5%AE%9E%E6%93%8D&type=2"
       }
     ]
   }
@@ -1337,30 +945,10 @@ function getPlatformData(platform) {
   const data = REAL_DATA[platform];
   if (!data || !data.items) return null;
   
-  // 基于日期生成每天不同的随机数量（最少30条，最多100条）
-  const now = new Date();
-  const dateSeed = now.getFullYear() * 10000 + (now.getMonth() + 1) * 100 + now.getDate();
-  
-  // 为每个平台生成不同的随机数
-  const platformSeeds = {
-    'xiaohongshu': dateSeed + 1,
-    'douyin': dateSeed + 2,
-    'wechat': dateSeed + 3
-  };
-  
-  let seed = platformSeeds[platform] || dateSeed;
-  // 简单的伪随机数生成器
-  seed = (seed * 1103515245 + 12345) & 0x7fffffff;
-  
-  // 生成30到100之间的随机数
-  const minCount = 30;
-  const maxCount = Math.min(data.items.length, 100);
-  const randomCount = minCount + (seed % (maxCount - minCount + 1));
-  
-  // 返回随机子集
+  // 返回完整的真实数据
   return {
     ...data,
-    items: data.items.slice(0, randomCount)
+    items: data.items
   };
 }
 
@@ -3260,11 +2848,11 @@ document.addEventListener('click', (e) => {
 });
 function openSettings() {
   document.getElementById('userDropdown').classList.remove('show');
-  document.getElementById('settingsModal').classList.add('show');
+  document.getElementById('settingsModal').style.display = 'flex';
 }
 
 function closeSettings() {
-  document.getElementById('settingsModal').classList.remove('show');
+  document.getElementById('settingsModal').style.display = 'none';
 }
 
 function setTheme(theme) {
@@ -3313,11 +2901,11 @@ function saveSettings() {
 // ============================================================
 function openHelp() {
   document.getElementById('userDropdown').classList.remove('show');
-  document.getElementById('helpModal').classList.add('show');
+  document.getElementById('helpModal').style.display = 'flex';
 }
 
 function closeHelp() {
-  document.getElementById('helpModal').classList.remove('show');
+  document.getElementById('helpModal').style.display = 'none';
 }
 
 function switchHelpTab(tab) {
@@ -3348,6 +2936,66 @@ function showToast(msg) {
 // ============================================================
 // 小红书文案生成器 - 对话式（升级版）
 // ============================================================
+const FEATURE_KEYWORDS = {
+  'AI做账': { type: '财务软件', focus: 'AI做账', identities: ['会计小白', '老会计', '财务主管'],
+    painpoints: [
+      { title: '每天重复录凭证', desc: '每天对着电脑录凭证，眼睛都看花了，感觉像打字员一样，效率特别低还容易出错。' },
+      { title: '发票堆积如山', desc: '月底发票堆成山，一张一张录入要花好几天，加班到深夜还是做不完。' },
+      { title: '会计科目记不住', desc: '新来的会计科目记不住，老会计每天要花大量时间教新人，效率特别低。' }
+    ],
+    features: [
+      'AI智能做账，发票扫一扫自动识别，会计科目自动匹配，不用手动录凭证，5分钟搞定200张',
+      'AI自动学习企业做账习惯，越用越智能，新发票自动匹配历史科目',
+      'AI异常检测，自动识别可疑发票，避免税务风险',
+      'AI智能分类，费用自动归集，不用手动整理'
+    ]
+  },
+  '一键报税': { type: '财务软件', focus: '一键报税', identities: ['会计', '财务主管'],
+    painpoints: [
+      { title: '报税流程太复杂', desc: '增值税、所得税、附加税，每个税种都要单独申报，流程繁琐还容易出错。' },
+      { title: '每次报税都焦虑', desc: '报税期那几天压力特别大，生怕填错了被税务局罚款。' }
+    ],
+    features: [
+      '一键报税，增值税、所得税、附加税自动生成报表，直接线上申报',
+      '自动计算税额，不用担心算错，申报数据准确无误',
+      '申报进度实时跟踪，报税状态一目了然'
+    ]
+  },
+  '库存管理': { type: '进销存', focus: '库存管理', identities: ['仓库管理员', '小公司老板', '店长'],
+    painpoints: [
+      { title: '库存数据不准确', desc: '账面库存和实际库存总是对不上，盘点要花好几天时间。' },
+      { title: '忘记补货导致缺货', desc: '卖着卖着才发现没货了，客户催着要货，急得团团转。' }
+    ],
+    features: [
+      '库存实时盘点，账实相符，再也不用花几天时间盘点',
+      '智能补货提醒，库存不足自动预警，再也不怕缺货',
+      '库存分析报表，哪些货好卖、哪些货滞销一目了然'
+    ]
+  },
+  '项目管理': { type: '项目管理', focus: '项目管理', identities: ['项目经理', '企业管理者'],
+    painpoints: [
+      { title: '项目进度跟踪难', desc: '项目做到哪一步了，什么时候能完成，全靠嘴问，心里没底。' },
+      { title: '成本预算控制不住', desc: '项目预算一开始定好了，但做着做着就超支了，也不知道超在哪里。' }
+    ],
+    features: [
+      '项目进度实时跟踪，谁负责什么、做到哪一步一目了然',
+      '成本预算自动核算，超支自动预警',
+      '项目报表一键生成，汇报工作不用再熬夜做PPT'
+    ]
+  },
+  'ERP': { type: 'ERP', focus: 'ERP', identities: ['企业管理者', '财务主管'],
+    painpoints: [
+      { title: '业务财务脱节', desc: '业务部门和财务部门各干各的，数据对不上，决策没有依据。' },
+      { title: '项目成本算不清', desc: '每个项目到底赚了多少钱，根本算不清楚。' }
+    ],
+    features: [
+      '业财一体化，业务财务数据无缝衔接，决策有依据',
+      '项目成本实时核算，每个项目赚多少钱一目了然',
+      '审批流程自动化，手机就能审批'
+    ]
+  }
+};
+
 const XHS_PRODUCT_MAP = {
   '财务软件': {
     type: '财务软件',
@@ -3574,21 +3222,103 @@ function sendMessage() {
   
   input.value = '';
   
-  // 解析用户意图
-  var productKey = detectProduct(text);
+  // 优先检测特征关键词
+  var detectedFeature = detectFeature(text);
+  if (detectedFeature) {
+    generateFeatureResult(detectedFeature);
+    return;
+  }
   
-  // 显示结果区域
+  // 检测产品类型
+  var productKey = detectProduct(text);
   var container = document.getElementById('chatMessages');
   container.style.display = 'block';
-  
-  // 清空之前的结果
   container.innerHTML = '';
   
   if (productKey) {
     generateResult(productKey);
   } else {
-    container.innerHTML = '<div class="result-card"><h4>⚠️ 未识别产品</h4><p>抱歉，我没有识别到你想推广的产品。请试试输入：财务软件、代账软件、进销存、ERP 等关键词。</p></div>';
+    container.innerHTML = '<div class="result-card"><h4>⚠️ 未识别产品</h4><p>抱歉，我没有识别到你想推广的产品。请试试输入：财务软件、代账软件、进销存、ERP、项目管理 等关键词。</p></div>';
   }
+}
+
+function detectFeature(text) {
+  var lowerText = text.toLowerCase();
+  for (var key in FEATURE_KEYWORDS) {
+    if (lowerText.indexOf(key.toLowerCase()) !== -1) {
+      return FEATURE_KEYWORDS[key];
+    }
+  }
+  return null;
+}
+
+function generateFeatureResult(featureData) {
+  var seed = Date.now();
+  var identity = featureData.identities[seed % featureData.identities.length];
+  var painpointObj = featureData.painpoints[seed % featureData.painpoints.length];
+  var features = featureData.features.slice(0, 3);
+  var focus = featureData.focus;
+  
+  var titleTemplates = [
+    identity + '必备！' + focus + '真的太香了',
+    '用了' + focus + '，效率提升10倍！',
+    identity + '都在用的' + focus + '，你知道吗？',
+    focus + '太强了！新手也能轻松上手',
+    '告别手工操作！' + focus + '体验分享',
+    '同行都在偷偷用的' + focus + '，你知道吗？',
+    '这个' + focus + '功能太强了，老板都夸好',
+    '用了3个月' + focus + '，说说真实感受',
+    focus + '避坑指南，新手必看！',
+    '3分钟学会' + focus + '，效率翻倍'
+  ];
+  var title = titleTemplates[seed % titleTemplates.length];
+  
+  var content = painpointObj.desc + '\n\n';
+  content += '后来用了' + focus + '功能，这些问题基本消失了。\n\n';
+  content += features[0] + '\n\n';
+  content += features[1] + '\n\n';
+  content += features[2] + '\n\n';
+  content += '同行朋友们真的可以试试，说不定也能帮到你们！';
+  
+  var hashtags = '#' + featureData.type + ' #' + focus + ' #效率提升 #职场干货';
+  
+  renderResult(title, content, hashtags, focus);
+}
+
+function renderResult(title, content, hashtags, focus) {
+  var container = document.getElementById('chatMessages');
+  container.innerHTML = `
+    <div class="result-card">
+      <h4>📝 生成的标题（≤20字）</h4>
+      <p style="font-size:16px; font-weight:600;">${title}</p>
+      <button class="copy-result-btn" onclick="copyText('${title}')">📋 复制标题</button>
+    </div>
+    <div class="result-card">
+      <h4>📄 正文内容</h4>
+      <p>${content}</p>
+      <button class="copy-result-btn" onclick="copyText('${content.replace(/'/g, "\\'").replace(/\n/g, '\\n')}')">📋 复制正文</button>
+    </div>
+    <div class="result-card">
+      <h4>🏷️ 话题标签</h4>
+      <p>${hashtags}</p>
+      <button class="copy-result-btn" onclick="copyText('${hashtags}')">📋 复制话题</button>
+    </div>
+    <div class="result-card">
+      <h4>📊 台账检测</h4>
+      <p>✅ 台账通过：近30天无重复，可发布</p>
+    </div>
+    <div class="result-card">
+      <h4>✨ 文案亮点</h4>
+      <p>• 全新角度：针对${focus}的使用场景
+• 3个功能点：覆盖核心使用场景
+• 共鸣点：真实工作场景描述
+• 收尾："同行朋友们真的可以试试"——简洁有力
+• 身份：用户视角，更有说服力</p>
+    </div>
+    <div class="result-card" style="text-align:center; background:linear-gradient(135deg, #FF6B6B, #FF8E53);">
+      <button onclick="copyAllCopy()" style="background:#fff; color:#FF6B6B; border:none; padding:14px 32px; border-radius:10px; font-size:15px; font-weight:600; cursor:pointer;">📋 一键复制全部内容</button>
+    </div>
+  `;
 }
 
 function detectProduct(text) {
@@ -3676,37 +3406,8 @@ function generateResult(productKey) {
   highlights += '• 共鸣点："${painpointObj.title}"——真实写照\n';
   highlights += '• 收尾："同行朋友们真的可以试试"——简洁有力';
   
-  // 显示结果
-  var container = document.getElementById('chatMessages');
-  container.innerHTML = `
-    <div class="result-card">
-      <h4>📝 生成的标题（≤20字）</h4>
-      <p>${title}</p>
-      <div style="margin-top:8px;font-size:12px;color:#666;">标题公式：${template.formula}</div>
-      <button class="copy-result-btn" onclick="copyText('${title}')">📋 复制标题</button>
-    </div>
-    <div class="result-card">
-      <h4>📄 正文内容</h4>
-      <p>${content}</p>
-      <button class="copy-result-btn" onclick="copyText('${content.replace(/'/g, "\\'")}')">📋 复制正文</button>
-    </div>
-    <div class="result-card">
-      <h4>🏷️ 话题标签</h4>
-      <p>${hashtags}</p>
-      <button class="copy-result-btn" onclick="copyText('${hashtags}')">📋 复制话题</button>
-    </div>
-    <div class="result-card">
-      <h4>📊 台账检测</h4>
-      <p>✅ 台账通过：近30天无重复，可发布</p>
-    </div>
-    <div class="result-card">
-      <h4>✨ 文案亮点</h4>
-      <p>${highlights}</p>
-    </div>
-    <div class="result-card" style="text-align:center; background:linear-gradient(135deg, #FF6B6B, #FF8E53);">
-      <button onclick="copyAllCopy()" style="background:#fff; color:#FF6B6B; border:none; padding:14px 32px; border-radius:10px; font-size:15px; font-weight:600; cursor:pointer;">📋 一键复制全部内容</button>
-    </div>
-  `;
+  // 使用 renderResult 显示结果
+  renderResult(title, content, hashtags, productType);
 }
 
 function copyText(text) {
@@ -3822,3 +3523,95 @@ function copyAllResult() {
     showToast('已复制到剪贴板');
   });
 }
+
+// ============================================================
+// AI API 设置与调用
+// ============================================================
+const API_CONFIGS = {
+  openai: { url: 'https://api.openai.com/v1/chat/completions', model: 'gpt-3.5-turbo' },
+  deepseek: { url: 'https://api.deepseek.com/v1/chat/completions', model: 'deepseek-chat' },
+  qwen: { url: 'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions', model: 'qwen-turbo' }
+};
+
+function openApiSettings() {
+  document.getElementById('apiSettingsModal').style.display = 'flex';
+  loadSettings();
+}
+
+function closeApiSettings() {
+  document.getElementById('apiSettingsModal').style.display = 'none';
+}
+
+function updateProviderFields() {
+  var provider = document.getElementById('apiProvider').value;
+  var customUrlGroup = document.getElementById('customUrlGroup');
+  customUrlGroup.style.display = provider === 'custom' ? 'block' : 'none';
+  
+  if (API_CONFIGS[provider]) {
+    document.getElementById('modelName').value = API_CONFIGS[provider].model;
+    document.getElementById('apiUrl').value = API_CONFIGS[provider].url;
+  }
+}
+
+function loadSettings() {
+  var settings = JSON.parse(localStorage.getItem('ai_settings') || '{}');
+  if (settings.provider) document.getElementById('apiProvider').value = settings.provider;
+  if (settings.apiKey) document.getElementById('apiKey').value = settings.apiKey;
+  if (settings.model) document.getElementById('modelName').value = settings.model;
+  if (settings.url) document.getElementById('apiUrl').value = settings.url;
+  updateProviderFields();
+  updateStatus();
+}
+
+function saveSettings() {
+  var settings = {
+    provider: document.getElementById('apiProvider').value,
+    apiKey: document.getElementById('apiKey').value,
+    model: document.getElementById('modelName').value,
+    url: document.getElementById('apiUrl').value
+  };
+  localStorage.setItem('ai_settings', JSON.stringify(settings));
+  closeApiSettings();
+  updateStatus();
+  showToast('设置已保存');
+}
+
+function updateStatus() {
+  var settings = JSON.parse(localStorage.getItem('ai_settings') || '{}');
+  var statusEl = document.getElementById('aiStatus');
+  if (settings.apiKey) {
+    statusEl.innerHTML = '<span class="status-dot online"></span><span>AI已连接</span>';
+  } else {
+    statusEl.innerHTML = '<span class="status-dot offline"></span><span>AI未连接</span>';
+  }
+}
+
+// 初始化时检查状态
+document.addEventListener('DOMContentLoaded', updateStatus);
+
+// 修改 sendMessage 函数
+window.sendMessage = function() {
+  var input = document.getElementById('chatInput');
+  var text = input.value.trim();
+  if (!text) return;
+  
+  input.value = '';
+  var container = document.getElementById('chatMessages');
+  container.style.display = 'block';
+  container.innerHTML = '';
+  
+  // 检测特征关键词
+  var detectedFeature = detectFeature(text);
+  if (detectedFeature) {
+    generateFeatureResult(detectedFeature);
+    return;
+  }
+  
+  // 检测产品类型
+  var productKey = detectProduct(text);
+  if (productKey) {
+    generateResult(productKey);
+  } else {
+    container.innerHTML = '<div class="result-card"><h4>未识别产品</h4><p>抱歉，我没有识别到你想推广的产品。请试试输入：财务软件、代账软件、进销存、ERP、项目管理 等关键词。</p></div>';
+  }
+};

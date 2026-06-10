@@ -138,7 +138,7 @@
     </header>
 
     <!-- 设置中心弹窗 -->
-    <div class="modal-overlay" id="settingsModal">
+    <div class="modal-overlay" id="settingsModal" style="display:none;">
       <div class="modal">
         <div class="modal-header">
           <div class="modal-title">⚙️ 设置中心</div>
@@ -213,7 +213,7 @@
     </div>
 
     <!-- 帮助中心弹窗 -->
-    <div class="modal-overlay" id="helpModal">
+    <div class="modal-overlay" id="helpModal" style="display:none;">
       <div class="modal modal-lg">
         <div class="modal-header">
           <div class="modal-title">❓ 帮助中心</div>
@@ -485,6 +485,13 @@
         </div>
         
         <div class="ai-input-card">
+          <div class="ai-input-header">
+            <div class="ai-status" id="aiStatus">
+              <span class="status-dot offline"></span>
+              <span>AI未连接</span>
+            </div>
+            <button class="ai-settings-btn" onclick="openApiSettings()">⚙️ API设置（无效）</button>
+          </div>
           <div class="ai-input-area">
             <div class="ai-input-row">
               <input type="text" id="chatInput" class="ai-text-input" placeholder="输入你想推广的产品，例如：财务软件、进销存、ERP..." onkeydown="if(event.key==='Enter')sendMessage()">
@@ -498,10 +505,45 @@
             <button class="ai-quick-btn" onclick="quickInput('代账软件')">📊 代账软件</button>
             <button class="ai-quick-btn" onclick="quickInput('进销存')">📦 进销存</button>
             <button class="ai-quick-btn" onclick="quickInput('ERP')">⚡ ERP</button>
+            <button class="ai-quick-btn" onclick="quickInput('AI做账')">🤖 AI做账</button>
           </div>
         </div>
         
         <div class="chat-messages" id="chatMessages" style="display:none;"></div>
+      </div>
+      
+      <!-- API设置弹窗 -->
+      <div class="modal-overlay" id="apiSettingsModal" style="display:none;">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>⚙️ API设置</h3>
+            <button class="modal-close" onclick="closeApiSettings()">✕</button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label>API服务商</label>
+              <select id="apiProvider" onchange="updateProviderFields()">
+                <option value="openai">OpenAI (GPT)</option>
+                <option value="deepseek">Deepseek</option>
+                <option value="qwen">通义千问</option>
+                <option value="custom">自定义</option>
+              </select>
+            </div>
+            <div class="form-group" id="customUrlGroup" style="display:none;">
+              <label>API地址</label>
+              <input type="text" id="apiUrl" placeholder="https://api.example.com/v1/chat/completions">
+            </div>
+            <div class="form-group">
+              <label>API Key</label>
+              <input type="password" id="apiKey" placeholder="输入你的API Key">
+            </div>
+            <div class="form-group">
+              <label>模型名称</label>
+              <input type="text" id="modelName" placeholder="gpt-3.5-turbo">
+            </div>
+            <button class="btn-save" onclick="saveSettings()">保存设置</button>
+          </div>
+        </div>
       </div>
     </div>
   </main>
