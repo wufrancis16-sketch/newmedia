@@ -57,14 +57,14 @@
         <span class="nav-label">标题推荐</span>
         <span class="nav-tag">NEW</span>
       </a>
+      <a class="nav-item" data-platform="copywriter" onclick="switchPage('copywriter')">
+        <span class="nav-icon">✍️</span>
+        <span class="nav-label">文案生成</span>
+        <span class="nav-tag">NEW</span>
+      </a>
       <a class="nav-item disabled" data-platform="publish">
         <span class="nav-icon">🚀</span>
         <span class="nav-label">内容分发</span>
-        <span class="nav-tag">SOON</span>
-      </a>
-      <a class="nav-item disabled" data-platform="collect">
-        <span class="nav-icon">📥</span>
-        <span class="nav-label">数据采集</span>
         <span class="nav-tag">SOON</span>
       </a>
     </nav>
@@ -473,6 +473,36 @@
         <div class="title-filter-count" id="titleFilterCount">显示 66 个标题</div>
       </div>
       <div id="titleRecommendations"></div>
+    </div>
+    <!-- Copywriter Page -->
+    <div class="page" id="page-copywriter">
+      <div class="ai-writer-container">
+        <div class="ai-writer-hero">
+          <div class="ai-badge">✨ AI驱动的文案创作助手</div>
+          <h1>让传播不再需要门槛，让创作从未如此简单</h1>
+          <h2>灵感一触即发</h2>
+          <p>输入你的创意主题，让 AI 帮你生成爆款标题、正文和话题标签</p>
+        </div>
+        
+        <div class="ai-input-card">
+          <div class="ai-input-area">
+            <div class="ai-input-row">
+              <input type="text" id="chatInput" class="ai-text-input" placeholder="输入你想推广的产品，例如：财务软件、进销存、ERP..." onkeydown="if(event.key==='Enter')sendMessage()">
+              <button class="ai-generate-btn" onclick="sendMessage()">生成文案</button>
+            </div>
+          </div>
+          
+          <div class="ai-quick-actions">
+            <span class="ai-quick-label">快速开始：</span>
+            <button class="ai-quick-btn" onclick="quickInput('财务软件')">💰 财务软件</button>
+            <button class="ai-quick-btn" onclick="quickInput('代账软件')">📊 代账软件</button>
+            <button class="ai-quick-btn" onclick="quickInput('进销存')">📦 进销存</button>
+            <button class="ai-quick-btn" onclick="quickInput('ERP')">⚡ ERP</button>
+          </div>
+        </div>
+        
+        <div class="chat-messages" id="chatMessages" style="display:none;"></div>
+      </div>
     </div>
   </main>
 

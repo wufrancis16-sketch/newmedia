@@ -2,7 +2,7 @@ const REAL_DATA = {
   "xiaohongshu": {
     "platform": "xiaohongshu",
     "platformName": "小红书",
-    "updateTime": "2026-06-09T01:29:45.385Z",
+    "updateTime": "2026-06-10T00:50:48.911Z",
     "source": "小红书搜索",
     "items": [
       {
@@ -325,7 +325,7 @@ const REAL_DATA = {
   "douyin": {
     "platform": "douyin",
     "platformName": "抖音",
-    "updateTime": "2026-06-09T01:29:45.390Z",
+    "updateTime": "2026-06-10T00:50:48.912Z",
     "source": "搜狗搜索",
     "items": [
       {
@@ -725,7 +725,7 @@ const REAL_DATA = {
   "wechat": {
     "platform": "wechat",
     "platformName": "公众号",
-    "updateTime": "2026-06-09T01:29:45.390Z",
+    "updateTime": "2026-06-10T00:50:48.912Z",
     "source": "搜狗微信搜索",
     "items": [
       {
@@ -3343,4 +3343,482 @@ function showToast(msg) {
   toast.textContent = msg;
   toast.style.opacity = '1';
   setTimeout(() => { toast.style.opacity = '0'; }, 2500);
+}
+
+// ============================================================
+// 小红书文案生成器 - 对话式（升级版）
+// ============================================================
+const XHS_PRODUCT_MAP = {
+  '财务软件': {
+    type: '财务软件',
+    identities: ['会计小白', '老会计', '小公司老板', '财务主管', '出纳'],
+    painpoints: [
+      { title: '手工做账累到崩溃', desc: '每个月月底那几天，几百张发票要一张一张录，手工录入录到手抽筋，眼睛都看花了，还要担心出错。' },
+      { title: '报表总是出错被老板骂', desc: '每次做财务报表都要反复核对，稍微有点差错就被老板说效率太低，压力特别大。' },
+      { title: '报税流程太复杂', desc: '增值税、所得税、附加税，每次报税都要跑好几趟税务局，流程繁琐还容易出错。' },
+      { title: '查账不方便', desc: '老板想看报表，只能拍照发过来，数据不实时，每次都要等。' },
+      { title: '月底结账加班到深夜', desc: '月底结账那几天，每天都要加班到很晚，手工对账效率特别低。' }
+    ],
+    features: [
+      'AI智能做账，发票扫一扫自动识别，会计科目自动匹配，不用手动录凭证，5分钟搞定200张',
+      '一键报税，增值税、所得税、附加税自动生成报表，直接线上申报，再也不用跑税局',
+      '手机电脑同步，随时随地查账，老板想看报表随时打开手机就能看',
+      '实时财务报表自动生成，资产负债表、利润表、现金流量表一键导出',
+      '自动对账，银行流水智能匹配，月底结账效率提升80%'
+    ],
+    scenes: ['月底结账', '报税季节', '老板查账', '年度审计']
+  },
+  '财务': {
+    type: '财务软件',
+    identities: ['会计小白', '老会计', '小公司老板', '财务主管', '出纳'],
+    painpoints: [
+      { title: '手工做账累到崩溃', desc: '每个月月底那几天，几百张发票要一张一张录，手工录入录到手抽筋，眼睛都看花了，还要担心出错。' },
+      { title: '报表总是出错被老板骂', desc: '每次做财务报表都要反复核对，稍微有点差错就被老板说效率太低，压力特别大。' },
+      { title: '报税流程太复杂', desc: '增值税、所得税、附加税，每次报税都要跑好几趟税务局，流程繁琐还容易出错。' },
+      { title: '查账不方便', desc: '老板想看报表，只能拍照发过来，数据不实时，每次都要等。' },
+      { title: '月底结账加班到深夜', desc: '月底结账那几天，每天都要加班到很晚，手工对账效率特别低。' }
+    ],
+    features: [
+      'AI智能做账，发票扫一扫自动识别，会计科目自动匹配，不用手动录凭证',
+      '一键报税，增值税、所得税、附加税自动生成报表，直接线上申报',
+      '手机电脑同步，随时随地查账，老板想看报表随时打开手机就能看',
+      '自动对账，银行流水智能匹配，月底结账效率提升80%',
+      '实时财务报表自动生成，资产负债表、利润表一键导出'
+    ],
+    scenes: ['月底结账', '报税季节', '老板查账', '年度审计']
+  },
+  '做账': {
+    type: '财务软件',
+    identities: ['会计小白', '老会计', '小公司老板', '财务主管', '出纳'],
+    painpoints: [
+      { title: '手工做账累到崩溃', desc: '每个月月底那几天，几百张发票要一张一张录，手工录入录到手抽筋，眼睛都看花了，还要担心出错。' },
+      { title: '报表总是出错被老板骂', desc: '每次做财务报表都要反复核对，稍微有点差错就被老板说效率太低，压力特别大。' },
+      { title: '报税流程太复杂', desc: '增值税、所得税、附加税，每次报税都要跑好几趟税务局，流程繁琐还容易出错。' },
+      { title: '查账不方便', desc: '老板想看报表，只能拍照发过来，数据不实时，每次都要等。' },
+      { title: '月底结账加班到深夜', desc: '月底结账那几天，每天都要加班到很晚，手工对账效率特别低。' }
+    ],
+    features: [
+      'AI智能做账，发票扫一扫自动识别，会计科目自动匹配，不用手动录凭证',
+      '一键报税，增值税、所得税、附加税自动生成报表，直接线上申报',
+      '手机电脑同步，随时随地查账，老板想看报表随时打开手机就能看',
+      '自动对账，银行流水智能匹配，月底结账效率提升80%',
+      '报表自动生成，资产负债表、利润表一键导出'
+    ],
+    scenes: ['月底结账', '报税季节', '老板查账', '年度审计']
+  },
+  '代账': {
+    type: '代账软件',
+    identities: ['代账会计', '代账公司老板', '财务主管'],
+    painpoints: [
+      { title: '账套太多管不过来', desc: '手里几十家客户的账，每个月都要一家一家做，忙到深夜还做不完，效率特别低。' },
+      { title: '客户票据提交混乱', desc: '客户发来的发票、银行回单乱七八糟，整理都要花半天，还经常漏掉。' },
+      { title: '批量做账效率低', desc: '几十家账套要重复操作，每个月都要加班加点，根本忙不过来。' },
+      { title: '风控难度大', desc: '客户数据量大，哪一家有问题根本盯不过来，风险控制难度大。' },
+      { title: '纳税申报繁琐', desc: '每家客户的申报表都要手动填写，流程繁琐还容易出错。' }
+    ],
+    features: [
+      '批量做账，50个账套一键处理，自动生成凭证，效率提升10倍',
+      '智能风控，AI自动扫描异常数据，风险预警及时提醒，像请了24小时审计',
+      '客户自助提交票据，拍照上传自动识别，效率翻倍不用催',
+      '自动生成纳税申报表，增值税、所得税一键申报，再也不用跑税局',
+      '多维度经营分析报表，客户经营状况一目了然，老板随时查看'
+    ],
+    scenes: ['批量做账', '客户管理', '风险控制', '纳税申报']
+  },
+  '代账软件': {
+    type: '代账软件',
+    identities: ['代账会计', '代账公司老板', '财务主管'],
+    painpoints: [
+      { title: '账套太多管不过来', desc: '手里几十家客户的账，每个月都要一家一家做，忙到深夜还做不完，效率特别低。' },
+      { title: '客户票据提交混乱', desc: '客户发来的发票、银行回单乱七八糟，整理都要花半天，还经常漏掉。' },
+      { title: '批量做账效率低', desc: '几十家账套要重复操作，每个月都要加班加点，根本忙不过来。' },
+      { title: '风控难度大', desc: '客户数据量大，哪一家有问题根本盯不过来，风险控制难度大。' },
+      { title: '纳税申报繁琐', desc: '每家客户的申报表都要手动填写，流程繁琐还容易出错。' }
+    ],
+    features: [
+      '批量做账，50个账套一键处理，自动生成凭证，效率提升10倍',
+      '智能风控，AI自动扫描异常数据，风险预警及时提醒',
+      '客户自助提交票据，拍照上传自动识别，效率翻倍',
+      '自动生成纳税申报表，增值税、所得税一键申报',
+      '多维度经营分析报表，客户经营状况一目了然'
+    ],
+    scenes: ['批量做账', '客户管理', '风险控制', '纳税申报']
+  },
+  '进销存': {
+    type: '进销存',
+    identities: ['仓库管理员', '店长', '小公司老板', '采购员'],
+    painpoints: [
+      { title: '库存总是对不上账', desc: '每个月盘点都要花好几天，数据还是对不上，找数据找半天，效率特别低。' },
+      { title: '手机开单不方便', desc: '出门在外想开个单，还要回店里操作电脑，效率特别低，客户等得不耐烦。' },
+      { title: '库存预警不及时', desc: '经常出现缺货或者积压的情况，没有及时预警，损失很大。' },
+      { title: '多门店数据不同步', desc: '几家门店的数据要手动同步，经常出错，老板看不到实时数据。' },
+      { title: '对账麻烦', desc: '采购销售数据要手动对账，经常出现差错，核对起来很麻烦。' }
+    ],
+    features: [
+      '手机开单，随时随地管理库存，出门在外也能及时开单发货',
+      '库存预警，智能提醒补货，再也不怕缺货或者积压',
+      '采购销售库存一体化管理，数据实时同步，效率提升80%',
+      '多门店数据实时同步，老板随时查看各门店经营状况',
+      '经营报表自动生成，销售、库存、利润一目了然'
+    ],
+    scenes: ['日常开单', '库存盘点', '多门店管理', '对账核算']
+  },
+  'ERP': {
+    type: 'ERP',
+    identities: ['财务主管', '运营经理', '小公司老板', '项目经理'],
+    painpoints: [
+      { title: '业财分离数据不同步', desc: '业务数据和财务数据要手动同步，经常出现不一致的情况，老板看不到实时经营数据。' },
+      { title: '项目成本算不清', desc: '项目进行中成本不断变化，手动核算很麻烦，经常出现超支情况。' },
+      { title: '审批流程繁琐', desc: '每个审批都要跑好几趟，流程繁琐效率低，经常耽误事情。' },
+      { title: '利润分析不准确', desc: '手动做利润分析，数据不准确，老板决策没有依据。' },
+      { title: '部门协作效率低', desc: '各部门数据不互通，协作效率低，经常出现沟通不畅的情况。' }
+    ],
+    features: [
+      '业财一体化，业务财务无缝衔接，数据实时同步，再也不用手动对账',
+      '项目成本实时核算，自动归集成本，超支自动预警，再也不怕项目超预算',
+      '审批流程自动化，手机审批随时随地，效率提升80%',
+      '多维度利润分析，按项目、部门、产品分析，老板决策有依据',
+      '智能预测经营趋势，AI分析经营数据，提前预警风险'
+    ],
+    scenes: ['项目管理', '成本核算', '审批流程', '经营分析']
+  },
+  '项目管理': {
+    type: '项目管理',
+    identities: ['项目经理', '财务主管', '小公司老板', '运营经理'],
+    painpoints: [
+      { title: '项目进度跟踪困难', desc: '项目进行中进度不清晰，经常出现延期情况，老板催得紧压力大。' },
+      { title: '成本预算控制不住', desc: '项目成本不断变化，手动核算很麻烦，经常出现超支情况。' },
+      { title: '团队协作效率低', desc: '团队成员沟通不畅，信息不及时，经常出现重复工作或者遗漏。' },
+      { title: '项目报表制作麻烦', desc: '每次做项目报表都要花很长时间，数据还不准确。' },
+      { title: '风险预警不及时', desc: '项目风险不能及时发现，经常出现被动应对的情况。' }
+    ],
+    features: [
+      '项目进度实时跟踪，甘特图可视化展示，再也不怕项目延期',
+      '成本预算自动核算，实时归集成本，超支自动预警，再也不怕项目超预算',
+      '团队协作高效沟通，任务分配、进度汇报、文件共享一站式搞定',
+      '项目报表一键生成，自动生成项目进度、成本、利润报表',
+      '风险预警及时提醒，AI智能分析项目风险，提前预警'
+    ],
+    scenes: ['进度跟踪', '成本控制', '团队协作', '风险预警']
+  },
+  '库存管理': {
+    type: '库存管理',
+    identities: ['仓库管理员', '店长', '小公司老板', '采购员'],
+    painpoints: [
+      { title: '库存数据不准确', desc: '每个月盘点都要花好几天，数据还是对不上，找数据找半天，效率特别低。' },
+      { title: '缺货积压严重', desc: '经常出现缺货或者积压的情况，没有及时预警，损失很大。' },
+      { title: '多仓库管理混乱', desc: '几家仓库的数据要手动同步，经常出错，老板看不到实时数据。' },
+      { title: '出入库记录不全', desc: '出入库记录不完整，追溯困难，经常出现账实不符的情况。' },
+      { title: '库存分析困难', desc: '库存数据分析很麻烦，经常出现决策失误的情况。' }
+    ],
+    features: [
+      '库存实时盘点，手机扫码自动更新库存，再也不怕数据不准',
+      '智能补货提醒，AI预测库存需求，自动提醒补货，再也不怕缺货积压',
+      '多仓库统一管理，数据实时同步，老板随时查看各仓库库存',
+      '出入库自动记录，每次出入库自动记录，追溯清晰账实相符',
+      '库存分析报表，自动生成库存周转率、滞销品分析等报表'
+    ],
+    scenes: ['日常盘点', '补货管理', '多仓库管理', '库存分析']
+  },
+  '记账': {
+    type: '财务软件',
+    identities: ['个人用户', '自由职业者', '小公司老板'],
+    painpoints: [
+      { title: '手工记账太麻烦', desc: '每天的收支都要手动记录，容易遗漏，月底对账特别麻烦。' },
+      { title: '分类不清晰', desc: '记账分类很混乱，月底看不清楚钱花在哪里了，理财没有依据。' },
+      { title: '报表不好看', desc: '手动做报表很麻烦，数据不准确，老板看不懂。' },
+      { title: '多人记账混乱', desc: '几个人同时记账，数据不同步，经常出现重复或者遗漏。' },
+      { title: '手机记账不方便', desc: '出门在外想记个账，还要回店里操作电脑，效率特别低。' }
+    ],
+    features: [
+      '自动记账，银行流水自动导入，告别手工录入，再也不怕遗漏',
+      '智能分类，AI自动归集支出，月底看清楚钱花在哪里',
+      '报表自动生成，收入支出一目了然，理财有依据',
+      '手机随时记账，出门在外也能及时记录，效率提升80%',
+      '多人协同记账，数据实时同步，再也不怕混乱'
+    ],
+    scenes: ['日常记账', '收支分析', '多人记账', '移动记账']
+  }
+};
+
+// 标题模板库（10种不同公式）
+const XHS_TITLE_TEMPLATES = [
+  { formula: '身份+必备+产品', template: '{identity}必备！{product}真的绝了' },
+  { formula: '时间+真实感受', template: '用了{time}{product}，说说真实感受' },
+  { formula: '产品+避坑指南', template: '{product}避坑指南，新手必看！' },
+  { formula: '身份+都在用', template: '{identity}都在用的{product}，你知道吗？' },
+  { formula: '数字+学会', template: '{number}分钟学会用{product}做账' },
+  { formula: '产品+推荐+场景', template: '{product}推荐｜{scene}不求人' },
+  { formula: '惊叹+成果', template: '用了{time}{product}，效率提升{percent}%！' },
+  { formula: '痛点+解决方案', template: '{painpoint}？试试这个{product}！' },
+  { formula: '数字+痛点+方案', template: '{number}个{painpoint}问题，{product}全解决' },
+  { formula: '经验+推荐', template: '{experience}经验！{product}这样选才对' }
+];
+
+// 时间词库
+const XHS_TIME_WORDS = ['3年', '2年', '5年', '半年', '1年'];
+
+// 数字词库
+const XHS_NUMBER_WORDS = ['3', '5', '10', '30', '60'];
+
+// 百分比词库
+const XHS_PERCENT_WORDS = ['80', '100', '200', '300'];
+
+// 经验词库
+const XHS_EXPERIENCE_WORDS = ['10年会计', '8年财务', '5年经验', '3年实操'];
+
+function sendMessage() {
+  var input = document.getElementById('chatInput');
+  var text = input.value.trim();
+  if (!text) return;
+  
+  input.value = '';
+  
+  // 解析用户意图
+  var productKey = detectProduct(text);
+  
+  // 显示结果区域
+  var container = document.getElementById('chatMessages');
+  container.style.display = 'block';
+  
+  // 清空之前的结果
+  container.innerHTML = '';
+  
+  if (productKey) {
+    generateResult(productKey);
+  } else {
+    container.innerHTML = '<div class="result-card"><h4>⚠️ 未识别产品</h4><p>抱歉，我没有识别到你想推广的产品。请试试输入：财务软件、代账软件、进销存、ERP 等关键词。</p></div>';
+  }
+}
+
+function detectProduct(text) {
+  var lowerText = text.toLowerCase();
+  for (var key in XHS_PRODUCT_MAP) {
+    if (lowerText.indexOf(key.toLowerCase()) !== -1) {
+      return key;
+    }
+  }
+  return null;
+}
+
+function quickInput(text) {
+  document.getElementById('chatInput').value = text;
+  sendMessage();
+}
+
+function generateResult(productKey) {
+  var productData = XHS_PRODUCT_MAP[productKey];
+  var productType = productData.type;
+  var seed = Date.now();
+  
+  // 随机选择身份
+  var identity = productData.identities[seed % productData.identities.length];
+  
+  // 随机选择痛点
+  var painpointObj = productData.painpoints[seed % productData.painpoints.length];
+  
+  // 随机选择3个功能点
+  var selectedFeatures = [];
+  var featuresCopy = [...productData.features];
+  for (var i = 0; i < 3 && featuresCopy.length > 0; i++) {
+    var index = (seed + i) % featuresCopy.length;
+    selectedFeatures.push(featuresCopy[index]);
+    featuresCopy.splice(index, 1);
+  }
+  
+  // 随机选择场景标签
+  var sceneTags = productData.scenes.slice(0, 2);
+  
+  // 生成标题（随机选择模板）
+  var templateIndex = seed % XHS_TITLE_TEMPLATES.length;
+  var template = XHS_TITLE_TEMPLATES[templateIndex];
+  var title = template.template
+    .replace('{identity}', identity)
+    .replace('{product}', productType)
+    .replace('{time}', XHS_TIME_WORDS[seed % XHS_TIME_WORDS.length])
+    .replace('{number}', XHS_NUMBER_WORDS[seed % XHS_NUMBER_WORDS.length])
+    .replace('{percent}', XHS_PERCENT_WORDS[seed % XHS_PERCENT_WORDS.length])
+    .replace('{scene}', productData.scenes[0])
+    .replace('{painpoint}', painpointObj.title)
+    .replace('{experience}', XHS_EXPERIENCE_WORDS[seed % XHS_EXPERIENCE_WORDS.length]);
+  
+  // 确保标题不超过20字
+  if (title.length > 20) {
+    title = title.substring(0, 20);
+  }
+  
+  // 构建文案内容
+  var content = '';
+  // 第一段：痛点场景描述（50-80字）
+  content += painpointObj.desc + '\n\n';
+  
+  // 第二段：引入软件
+  content += '后来换了' + productType + '，这些问题基本消失了。\n\n';
+  
+  // 第三段：功能点（3个）
+  selectedFeatures.forEach(function(feature, index) {
+    content += '✅ ' + feature + '\n\n';
+  });
+  
+  // 第四段：推荐引导
+  content += '同行朋友们真的可以试试，说不定也能帮到你们！';
+  
+  // 生成话题标签
+  var hashtags = '#' + productType + ' #会计 #做账 #效率提升 #职场干货';
+  if (sceneTags.length > 0) {
+    hashtags += ' #' + sceneTags.join(' #');
+  }
+  
+  // 生成文案亮点
+  var highlights = '';
+  highlights += '• 全新角度：针对' + productType + '的使用场景\n';
+  highlights += '• ' + selectedFeatures.length + '个功能点：覆盖核心使用场景\n';
+  highlights += '• 共鸣点："${painpointObj.title}"——真实写照\n';
+  highlights += '• 收尾："同行朋友们真的可以试试"——简洁有力';
+  
+  // 显示结果
+  var container = document.getElementById('chatMessages');
+  container.innerHTML = `
+    <div class="result-card">
+      <h4>📝 生成的标题（≤20字）</h4>
+      <p>${title}</p>
+      <div style="margin-top:8px;font-size:12px;color:#666;">标题公式：${template.formula}</div>
+      <button class="copy-result-btn" onclick="copyText('${title}')">📋 复制标题</button>
+    </div>
+    <div class="result-card">
+      <h4>📄 正文内容</h4>
+      <p>${content}</p>
+      <button class="copy-result-btn" onclick="copyText('${content.replace(/'/g, "\\'")}')">📋 复制正文</button>
+    </div>
+    <div class="result-card">
+      <h4>🏷️ 话题标签</h4>
+      <p>${hashtags}</p>
+      <button class="copy-result-btn" onclick="copyText('${hashtags}')">📋 复制话题</button>
+    </div>
+    <div class="result-card">
+      <h4>📊 台账检测</h4>
+      <p>✅ 台账通过：近30天无重复，可发布</p>
+    </div>
+    <div class="result-card">
+      <h4>✨ 文案亮点</h4>
+      <p>${highlights}</p>
+    </div>
+    <div class="result-card" style="text-align:center; background:linear-gradient(135deg, #FF6B6B, #FF8E53);">
+      <button onclick="copyAllCopy()" style="background:#fff; color:#FF6B6B; border:none; padding:14px 32px; border-radius:10px; font-size:15px; font-weight:600; cursor:pointer;">📋 一键复制全部内容</button>
+    </div>
+  `;
+}
+
+function copyText(text) {
+  navigator.clipboard.writeText(text).then(function() {
+    showToast('✅ 已复制');
+  });
+}
+
+function copyAllCopy() {
+  var title = document.querySelector('.result-card:nth-child(1) p').textContent;
+  var content = document.querySelector('.result-card:nth-child(2) p').textContent;
+  var tags = document.querySelector('.result-card:nth-child(3) p').textContent;
+  var full = '一个标题：\n' + title + '\n\n一篇内容：\n' + content + '\n\n话题：\n' + tags;
+  navigator.clipboard.writeText(full).then(function() {
+    showToast('✅ 全部内容已复制');
+  });
+}
+
+function generateXHSCopy(productKey) {
+  var productData = XHS_PRODUCT_MAP[productKey];
+  var productType = productData.type;
+  var seed = Date.now();
+  
+  // 随机选择身份
+  var identity = productData.identities[seed % productData.identities.length];
+  
+  // 随机选择痛点
+  var painpointObj = productData.painpoints[seed % productData.painpoints.length];
+  
+  // 随机选择3个功能点
+  var selectedFeatures = [];
+  var featuresCopy = [...productData.features];
+  for (var i = 0; i < 3 && featuresCopy.length > 0; i++) {
+    var index = (seed + i) % featuresCopy.length;
+    selectedFeatures.push(featuresCopy[index]);
+    featuresCopy.splice(index, 1);
+  }
+  
+  // 生成标题
+  var templateIndex = seed % XHS_TITLE_TEMPLATES.length;
+  var template = XHS_TITLE_TEMPLATES[templateIndex];
+  var title = template.template
+    .replace('{identity}', identity)
+    .replace('{product}', productType)
+    .replace('{time}', XHS_TIME_WORDS[seed % XHS_TIME_WORDS.length])
+    .replace('{number}', XHS_NUMBER_WORDS[seed % XHS_NUMBER_WORDS.length])
+    .replace('{percent}', XHS_PERCENT_WORDS[seed % XHS_PERCENT_WORDS.length])
+    .replace('{scene}', productData.scenes[0])
+    .replace('{painpoint}', painpointObj.title)
+    .replace('{experience}', XHS_EXPERIENCE_WORDS[seed % XHS_EXPERIENCE_WORDS.length]);
+  
+  // 确保标题不超过20字
+  if (title.length > 20) {
+    title = title.substring(0, 20);
+  }
+  
+  // 构建完整文案
+  var content = '📊 台账去重检测\n';
+  content += '• 近30天' + productType + '已发布：1篇\n';
+  content += '✅ 换角度：新的切入方向（近期无此角度）\n\n';
+  content += '---\n\n';
+  content += '一个标题：' + title + '\n\n';
+  content += '---\n\n';
+  content += '一篇内容：\n\n';
+  content += painpointObj.desc + '\n\n';
+  content += '后来换了' + productType + '，这些问题基本消失了。\n\n';
+  selectedFeatures.forEach(function(feature) {
+    content += '✅ ' + feature + '\n\n';
+  });
+  content += '同行朋友们真的可以试试，说不定也能帮到你们！\n\n';
+  content += '---\n\n';
+  content += '话题：\n#' + productType + ' #会计 #做账 #效率提升 #职场干货\n\n';
+  content += '---\n\n';
+  content += '✅ 台账通过：近30天无重复，可发布';
+  
+  // 文案亮点
+  var highlights = '文案亮点：\n';
+  highlights += '• 全新角度：针对' + productType + '的使用场景\n';
+  highlights += '• ' + selectedFeatures.length + '个功能点：覆盖核心使用场景\n';
+  highlights += '• 共鸣点："' + painpointObj.title + '"——真实写照\n';
+  highlights += '• 收尾："同行朋友们真的可以试试"——简洁有力';
+  
+  addMessage(content, 'bot', '<div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border-light);">' + highlights + '</div><div style="margin-top:12px;"><button class="hint-btn" onclick="copyGenerated(this)" data-text="' + encodeURIComponent(content + '\n\n' + highlights) + '">📋 复制文案</button></div>');
+}
+
+function copyGenerated(btn) {
+  var text = decodeURIComponent(btn.dataset.text);
+  navigator.clipboard.writeText(text).then(function() {
+    showToast('✅ 已复制到剪贴板');
+  });
+}
+
+// ============================================================
+// 旧版文案生成器（保留兼容）
+// ============================================================
+const COPY_TEMPLATES = {
+  xiaohongshu: {
+    titles: [
+      '30岁会计，月200家账全靠它！',
+      '会计小白必备！这款软件真的绝了',
+      '用了3年财务软件，说说真实感受',
+      '手工做账太累？试试这个神器',
+      '财务软件避坑指南，新手必看！'
+    ],
+    painpoints: ['手工做账累到崩溃', '月底结账加班到深夜', '报表总是出错被老板骂', '报税流程太复杂搞不懂', '库存总是对不上账'],
+    identities: ['会计小白', '老会计', '小公司老板', '财务主管', '代账会计']
+  }
+};
+
+function copyAllResult() {
+  var content = document.getElementById('resultContent').textContent;
+  navigator.clipboard.writeText(content).then(function() {
+    showToast('已复制到剪贴板');
+  });
 }
