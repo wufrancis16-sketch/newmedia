@@ -2,7 +2,7 @@ const REAL_DATA = {
   "xiaohongshu": {
     "platform": "xiaohongshu",
     "platformName": "小红书",
-    "updateTime": "2026-06-18T07:39:45.527Z",
+    "updateTime": "2026-06-23T00:51:15.855Z",
     "source": "小红书搜索",
     "items": [
       {
@@ -634,13 +634,41 @@ const REAL_DATA = {
         "tag": "出入库",
         "author": "小红书搜索",
         "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%87%BA%E5%85%A5%E5%BA%93&source=web_search_result_notes"
+      },
+      {
+        "rank": 91,
+        "title": "财务管理相关内容",
+        "tag": "财务管理",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E8%B4%A2%E5%8A%A1%E7%AE%A1%E7%90%86&source=web_search_result_notes"
+      },
+      {
+        "rank": 92,
+        "title": "会计实操相关内容",
+        "tag": "会计实操",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E4%BC%9A%E8%AE%A1%E5%AE%9E%E6%93%8D&source=web_search_result_notes"
+      },
+      {
+        "rank": 93,
+        "title": "报税相关内容",
+        "tag": "报税",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E6%8A%A5%E7%A8%8E&source=web_search_result_notes"
+      },
+      {
+        "rank": 94,
+        "title": "发票相关内容",
+        "tag": "发票",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%8F%91%E7%A5%A8&source=web_search_result_notes"
       }
     ]
   },
   "douyin": {
     "platform": "douyin",
     "platformName": "抖音",
-    "updateTime": "2026-06-18T07:39:45.530Z",
+    "updateTime": "2026-06-23T00:51:15.855Z",
     "source": "搜狗搜索",
     "items": [
       {
@@ -1258,13 +1286,41 @@ const REAL_DATA = {
         "tag": "财务软件",
         "author": "AI会计",
         "url": "https://www.douyin.com/video/7213351125964033295"
+      },
+      {
+        "rank": 89,
+        "title": "财务软件怎么选？3分钟教你避坑！",
+        "tag": "财务软件",
+        "author": "财税老张说",
+        "url": "https://www.douyin.com/video/7309125058482441513"
+      },
+      {
+        "rank": 90,
+        "title": "进销存教程：出入库单据自动填充",
+        "tag": "进销存",
+        "author": "进销存教程",
+        "url": "https://www.douyin.com/video/7537622960523038010"
+      },
+      {
+        "rank": 91,
+        "title": "小公司没有财务软件该如何记账？一张表格轻松搞定！",
+        "tag": "财务软件",
+        "author": "我的评价是不如养猪",
+        "url": "https://www.douyin.com/video/7644511811819715270"
+      },
+      {
+        "rank": 92,
+        "title": "做批发的老板，别再花冤枉钱了！骓云ERP采购销售库存财务全配齐",
+        "tag": "ERP",
+        "author": "骓云ERP",
+        "url": "https://www.douyin.com/video/7644479611040042249"
       }
     ]
   },
   "wechat": {
     "platform": "wechat",
     "platformName": "公众号",
-    "updateTime": "2026-06-18T07:39:45.530Z",
+    "updateTime": "2026-06-23T00:51:15.855Z",
     "source": "搜狗微信搜索",
     "items": [
       {
@@ -1889,6 +1945,34 @@ const REAL_DATA = {
         "tag": "ERP",
         "author": "管家婆",
         "url": "https://weixin.sogou.com/weixin?query=%E7%AE%A1%E5%AE%B6%E5%A9%86+ERP+%E5%BA%93%E5%AD%98&type=2"
+      },
+      {
+        "rank": 90,
+        "title": "初创公司成长秘籍：如何巧用ERP软件加速飞跃",
+        "tag": "ERP",
+        "author": "创业指南",
+        "url": "https://weixin.sogou.com/weixin?query=%E5%88%9D%E5%88%9B%E5%85%AC%E5%8F%B8+ERP%E8%BD%AF%E4%BB%B6&type=2"
+      },
+      {
+        "rank": 91,
+        "title": "全自动财务记账管理系统(包含记账、进销存、发票等等)",
+        "tag": "财务软件",
+        "author": "会计教练网校",
+        "url": "https://weixin.sogou.com/weixin?query=%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6+%E8%AE%B0%E8%B4%A6&type=2"
+      },
+      {
+        "rank": 92,
+        "title": "进销存和财务软件分开好还是一起好？",
+        "tag": "进销存",
+        "author": "象过河",
+        "url": "https://weixin.sogou.com/weixin?query=%E8%BF%9B%E9%94%80%E5%AD%98+%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6&type=2"
+      },
+      {
+        "rank": 93,
+        "title": "各行业会计账务处理大全",
+        "tag": "做账",
+        "author": "浩博财税",
+        "url": "https://weixin.sogou.com/weixin?query=%E4%BC%9A%E8%AE%A1+%E8%B4%A6%E5%8A%A1%E5%A4%84%E7%90%86&type=2"
       }
     ]
   }
