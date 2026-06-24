@@ -2937,6 +2937,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // 全屏按钮
+  const btnFullscreen = document.getElementById('btnFullscreen');
+  if (btnFullscreen) {
+    btnFullscreen.addEventListener('click', () => {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().then(() => {
+          btnFullscreen.classList.add('is-fullscreen');
+          btnFullscreen.title = '退出全屏';
+        }).catch(() => {});
+      } else {
+        document.exitFullscreen().then(() => {
+          btnFullscreen.classList.remove('is-fullscreen');
+          btnFullscreen.title = '全屏';
+        }).catch(() => {});
+      }
+    });
+    document.addEventListener('fullscreenchange', () => {
+      if (!document.fullscreenElement) {
+        btnFullscreen.classList.remove('is-fullscreen');
+        btnFullscreen.title = '全屏';
+      }
+    });
+  }
+
   const mainContent = document.getElementById('mainContent');
   if (mainContent) {
     mainContent.addEventListener('click', () => {

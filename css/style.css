@@ -318,6 +318,12 @@ body {
   color: var(--primary);
 }
 
+#btnFullscreen.is-fullscreen {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
 /* ============================================================
    Notification
    ============================================================ */
