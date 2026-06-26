@@ -2,7 +2,7 @@ const REAL_DATA = {
   "xiaohongshu": {
     "platform": "xiaohongshu",
     "platformName": "小红书",
-    "updateTime": "2026-06-26T09:14:29.305Z",
+    "updateTime": "2026-06-26T09:28:22.426Z",
     "source": "小红书搜索",
     "items": [
       {
@@ -486,7 +486,7 @@ const REAL_DATA = {
   "douyin": {
     "platform": "douyin",
     "platformName": "抖音",
-    "updateTime": "2026-06-26T09:14:29.305Z",
+    "updateTime": "2026-06-26T09:28:22.427Z",
     "source": "搜狗搜索",
     "items": [
       {
@@ -659,10 +659,10 @@ const REAL_DATA = {
       },
       {
         "rank": 25,
-        "title": "金蝶操作技巧：如何快速对账，提高收款效率",
-        "tag": "财务软件",
-        "author": "金蝶小妙招",
-        "url": "https://www.douyin.com/video/7318057917649868299"
+        "title": "进销存推荐｜小公司做账不求人",
+        "tag": "开单软件",
+        "author": "抖音搜索",
+        "url": "https://www.douyin.com/video/6980752588455120164"
       },
       {
         "rank": 26,
@@ -956,7 +956,7 @@ const REAL_DATA = {
   "wechat": {
     "platform": "wechat",
     "platformName": "公众号",
-    "updateTime": "2026-06-26T09:14:29.305Z",
+    "updateTime": "2026-06-26T09:28:22.427Z",
     "source": "搜狗微信搜索",
     "items": [
       {
@@ -1435,96 +1435,80 @@ const REAL_DATA = {
 // 词云数据 - 自动生成于 2026-06-26T08:26:17.979Z
 const KEYWORD_CLOUD_DATA = [
   {
-    "text": "软件",
+    "text": "避坑",
     "weight": 100
   },
   {
-    "text": "财务",
-    "weight": 91
-  },
-  {
-    "text": "ERP",
-    "weight": 66
-  },
-  {
-    "text": "会计",
-    "weight": 64
-  },
-  {
-    "text": "管理",
-    "weight": 63
-  },
-  {
-    "text": "进销存",
-    "weight": 51
-  },
-  {
-    "text": "记账",
-    "weight": 41
-  },
-  {
-    "text": "系统",
-    "weight": 41
-  },
-  {
-    "text": "做账",
-    "weight": 38
-  },
-  {
-    "text": "避坑",
-    "weight": 29
-  },
-  {
-    "text": "库存",
-    "weight": 26
-  },
-  {
-    "text": "发票",
-    "weight": 23
-  },
-  {
-    "text": "会计实操",
-    "weight": 21
-  },
-  {
     "text": "指南",
-    "weight": 20
+    "weight": 58
   },
   {
     "text": "教程",
-    "weight": 19
+    "weight": 52
   },
   {
-    "text": "报税",
-    "weight": 19
-  },
-  {
-    "text": "技巧",
-    "weight": 18
+    "text": "推荐",
+    "weight": 46
   },
   {
     "text": "区别",
-    "weight": 18
+    "weight": 46
   },
   {
     "text": "怎么选",
-    "weight": 18
+    "weight": 46
   },
   {
     "text": "教你",
-    "weight": 18
+    "weight": 46
+  },
+  {
+    "text": "成长",
+    "weight": 40
+  },
+  {
+    "text": "技巧",
+    "weight": 40
   },
   {
     "text": "老板",
-    "weight": 14
+    "weight": 28
   },
   {
-    "text": "出纳",
-    "weight": 14
+    "text": "工作",
+    "weight": 28
+  },
+  {
+    "text": "快速",
+    "weight": 28
   },
   {
     "text": "新手",
-    "weight": 13
+    "weight": 22
+  },
+  {
+    "text": "必看",
+    "weight": 22
+  },
+  {
+    "text": "真实",
+    "weight": 22
+  },
+  {
+    "text": "必备",
+    "weight": 22
+  },
+  {
+    "text": "对比",
+    "weight": 22
+  },
+  {
+    "text": "测评",
+    "weight": 22
+  },
+  {
+    "text": "分享",
+    "weight": 16
   },
   {
     "text": "小白",
@@ -1535,15 +1519,19 @@ const KEYWORD_CLOUD_DATA = [
     "weight": 10
   },
   {
-    "text": "推荐",
+    "text": "免费",
     "weight": 10
   },
   {
-    "text": "干货",
+    "text": "学习",
     "weight": 10
   },
   {
-    "text": "神器",
+    "text": "打工人",
+    "weight": 10
+  },
+  {
+    "text": "女生",
     "weight": 10
   },
   {
@@ -1551,7 +1539,19 @@ const KEYWORD_CLOUD_DATA = [
     "weight": 10
   },
   {
-    "text": "必看",
+    "text": "宝妈",
+    "weight": 10
+  },
+  {
+    "text": "学生党",
+    "weight": 10
+  },
+  {
+    "text": "朋友",
+    "weight": 10
+  },
+  {
+    "text": "姐妹",
     "weight": 10
   }
 ];
@@ -2759,63 +2759,87 @@ function renderPlatformDist(container) {
   `;
 }
 
-// 词云数据兜底（通用全网热门词汇）
-// 正常情况下由 update-data.js 注入 KEYWORD_CLOUD_DATA
+// 词云数据兜底（人群/身份/通用热词，参考参考图风格）
+// 正常情况下由 update-data.js 从抓取到的真实标题中提取并注入 KEYWORD_CLOUD_DATA
 const TRENDING_KEYWORDS_FALLBACK = [
-  { text: '今日热点', weight: 100 },
-  { text: '社会新闻', weight: 95 },
-  { text: '娱乐八卦', weight: 92 },
-  { text: '科技前沿', weight: 90 },
-  { text: '体育赛事', weight: 88 },
-  { text: '高考', weight: 85 },
-  { text: '中考', weight: 82 },
-  { text: '志愿填报', weight: 80 },
-  { text: '股票', weight: 78 },
-  { text: 'A股', weight: 75 },
-  { text: '原神', weight: 72 },
-  { text: '恋与深空', weight: 70 },
-  { text: 'iPhone', weight: 68 },
-  { text: '华为', weight: 65 },
-  { text: '小米', weight: 62 },
-  { text: '电影', weight: 60 },
-  { text: '电视剧', weight: 58 },
-  { text: '综艺', weight: 55 },
-  { text: '明星', weight: 52 },
-  { text: '演唱会', weight: 50 },
-  { text: '旅游', weight: 48 },
-  { text: '美食', weight: 45 },
-  { text: '穿搭', weight: 42 },
-  { text: '健身', weight: 40 },
-  { text: '心理健康', weight: 38 },
-  { text: '职场', weight: 35 },
-  { text: '房价', weight: 32 },
-  { text: '油价', weight: 30 },
-  { text: '黄金', weight: 28 },
-  { text: 'AI', weight: 25 }
+  { text: '免费', weight: 100 },
+  { text: '小白', weight: 95 },
+  { text: '打工人', weight: 90 },
+  { text: '女生', weight: 88 },
+  { text: '新手', weight: 85 },
+  { text: '学习', weight: 82 },
+  { text: '朋友', weight: 80 },
+  { text: '老师', weight: 78 },
+  { text: '工作', weight: 75 },
+  { text: '大学', weight: 72 },
+  { text: '打新', weight: 70 },
+  { text: '学生党', weight: 68 },
+  { text: '新人', weight: 65 },
+  { text: '宝妈', weight: 62 },
+  { text: '搭子', weight: 60 },
+  { text: '考生', weight: 58 },
+  { text: '姐妹', weight: 55 },
+  { text: '高中生', weight: 52 },
+  { text: '大学生', weight: 50 },
+  { text: '高考', weight: 48 },
+  { text: '围观', weight: 45 },
+  { text: '宝子', weight: 42 },
+  { text: '填志愿', weight: 40 },
+  { text: '家长', weight: 38 },
+  { text: '同事', weight: 35 },
+  { text: '学生', weight: 32 },
+  { text: '懒人', weight: 30 },
+  { text: '社恐', weight: 28 },
+  { text: '指南', weight: 25 },
+  { text: '必看', weight: 22 }
 ];
 
 function renderKeywordCloud(container) {
-  // 词云数据：由 update-data.js 从微博/百度/抖音/B站等平台热搜榜注入
-  // 兜底：若未注入则使用通用热门词汇
+  // 词云数据：由 update-data.js 从抓取到的真实标题中按词频统计注入
+  // 兜底：若未注入则使用人群/身份通用热词
   const trendingKeywords = (typeof KEYWORD_CLOUD_DATA !== 'undefined' && Array.isArray(KEYWORD_CLOUD_DATA) && KEYWORD_CLOUD_DATA.length > 0)
     ? KEYWORD_CLOUD_DATA
     : TRENDING_KEYWORDS_FALLBACK;
 
-  // 随机打乱顺序
-  const shuffled = [...trendingKeywords].sort(() => Math.random() - 0.5);
+  // 按权重降序，让最大的居中
+  const sorted = [...trendingKeywords].sort((a, b) => b.weight - a.weight);
 
-  // 词云布局样式
+  // 圆形布局：角度沿圆周分布 + 半径随权重变化（中心最大）
+  const N = sorted.length;
+  const placed = sorted.map((kw, i) => {
+    // 0~1 归一化位置（0 = 中心，1 = 最外圈）
+    const t = i / Math.max(N - 1, 1);
+    // 半径：从中心 0 到边缘 1（椭圆）
+    const radius = 0.15 + t * 0.85;
+    // 角度：从顶部开始螺旋展开（-90° 起）
+    const angle = -Math.PI / 2 + (i / N) * Math.PI * 2.3; // 2.3 圈让布局更紧凑
+    // 椭圆坐标
+    const x = 0.5 + Math.cos(angle) * radius * 0.45;
+    const y = 0.5 + Math.sin(angle) * radius * 0.45;
+    // 字号：权重 → 12~46px
+    const fontSize = 12 + (kw.weight / 100) * 34;
+    // 旋转：-45~45° 之间，让排版不死板
+    const rotation = ((i * 37) % 91) - 45; // 伪随机
+    // 字重：权重高更粗
+    const fontWeight = kw.weight >= 80 ? 800 : kw.weight >= 50 ? 700 : 600;
+    // 颜色：单一蓝色调，深浅随权重
+    const lightness = 35 + (kw.weight / 100) * 25; // 35% ~ 60%
+    const color = `hsl(220, 90%, ${lightness}%)`;
+    return { ...kw, x, y, fontSize, rotation, fontWeight, color };
+  });
+
   container.innerHTML = `
     <div class="word-cloud">
-      <div class="cloud-title">今日全网热点词云</div>
-      <div class="cloud-container">
-        ${shuffled.map((kw, i) => {
-          const size = 10 + (kw.weight / 100) * 22;
-          const colors = ['#1E40AF', '#3B82F6', '#60A5FA', '#93C5FD', '#BFDBFE', '#7C3AED', '#8B5CF6', '#A78BFA'];
-          const color = colors[i % colors.length];
-          const opacity = 0.6 + (kw.weight / 100) * 0.4;
-          return `<span class="cloud-word" style="font-size: ${size}px; color: ${color}; opacity: ${opacity}; font-weight: ${kw.weight > 70 ? '700' : kw.weight > 40 ? '500' : '400'};">${kw.text}</span>`;
-        }).join('')}
+      <div class="cloud-title">今日新媒体热词</div>
+      <div class="cloud-canvas">
+        ${placed.map(p => `<span class="cloud-word" style="
+          left: ${(p.x * 100).toFixed(2)}%;
+          top: ${(p.y * 100).toFixed(2)}%;
+          font-size: ${p.fontSize.toFixed(1)}px;
+          font-weight: ${p.fontWeight};
+          color: ${p.color};
+          transform: translate(-50%, -50%) rotate(${p.rotation}deg);
+        ">${p.text}</span>`).join('')}
       </div>
     </div>
   `;
