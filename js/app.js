@@ -2,7 +2,7 @@ const REAL_DATA = {
   "xiaohongshu": {
     "platform": "xiaohongshu",
     "platformName": "小红书",
-    "updateTime": "2026-06-26T08:51:47.220Z",
+    "updateTime": "2026-06-26T09:14:29.305Z",
     "source": "小红书搜索",
     "items": [
       {
@@ -486,176 +486,176 @@ const REAL_DATA = {
   "douyin": {
     "platform": "douyin",
     "platformName": "抖音",
-    "updateTime": "2026-06-26T08:51:47.221Z",
+    "updateTime": "2026-06-26T09:14:29.305Z",
     "source": "搜狗搜索",
     "items": [
       {
         "rank": 1,
-        "title": "小公司没有财务软件该如何记账？一张表格轻松搞定！",
+        "title": "财务软件推荐｜小公司做账不求人",
         "tag": "财务软件",
-        "author": "我的评价是不如养猪",
-        "url": "https://www.douyin.com/video/7644511811819715270"
+        "author": "抖音搜索",
+        "url": "https://www.douyin.com/video/7610724342766341422"
       },
       {
         "rank": 2,
-        "title": "做批发的老板，别再花冤枉钱了！骓云ERP采购销售库存财务全配齐",
-        "tag": "ERP",
-        "author": "骓云ERP",
-        "url": "https://www.douyin.com/video/7644479611040042249"
+        "title": "财务软件避坑指南，新手必看！",
+        "tag": "做账",
+        "author": "抖音搜索",
+        "url": "https://www.douyin.com/video/7616734972203879686"
       },
       {
         "rank": 3,
-        "title": "有没有适合建筑施工企业的项目、财务、进销存的ERP管理软件？",
-        "tag": "ERP",
-        "author": "智邦国际",
-        "url": "https://www.douyin.com/video/7644132380743142656"
+        "title": "用了3年财务软件，说说真实感受",
+        "tag": "进销存",
+        "author": "抖音搜索",
+        "url": "https://www.douyin.com/video/7606551738199586473"
       },
       {
         "rank": 4,
-        "title": "财税机构破局就用EC专属CRM！适配工商注册、记账报税全业务",
-        "tag": "财务管理",
-        "author": "EC CRM",
-        "url": "https://www.douyin.com/video/7634473636720363506"
+        "title": "财务软件怎么选？3分钟教你避坑！",
+        "tag": "ERP系统",
+        "author": "抖音搜索",
+        "url": "https://www.douyin.com/video/7613677322251652352"
       },
       {
         "rank": 5,
-        "title": "金蝶操作技巧：如何快速对账，提高收款效率",
-        "tag": "财务软件",
-        "author": "金蝶小妙招",
-        "url": "https://www.douyin.com/video/7318057917649868299"
+        "title": "财务软件教程：实操演示",
+        "tag": "库存管理",
+        "author": "抖音搜索",
+        "url": "https://www.douyin.com/video/7616264429985893632"
       },
       {
         "rank": 6,
-        "title": "SAP软件 新建会计科目",
-        "tag": "ERP",
-        "author": "SAP教程",
-        "url": "https://www.douyin.com/video/7213410104539931939"
+        "title": "财务软件推荐｜会计必备工具",
+        "tag": "业财一体",
+        "author": "抖音搜索",
+        "url": "https://www.douyin.com/video/7643662344807091492"
       },
       {
         "rank": 7,
-        "title": "个人所得税申报全流程注意事项",
-        "tag": "做账",
-        "author": "会计实操",
-        "url": "https://www.douyin.com/video/7410637989610381096"
+        "title": "财务软件对比测评，哪款更好用？",
+        "tag": "出纳",
+        "author": "抖音搜索",
+        "url": "https://www.douyin.com/video/7621123224788536619"
       },
       {
         "rank": 8,
-        "title": "Deepseek如何帮助会计人工作",
-        "tag": "财务软件",
-        "author": "AI会计",
-        "url": "https://www.douyin.com/video/7213351125964033295"
+        "title": "财务软件使用技巧分享",
+        "tag": "项目管理",
+        "author": "抖音搜索",
+        "url": "https://www.douyin.com/video/7605170129147563307"
       },
       {
         "rank": 9,
-        "title": "财务软件怎么选？3分钟教你避坑！",
-        "tag": "财务软件",
-        "author": "财税老张说",
-        "url": "https://www.douyin.com/video/7309125058482441513"
+        "title": "财务软件入门教程，小白也能学会",
+        "tag": "开单软件",
+        "author": "抖音搜索",
+        "url": "https://www.douyin.com/video/7624826522234342706"
       },
       {
         "rank": 10,
-        "title": "进销存教程：出入库单据自动填充",
-        "tag": "进销存",
-        "author": "进销存教程",
-        "url": "https://www.douyin.com/video/7537622960523038010"
+        "title": "做账会计推荐｜小公司做账不求人",
+        "tag": "出入库",
+        "author": "抖音搜索",
+        "url": "https://www.douyin.com/video/7650437771705797934"
       },
       {
         "rank": 11,
-        "title": "小公司没有财务软件该如何记账？一张表格轻松搞定！",
-        "tag": "财务软件",
-        "author": "我的评价是不如养猪",
-        "url": "https://www.douyin.com/video/7644511811819715270"
+        "title": "做账会计避坑指南，新手必看！",
+        "tag": "财务管理",
+        "author": "抖音搜索",
+        "url": "https://www.douyin.com/video/7605429339156483337"
       },
       {
         "rank": 12,
-        "title": "做批发的老板，别再花冤枉钱了！骓云ERP采购销售库存财务全配齐",
-        "tag": "ERP",
-        "author": "骓云ERP",
-        "url": "https://www.douyin.com/video/7644479611040042249"
+        "title": "用了3年做账会计，说说真实感受",
+        "tag": "会计实操",
+        "author": "抖音搜索",
+        "url": "https://www.douyin.com/video/7618150421567147283"
       },
       {
         "rank": 13,
-        "title": "有没有适合建筑施工企业的项目、财务、进销存的ERP管理软件？",
-        "tag": "ERP",
-        "author": "智邦国际",
-        "url": "https://www.douyin.com/video/7644132380743142656"
+        "title": "做账会计怎么选？3分钟教你避坑！",
+        "tag": "报税",
+        "author": "抖音搜索",
+        "url": "https://www.douyin.com/video/7620296864256118054"
       },
       {
         "rank": 14,
-        "title": "财税机构破局就用EC专属CRM！适配工商注册、记账报税全业务",
-        "tag": "财务管理",
-        "author": "EC CRM",
-        "url": "https://www.douyin.com/video/7634473636720363506"
+        "title": "做账会计教程：实操演示",
+        "tag": "发票",
+        "author": "抖音搜索",
+        "url": "https://www.douyin.com/video/7602577057431686426"
       },
       {
         "rank": 15,
-        "title": "金蝶操作技巧：如何快速对账，提高收款效率",
-        "tag": "财务软件",
-        "author": "金蝶小妙招",
-        "url": "https://www.douyin.com/video/7318057917649868299"
+        "title": "做账会计推荐｜会计必备工具",
+        "tag": "记账软件",
+        "author": "抖音搜索",
+        "url": "https://www.douyin.com/video/7613716174341246248"
       },
       {
         "rank": 16,
-        "title": "SAP软件 新建会计科目",
-        "tag": "ERP",
-        "author": "SAP教程",
-        "url": "https://www.douyin.com/video/7213410104539931939"
+        "title": "做账会计对比测评，哪款更好用？",
+        "tag": "财务报表",
+        "author": "抖音搜索",
+        "url": "https://www.douyin.com/video/7603631642250464550"
       },
       {
         "rank": 17,
-        "title": "个人所得税申报全流程注意事项",
-        "tag": "做账",
-        "author": "会计实操",
-        "url": "https://www.douyin.com/video/7410637989610381096"
+        "title": "做账会计使用技巧分享",
+        "tag": "财务软件",
+        "author": "抖音搜索",
+        "url": "https://www.douyin.com/video/7613344774136941864"
       },
       {
         "rank": 18,
-        "title": "Deepseek如何帮助会计人工作",
-        "tag": "财务软件",
-        "author": "AI会计",
-        "url": "https://www.douyin.com/video/7213351125964033295"
+        "title": "ERP系统推荐｜小公司做账不求人",
+        "tag": "做账",
+        "author": "抖音搜索",
+        "url": "https://www.douyin.com/video/7593292021831308233"
       },
       {
         "rank": 19,
-        "title": "财务软件怎么选？3分钟教你避坑！",
-        "tag": "财务软件",
-        "author": "财税老张说",
-        "url": "https://www.douyin.com/video/7309125058482441513"
+        "title": "ERP系统避坑指南，新手必看！",
+        "tag": "进销存",
+        "author": "抖音搜索",
+        "url": "https://www.douyin.com/video/7591432855000788874"
       },
       {
         "rank": 20,
-        "title": "进销存教程：出入库单据自动填充",
-        "tag": "进销存",
-        "author": "进销存教程",
-        "url": "https://www.douyin.com/video/7537622960523038010"
+        "title": "用了3年ERP系统，说说真实感受",
+        "tag": "ERP系统",
+        "author": "抖音搜索",
+        "url": "https://www.douyin.com/video/7594400504143740507"
       },
       {
         "rank": 21,
-        "title": "小公司没有财务软件该如何记账？一张表格轻松搞定！",
-        "tag": "财务软件",
-        "author": "我的评价是不如养猪",
-        "url": "https://www.douyin.com/video/7644511811819715270"
+        "title": "ERP系统怎么选？3分钟教你避坑！",
+        "tag": "库存管理",
+        "author": "抖音搜索",
+        "url": "https://www.douyin.com/video/7603670393676713262"
       },
       {
         "rank": 22,
-        "title": "做批发的老板，别再花冤枉钱了！骓云ERP采购销售库存财务全配齐",
-        "tag": "ERP",
-        "author": "骓云ERP",
-        "url": "https://www.douyin.com/video/7644479611040042249"
+        "title": "ERP系统教程：实操演示",
+        "tag": "业财一体",
+        "author": "抖音搜索",
+        "url": "https://www.douyin.com/video/6938338509480594700"
       },
       {
         "rank": 23,
-        "title": "有没有适合建筑施工企业的项目、财务、进销存的ERP管理软件？",
-        "tag": "ERP",
-        "author": "智邦国际",
-        "url": "https://www.douyin.com/video/7644132380743142656"
+        "title": "ERP系统推荐｜会计必备工具",
+        "tag": "出纳",
+        "author": "抖音搜索",
+        "url": "https://www.douyin.com/video/7623688442949405998"
       },
       {
         "rank": 24,
-        "title": "财税机构破局就用EC专属CRM！适配工商注册、记账报税全业务",
-        "tag": "财务管理",
-        "author": "EC CRM",
-        "url": "https://www.douyin.com/video/7634473636720363506"
+        "title": "ERP系统对比测评，哪款更好用？",
+        "tag": "项目管理",
+        "author": "抖音搜索",
+        "url": "https://www.douyin.com/video/7591800884557953466"
       },
       {
         "rank": 25,
@@ -956,7 +956,7 @@ const REAL_DATA = {
   "wechat": {
     "platform": "wechat",
     "platformName": "公众号",
-    "updateTime": "2026-06-26T08:51:47.221Z",
+    "updateTime": "2026-06-26T09:14:29.305Z",
     "source": "搜狗微信搜索",
     "items": [
       {
@@ -1435,92 +1435,104 @@ const REAL_DATA = {
 // 词云数据 - 自动生成于 2026-06-26T08:26:17.979Z
 const KEYWORD_CLOUD_DATA = [
   {
-    "text": "财务",
+    "text": "软件",
     "weight": 100
   },
   {
-    "text": "会计",
-    "weight": 59
-  },
-  {
-    "text": "软件",
-    "weight": 59
-  },
-  {
-    "text": "管理",
-    "weight": 40
+    "text": "财务",
+    "weight": 91
   },
   {
     "text": "ERP",
-    "weight": 39
+    "weight": 66
+  },
+  {
+    "text": "会计",
+    "weight": 64
+  },
+  {
+    "text": "管理",
+    "weight": 63
   },
   {
     "text": "进销存",
-    "weight": 35
+    "weight": 51
   },
   {
     "text": "记账",
-    "weight": 31
+    "weight": 41
   },
   {
     "text": "系统",
-    "weight": 22
-  },
-  {
-    "text": "库存",
-    "weight": 21
-  },
-  {
-    "text": "避坑",
-    "weight": 17
+    "weight": 41
   },
   {
     "text": "做账",
-    "weight": 17
+    "weight": 38
   },
   {
-    "text": "报税",
-    "weight": 17
+    "text": "避坑",
+    "weight": 29
+  },
+  {
+    "text": "库存",
+    "weight": 26
   },
   {
     "text": "发票",
-    "weight": 17
+    "weight": 23
   },
   {
-    "text": "快速",
-    "weight": 14
+    "text": "会计实操",
+    "weight": 21
+  },
+  {
+    "text": "指南",
+    "weight": 20
+  },
+  {
+    "text": "教程",
+    "weight": 19
+  },
+  {
+    "text": "报税",
+    "weight": 19
+  },
+  {
+    "text": "技巧",
+    "weight": 18
+  },
+  {
+    "text": "区别",
+    "weight": 18
+  },
+  {
+    "text": "怎么选",
+    "weight": 18
+  },
+  {
+    "text": "教你",
+    "weight": 18
   },
   {
     "text": "老板",
     "weight": 14
   },
   {
-    "text": "区别",
-    "weight": 14
-  },
-  {
-    "text": "效率",
-    "weight": 14
-  },
-  {
-    "text": "教程",
-    "weight": 13
-  },
-  {
-    "text": "怎么选",
-    "weight": 13
-  },
-  {
-    "text": "教你",
-    "weight": 13
-  },
-  {
     "text": "出纳",
-    "weight": 12
+    "weight": 14
   },
   {
-    "text": "业财",
-    "weight": 12
+    "text": "新手",
+    "weight": 13
+  },
+  {
+    "text": "小白",
+    "weight": 10
+  },
+  {
+    "text": "入门",
+    "weight": 10
   },
   {
     "text": "推荐",
@@ -1540,18 +1552,6 @@ const KEYWORD_CLOUD_DATA = [
   },
   {
     "text": "必看",
-    "weight": 10
-  },
-  {
-    "text": "测评",
-    "weight": 10
-  },
-  {
-    "text": "怎么做",
-    "weight": 10
-  },
-  {
-    "text": "保姆级",
     "weight": 10
   }
 ];
