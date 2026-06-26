@@ -2,7 +2,7 @@ const REAL_DATA = {
   "xiaohongshu": {
     "platform": "xiaohongshu",
     "platformName": "小红书",
-    "updateTime": "2026-06-25T07:03:08.248Z",
+    "updateTime": "2026-06-26T08:27:45.463Z",
     "source": "小红书搜索",
     "items": [
       {
@@ -242,35 +242,273 @@ const REAL_DATA = {
         "tag": "做账",
         "author": "小红书搜索",
         "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%81%9A%E8%B4%A6&source=web_search_result_notes"
+      },
+      {
+        "rank": 35,
+        "title": "进销存相关内容",
+        "tag": "进销存",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E8%BF%9B%E9%94%80%E5%AD%98&source=web_search_result_notes"
+      },
+      {
+        "rank": 36,
+        "title": "ERP系统相关内容",
+        "tag": "ERP系统",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=ERP%E7%B3%BB%E7%BB%9F&source=web_search_result_notes"
+      },
+      {
+        "rank": 37,
+        "title": "库存管理相关内容",
+        "tag": "库存管理",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%BA%93%E5%AD%98%E7%AE%A1%E7%90%86&source=web_search_result_notes"
+      },
+      {
+        "rank": 38,
+        "title": "业财一体相关内容",
+        "tag": "业财一体",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E4%B8%9A%E8%B4%A2%E4%B8%80%E4%BD%93&source=web_search_result_notes"
+      },
+      {
+        "rank": 39,
+        "title": "出纳相关内容",
+        "tag": "出纳",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%87%BA%E7%BA%B3&source=web_search_result_notes"
+      },
+      {
+        "rank": 40,
+        "title": "项目管理相关内容",
+        "tag": "项目管理",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86&source=web_search_result_notes"
+      },
+      {
+        "rank": 41,
+        "title": "开单软件相关内容",
+        "tag": "开单软件",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%BC%80%E5%8D%95%E8%BD%AF%E4%BB%B6&source=web_search_result_notes"
+      },
+      {
+        "rank": 42,
+        "title": "出入库相关内容",
+        "tag": "出入库",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%87%BA%E5%85%A5%E5%BA%93&source=web_search_result_notes"
+      },
+      {
+        "rank": 43,
+        "title": "财务管理相关内容",
+        "tag": "财务管理",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E8%B4%A2%E5%8A%A1%E7%AE%A1%E7%90%86&source=web_search_result_notes"
+      },
+      {
+        "rank": 44,
+        "title": "会计实操相关内容",
+        "tag": "会计实操",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E4%BC%9A%E8%AE%A1%E5%AE%9E%E6%93%8D&source=web_search_result_notes"
+      },
+      {
+        "rank": 45,
+        "title": "报税相关内容",
+        "tag": "报税",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E6%8A%A5%E7%A8%8E&source=web_search_result_notes"
+      },
+      {
+        "rank": 46,
+        "title": "发票相关内容",
+        "tag": "发票",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%8F%91%E7%A5%A8&source=web_search_result_notes"
+      },
+      {
+        "rank": 47,
+        "title": "记账软件相关内容",
+        "tag": "记账软件",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E8%AE%B0%E8%B4%A6%E8%BD%AF%E4%BB%B6&source=web_search_result_notes"
+      },
+      {
+        "rank": 48,
+        "title": "财务报表相关内容",
+        "tag": "财务报表",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E8%B4%A2%E5%8A%A1%E6%8A%A5%E8%A1%A8&source=web_search_result_notes"
+      },
+      {
+        "rank": 49,
+        "title": "财务软件相关内容",
+        "tag": "财务软件",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6&source=web_search_result_notes"
+      },
+      {
+        "rank": 50,
+        "title": "做账相关内容",
+        "tag": "做账",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%81%9A%E8%B4%A6&source=web_search_result_notes"
+      },
+      {
+        "rank": 51,
+        "title": "进销存相关内容",
+        "tag": "进销存",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E8%BF%9B%E9%94%80%E5%AD%98&source=web_search_result_notes"
+      },
+      {
+        "rank": 52,
+        "title": "ERP系统相关内容",
+        "tag": "ERP系统",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=ERP%E7%B3%BB%E7%BB%9F&source=web_search_result_notes"
+      },
+      {
+        "rank": 53,
+        "title": "库存管理相关内容",
+        "tag": "库存管理",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%BA%93%E5%AD%98%E7%AE%A1%E7%90%86&source=web_search_result_notes"
+      },
+      {
+        "rank": 54,
+        "title": "业财一体相关内容",
+        "tag": "业财一体",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E4%B8%9A%E8%B4%A2%E4%B8%80%E4%BD%93&source=web_search_result_notes"
+      },
+      {
+        "rank": 55,
+        "title": "出纳相关内容",
+        "tag": "出纳",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%87%BA%E7%BA%B3&source=web_search_result_notes"
+      },
+      {
+        "rank": 56,
+        "title": "项目管理相关内容",
+        "tag": "项目管理",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86&source=web_search_result_notes"
+      },
+      {
+        "rank": 57,
+        "title": "开单软件相关内容",
+        "tag": "开单软件",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%BC%80%E5%8D%95%E8%BD%AF%E4%BB%B6&source=web_search_result_notes"
+      },
+      {
+        "rank": 58,
+        "title": "出入库相关内容",
+        "tag": "出入库",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%87%BA%E5%85%A5%E5%BA%93&source=web_search_result_notes"
+      },
+      {
+        "rank": 59,
+        "title": "财务管理相关内容",
+        "tag": "财务管理",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E8%B4%A2%E5%8A%A1%E7%AE%A1%E7%90%86&source=web_search_result_notes"
+      },
+      {
+        "rank": 60,
+        "title": "会计实操相关内容",
+        "tag": "会计实操",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E4%BC%9A%E8%AE%A1%E5%AE%9E%E6%93%8D&source=web_search_result_notes"
+      },
+      {
+        "rank": 61,
+        "title": "报税相关内容",
+        "tag": "报税",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E6%8A%A5%E7%A8%8E&source=web_search_result_notes"
+      },
+      {
+        "rank": 62,
+        "title": "发票相关内容",
+        "tag": "发票",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%8F%91%E7%A5%A8&source=web_search_result_notes"
+      },
+      {
+        "rank": 63,
+        "title": "记账软件相关内容",
+        "tag": "记账软件",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E8%AE%B0%E8%B4%A6%E8%BD%AF%E4%BB%B6&source=web_search_result_notes"
+      },
+      {
+        "rank": 64,
+        "title": "财务报表相关内容",
+        "tag": "财务报表",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E8%B4%A2%E5%8A%A1%E6%8A%A5%E8%A1%A8&source=web_search_result_notes"
+      },
+      {
+        "rank": 65,
+        "title": "财务软件相关内容",
+        "tag": "财务软件",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6&source=web_search_result_notes"
+      },
+      {
+        "rank": 66,
+        "title": "做账相关内容",
+        "tag": "做账",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%81%9A%E8%B4%A6&source=web_search_result_notes"
+      },
+      {
+        "rank": 67,
+        "title": "进销存相关内容",
+        "tag": "进销存",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%E8%BF%9B%E9%94%80%E5%AD%98&source=web_search_result_notes"
+      },
+      {
+        "rank": 68,
+        "title": "ERP系统相关内容",
+        "tag": "ERP系统",
+        "author": "小红书搜索",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=ERP%E7%B3%BB%E7%BB%9F&source=web_search_result_notes"
       }
     ]
   },
   "douyin": {
     "platform": "douyin",
     "platformName": "抖音",
-    "updateTime": "2026-06-25T07:03:08.249Z",
+    "updateTime": "2026-06-26T08:27:45.464Z",
     "source": "搜狗搜索",
     "items": [
       {
         "rank": 1,
-        "title": "ERP系统推荐｜小公司做账不求人",
+        "title": "小公司没有财务软件该如何记账？一张表格轻松搞定！",
         "tag": "财务软件",
-        "author": "抖音搜索",
-        "url": "https://www.douyin.com/video/7571072187227032859"
+        "author": "我的评价是不如养猪",
+        "url": "https://www.douyin.com/video/7644511811819715270"
       },
       {
         "rank": 2,
-        "title": "ERP系统避坑指南，新手必看！",
-        "tag": "做账",
-        "author": "抖音搜索",
-        "url": "https://www.douyin.com/video/7507160641094880527"
+        "title": "做批发的老板，别再花冤枉钱了！骓云ERP采购销售库存财务全配齐",
+        "tag": "ERP",
+        "author": "骓云ERP",
+        "url": "https://www.douyin.com/video/7644479611040042249"
       },
       {
         "rank": 3,
-        "title": "用了3年ERP系统，说说真实感受",
-        "tag": "进销存",
-        "author": "抖音搜索",
-        "url": "https://www.douyin.com/video/7470815620867607823"
+        "title": "有没有适合建筑施工企业的项目、财务、进销存的ERP管理软件？",
+        "tag": "ERP",
+        "author": "智邦国际",
+        "url": "https://www.douyin.com/video/7644132380743142656"
       },
       {
         "rank": 4,
@@ -474,13 +712,251 @@ const REAL_DATA = {
         "tag": "ERP",
         "author": "骓云ERP",
         "url": "https://www.douyin.com/video/7644479611040042249"
+      },
+      {
+        "rank": 33,
+        "title": "有没有适合建筑施工企业的项目、财务、进销存的ERP管理软件？",
+        "tag": "ERP",
+        "author": "智邦国际",
+        "url": "https://www.douyin.com/video/7644132380743142656"
+      },
+      {
+        "rank": 34,
+        "title": "财税机构破局就用EC专属CRM！适配工商注册、记账报税全业务",
+        "tag": "财务管理",
+        "author": "EC CRM",
+        "url": "https://www.douyin.com/video/7634473636720363506"
+      },
+      {
+        "rank": 35,
+        "title": "金蝶操作技巧：如何快速对账，提高收款效率",
+        "tag": "财务软件",
+        "author": "金蝶小妙招",
+        "url": "https://www.douyin.com/video/7318057917649868299"
+      },
+      {
+        "rank": 36,
+        "title": "SAP软件 新建会计科目",
+        "tag": "ERP",
+        "author": "SAP教程",
+        "url": "https://www.douyin.com/video/7213410104539931939"
+      },
+      {
+        "rank": 37,
+        "title": "个人所得税申报全流程注意事项",
+        "tag": "做账",
+        "author": "会计实操",
+        "url": "https://www.douyin.com/video/7410637989610381096"
+      },
+      {
+        "rank": 38,
+        "title": "Deepseek如何帮助会计人工作",
+        "tag": "财务软件",
+        "author": "AI会计",
+        "url": "https://www.douyin.com/video/7213351125964033295"
+      },
+      {
+        "rank": 39,
+        "title": "财务软件怎么选？3分钟教你避坑！",
+        "tag": "财务软件",
+        "author": "财税老张说",
+        "url": "https://www.douyin.com/video/7309125058482441513"
+      },
+      {
+        "rank": 40,
+        "title": "进销存教程：出入库单据自动填充",
+        "tag": "进销存",
+        "author": "进销存教程",
+        "url": "https://www.douyin.com/video/7537622960523038010"
+      },
+      {
+        "rank": 41,
+        "title": "小公司没有财务软件该如何记账？一张表格轻松搞定！",
+        "tag": "财务软件",
+        "author": "我的评价是不如养猪",
+        "url": "https://www.douyin.com/video/7644511811819715270"
+      },
+      {
+        "rank": 42,
+        "title": "做批发的老板，别再花冤枉钱了！骓云ERP采购销售库存财务全配齐",
+        "tag": "ERP",
+        "author": "骓云ERP",
+        "url": "https://www.douyin.com/video/7644479611040042249"
+      },
+      {
+        "rank": 43,
+        "title": "有没有适合建筑施工企业的项目、财务、进销存的ERP管理软件？",
+        "tag": "ERP",
+        "author": "智邦国际",
+        "url": "https://www.douyin.com/video/7644132380743142656"
+      },
+      {
+        "rank": 44,
+        "title": "财税机构破局就用EC专属CRM！适配工商注册、记账报税全业务",
+        "tag": "财务管理",
+        "author": "EC CRM",
+        "url": "https://www.douyin.com/video/7634473636720363506"
+      },
+      {
+        "rank": 45,
+        "title": "金蝶操作技巧：如何快速对账，提高收款效率",
+        "tag": "财务软件",
+        "author": "金蝶小妙招",
+        "url": "https://www.douyin.com/video/7318057917649868299"
+      },
+      {
+        "rank": 46,
+        "title": "SAP软件 新建会计科目",
+        "tag": "ERP",
+        "author": "SAP教程",
+        "url": "https://www.douyin.com/video/7213410104539931939"
+      },
+      {
+        "rank": 47,
+        "title": "个人所得税申报全流程注意事项",
+        "tag": "做账",
+        "author": "会计实操",
+        "url": "https://www.douyin.com/video/7410637989610381096"
+      },
+      {
+        "rank": 48,
+        "title": "Deepseek如何帮助会计人工作",
+        "tag": "财务软件",
+        "author": "AI会计",
+        "url": "https://www.douyin.com/video/7213351125964033295"
+      },
+      {
+        "rank": 49,
+        "title": "财务软件怎么选？3分钟教你避坑！",
+        "tag": "财务软件",
+        "author": "财税老张说",
+        "url": "https://www.douyin.com/video/7309125058482441513"
+      },
+      {
+        "rank": 50,
+        "title": "进销存教程：出入库单据自动填充",
+        "tag": "进销存",
+        "author": "进销存教程",
+        "url": "https://www.douyin.com/video/7537622960523038010"
+      },
+      {
+        "rank": 51,
+        "title": "小公司没有财务软件该如何记账？一张表格轻松搞定！",
+        "tag": "财务软件",
+        "author": "我的评价是不如养猪",
+        "url": "https://www.douyin.com/video/7644511811819715270"
+      },
+      {
+        "rank": 52,
+        "title": "做批发的老板，别再花冤枉钱了！骓云ERP采购销售库存财务全配齐",
+        "tag": "ERP",
+        "author": "骓云ERP",
+        "url": "https://www.douyin.com/video/7644479611040042249"
+      },
+      {
+        "rank": 53,
+        "title": "有没有适合建筑施工企业的项目、财务、进销存的ERP管理软件？",
+        "tag": "ERP",
+        "author": "智邦国际",
+        "url": "https://www.douyin.com/video/7644132380743142656"
+      },
+      {
+        "rank": 54,
+        "title": "财税机构破局就用EC专属CRM！适配工商注册、记账报税全业务",
+        "tag": "财务管理",
+        "author": "EC CRM",
+        "url": "https://www.douyin.com/video/7634473636720363506"
+      },
+      {
+        "rank": 55,
+        "title": "金蝶操作技巧：如何快速对账，提高收款效率",
+        "tag": "财务软件",
+        "author": "金蝶小妙招",
+        "url": "https://www.douyin.com/video/7318057917649868299"
+      },
+      {
+        "rank": 56,
+        "title": "SAP软件 新建会计科目",
+        "tag": "ERP",
+        "author": "SAP教程",
+        "url": "https://www.douyin.com/video/7213410104539931939"
+      },
+      {
+        "rank": 57,
+        "title": "个人所得税申报全流程注意事项",
+        "tag": "做账",
+        "author": "会计实操",
+        "url": "https://www.douyin.com/video/7410637989610381096"
+      },
+      {
+        "rank": 58,
+        "title": "Deepseek如何帮助会计人工作",
+        "tag": "财务软件",
+        "author": "AI会计",
+        "url": "https://www.douyin.com/video/7213351125964033295"
+      },
+      {
+        "rank": 59,
+        "title": "财务软件怎么选？3分钟教你避坑！",
+        "tag": "财务软件",
+        "author": "财税老张说",
+        "url": "https://www.douyin.com/video/7309125058482441513"
+      },
+      {
+        "rank": 60,
+        "title": "进销存教程：出入库单据自动填充",
+        "tag": "进销存",
+        "author": "进销存教程",
+        "url": "https://www.douyin.com/video/7537622960523038010"
+      },
+      {
+        "rank": 61,
+        "title": "小公司没有财务软件该如何记账？一张表格轻松搞定！",
+        "tag": "财务软件",
+        "author": "我的评价是不如养猪",
+        "url": "https://www.douyin.com/video/7644511811819715270"
+      },
+      {
+        "rank": 62,
+        "title": "做批发的老板，别再花冤枉钱了！骓云ERP采购销售库存财务全配齐",
+        "tag": "ERP",
+        "author": "骓云ERP",
+        "url": "https://www.douyin.com/video/7644479611040042249"
+      },
+      {
+        "rank": 63,
+        "title": "有没有适合建筑施工企业的项目、财务、进销存的ERP管理软件？",
+        "tag": "ERP",
+        "author": "智邦国际",
+        "url": "https://www.douyin.com/video/7644132380743142656"
+      },
+      {
+        "rank": 64,
+        "title": "财税机构破局就用EC专属CRM！适配工商注册、记账报税全业务",
+        "tag": "财务管理",
+        "author": "EC CRM",
+        "url": "https://www.douyin.com/video/7634473636720363506"
+      },
+      {
+        "rank": 65,
+        "title": "金蝶操作技巧：如何快速对账，提高收款效率",
+        "tag": "财务软件",
+        "author": "金蝶小妙招",
+        "url": "https://www.douyin.com/video/7318057917649868299"
+      },
+      {
+        "rank": 66,
+        "title": "SAP软件 新建会计科目",
+        "tag": "ERP",
+        "author": "SAP教程",
+        "url": "https://www.douyin.com/video/7213410104539931939"
       }
     ]
   },
   "wechat": {
     "platform": "wechat",
     "platformName": "公众号",
-    "updateTime": "2026-06-25T07:03:08.249Z",
+    "updateTime": "2026-06-26T08:27:45.464Z",
     "source": "搜狗微信搜索",
     "items": [
       {
@@ -713,10 +1189,372 @@ const REAL_DATA = {
         "tag": "做账",
         "author": "浩博财税",
         "url": "https://weixin.sogou.com/weixin?query=%E4%BC%9A%E8%AE%A1+%E8%B4%A6%E5%8A%A1%E5%A4%84%E7%90%86&type=2"
+      },
+      {
+        "rank": 34,
+        "title": "有了财务软件还要进销存软件吗？",
+        "tag": "进销存",
+        "author": "百卓采购网",
+        "url": "https://weixin.sogou.com/weixin?query=%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6+%E8%BF%9B%E9%94%80%E5%AD%98&type=2"
+      },
+      {
+        "rank": 35,
+        "title": "WMS与ERP在仓库管理中的区别与联系",
+        "tag": "ERP",
+        "author": "仓库管理",
+        "url": "https://weixin.sogou.com/weixin?query=WMS+ERP+%E4%BB%93%E5%BA%93%E7%AE%A1%E7%90%86&type=2"
+      },
+      {
+        "rank": 36,
+        "title": "ERP系统中仓库分类管理的五大误区",
+        "tag": "ERP",
+        "author": "ERP顾问",
+        "url": "https://weixin.sogou.com/weixin?query=ERP+%E4%BB%93%E5%BA%93%E5%88%86%E7%B1%BB&type=2"
+      },
+      {
+        "rank": 37,
+        "title": "会计做账适合用什么样的财务软件？",
+        "tag": "做账",
+        "author": "会计说",
+        "url": "https://weixin.sogou.com/weixin?query=%E4%BC%9A%E8%AE%A1%E5%81%9A%E8%B4%A6+%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6&type=2"
+      },
+      {
+        "rank": 38,
+        "title": "小微企业会计实操避坑指南",
+        "tag": "做账",
+        "author": "财税顾问",
+        "url": "https://weixin.sogou.com/weixin?query=%E5%B0%8F%E5%BE%AE%E4%BC%81%E4%B8%9A+%E4%BC%9A%E8%AE%A1%E5%AE%9E%E6%93%8D&type=2"
+      },
+      {
+        "rank": 39,
+        "title": "管家婆财贸ERP：从库存管理出发",
+        "tag": "ERP",
+        "author": "管家婆",
+        "url": "https://weixin.sogou.com/weixin?query=%E7%AE%A1%E5%AE%B6%E5%A9%86+ERP+%E5%BA%93%E5%AD%98&type=2"
+      },
+      {
+        "rank": 40,
+        "title": "初创公司成长秘籍：如何巧用ERP软件加速飞跃",
+        "tag": "ERP",
+        "author": "创业指南",
+        "url": "https://weixin.sogou.com/weixin?query=%E5%88%9D%E5%88%9B%E5%85%AC%E5%8F%B8+ERP%E8%BD%AF%E4%BB%B6&type=2"
+      },
+      {
+        "rank": 41,
+        "title": "全自动财务记账管理系统(包含记账、进销存、发票等等)",
+        "tag": "财务软件",
+        "author": "会计教练网校",
+        "url": "https://weixin.sogou.com/weixin?query=%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6+%E8%AE%B0%E8%B4%A6&type=2"
+      },
+      {
+        "rank": 42,
+        "title": "进销存和财务软件分开好还是一起好？",
+        "tag": "进销存",
+        "author": "象过河",
+        "url": "https://weixin.sogou.com/weixin?query=%E8%BF%9B%E9%94%80%E5%AD%98+%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6&type=2"
+      },
+      {
+        "rank": 43,
+        "title": "各行业会计账务处理大全",
+        "tag": "做账",
+        "author": "浩博财税",
+        "url": "https://weixin.sogou.com/weixin?query=%E4%BC%9A%E8%AE%A1+%E8%B4%A6%E5%8A%A1%E5%A4%84%E7%90%86&type=2"
+      },
+      {
+        "rank": 44,
+        "title": "有了财务软件还要进销存软件吗？",
+        "tag": "进销存",
+        "author": "百卓采购网",
+        "url": "https://weixin.sogou.com/weixin?query=%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6+%E8%BF%9B%E9%94%80%E5%AD%98&type=2"
+      },
+      {
+        "rank": 45,
+        "title": "WMS与ERP在仓库管理中的区别与联系",
+        "tag": "ERP",
+        "author": "仓库管理",
+        "url": "https://weixin.sogou.com/weixin?query=WMS+ERP+%E4%BB%93%E5%BA%93%E7%AE%A1%E7%90%86&type=2"
+      },
+      {
+        "rank": 46,
+        "title": "ERP系统中仓库分类管理的五大误区",
+        "tag": "ERP",
+        "author": "ERP顾问",
+        "url": "https://weixin.sogou.com/weixin?query=ERP+%E4%BB%93%E5%BA%93%E5%88%86%E7%B1%BB&type=2"
+      },
+      {
+        "rank": 47,
+        "title": "会计做账适合用什么样的财务软件？",
+        "tag": "做账",
+        "author": "会计说",
+        "url": "https://weixin.sogou.com/weixin?query=%E4%BC%9A%E8%AE%A1%E5%81%9A%E8%B4%A6+%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6&type=2"
+      },
+      {
+        "rank": 48,
+        "title": "小微企业会计实操避坑指南",
+        "tag": "做账",
+        "author": "财税顾问",
+        "url": "https://weixin.sogou.com/weixin?query=%E5%B0%8F%E5%BE%AE%E4%BC%81%E4%B8%9A+%E4%BC%9A%E8%AE%A1%E5%AE%9E%E6%93%8D&type=2"
+      },
+      {
+        "rank": 49,
+        "title": "管家婆财贸ERP：从库存管理出发",
+        "tag": "ERP",
+        "author": "管家婆",
+        "url": "https://weixin.sogou.com/weixin?query=%E7%AE%A1%E5%AE%B6%E5%A9%86+ERP+%E5%BA%93%E5%AD%98&type=2"
+      },
+      {
+        "rank": 50,
+        "title": "初创公司成长秘籍：如何巧用ERP软件加速飞跃",
+        "tag": "ERP",
+        "author": "创业指南",
+        "url": "https://weixin.sogou.com/weixin?query=%E5%88%9D%E5%88%9B%E5%85%AC%E5%8F%B8+ERP%E8%BD%AF%E4%BB%B6&type=2"
+      },
+      {
+        "rank": 51,
+        "title": "全自动财务记账管理系统(包含记账、进销存、发票等等)",
+        "tag": "财务软件",
+        "author": "会计教练网校",
+        "url": "https://weixin.sogou.com/weixin?query=%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6+%E8%AE%B0%E8%B4%A6&type=2"
+      },
+      {
+        "rank": 52,
+        "title": "进销存和财务软件分开好还是一起好？",
+        "tag": "进销存",
+        "author": "象过河",
+        "url": "https://weixin.sogou.com/weixin?query=%E8%BF%9B%E9%94%80%E5%AD%98+%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6&type=2"
+      },
+      {
+        "rank": 53,
+        "title": "各行业会计账务处理大全",
+        "tag": "做账",
+        "author": "浩博财税",
+        "url": "https://weixin.sogou.com/weixin?query=%E4%BC%9A%E8%AE%A1+%E8%B4%A6%E5%8A%A1%E5%A4%84%E7%90%86&type=2"
+      },
+      {
+        "rank": 54,
+        "title": "有了财务软件还要进销存软件吗？",
+        "tag": "进销存",
+        "author": "百卓采购网",
+        "url": "https://weixin.sogou.com/weixin?query=%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6+%E8%BF%9B%E9%94%80%E5%AD%98&type=2"
+      },
+      {
+        "rank": 55,
+        "title": "WMS与ERP在仓库管理中的区别与联系",
+        "tag": "ERP",
+        "author": "仓库管理",
+        "url": "https://weixin.sogou.com/weixin?query=WMS+ERP+%E4%BB%93%E5%BA%93%E7%AE%A1%E7%90%86&type=2"
+      },
+      {
+        "rank": 56,
+        "title": "ERP系统中仓库分类管理的五大误区",
+        "tag": "ERP",
+        "author": "ERP顾问",
+        "url": "https://weixin.sogou.com/weixin?query=ERP+%E4%BB%93%E5%BA%93%E5%88%86%E7%B1%BB&type=2"
+      },
+      {
+        "rank": 57,
+        "title": "会计做账适合用什么样的财务软件？",
+        "tag": "做账",
+        "author": "会计说",
+        "url": "https://weixin.sogou.com/weixin?query=%E4%BC%9A%E8%AE%A1%E5%81%9A%E8%B4%A6+%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6&type=2"
+      },
+      {
+        "rank": 58,
+        "title": "小微企业会计实操避坑指南",
+        "tag": "做账",
+        "author": "财税顾问",
+        "url": "https://weixin.sogou.com/weixin?query=%E5%B0%8F%E5%BE%AE%E4%BC%81%E4%B8%9A+%E4%BC%9A%E8%AE%A1%E5%AE%9E%E6%93%8D&type=2"
+      },
+      {
+        "rank": 59,
+        "title": "管家婆财贸ERP：从库存管理出发",
+        "tag": "ERP",
+        "author": "管家婆",
+        "url": "https://weixin.sogou.com/weixin?query=%E7%AE%A1%E5%AE%B6%E5%A9%86+ERP+%E5%BA%93%E5%AD%98&type=2"
+      },
+      {
+        "rank": 60,
+        "title": "初创公司成长秘籍：如何巧用ERP软件加速飞跃",
+        "tag": "ERP",
+        "author": "创业指南",
+        "url": "https://weixin.sogou.com/weixin?query=%E5%88%9D%E5%88%9B%E5%85%AC%E5%8F%B8+ERP%E8%BD%AF%E4%BB%B6&type=2"
+      },
+      {
+        "rank": 61,
+        "title": "全自动财务记账管理系统(包含记账、进销存、发票等等)",
+        "tag": "财务软件",
+        "author": "会计教练网校",
+        "url": "https://weixin.sogou.com/weixin?query=%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6+%E8%AE%B0%E8%B4%A6&type=2"
+      },
+      {
+        "rank": 62,
+        "title": "进销存和财务软件分开好还是一起好？",
+        "tag": "进销存",
+        "author": "象过河",
+        "url": "https://weixin.sogou.com/weixin?query=%E8%BF%9B%E9%94%80%E5%AD%98+%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6&type=2"
+      },
+      {
+        "rank": 63,
+        "title": "各行业会计账务处理大全",
+        "tag": "做账",
+        "author": "浩博财税",
+        "url": "https://weixin.sogou.com/weixin?query=%E4%BC%9A%E8%AE%A1+%E8%B4%A6%E5%8A%A1%E5%A4%84%E7%90%86&type=2"
+      },
+      {
+        "rank": 64,
+        "title": "有了财务软件还要进销存软件吗？",
+        "tag": "进销存",
+        "author": "百卓采购网",
+        "url": "https://weixin.sogou.com/weixin?query=%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6+%E8%BF%9B%E9%94%80%E5%AD%98&type=2"
+      },
+      {
+        "rank": 65,
+        "title": "WMS与ERP在仓库管理中的区别与联系",
+        "tag": "ERP",
+        "author": "仓库管理",
+        "url": "https://weixin.sogou.com/weixin?query=WMS+ERP+%E4%BB%93%E5%BA%93%E7%AE%A1%E7%90%86&type=2"
+      },
+      {
+        "rank": 66,
+        "title": "ERP系统中仓库分类管理的五大误区",
+        "tag": "ERP",
+        "author": "ERP顾问",
+        "url": "https://weixin.sogou.com/weixin?query=ERP+%E4%BB%93%E5%BA%93%E5%88%86%E7%B1%BB&type=2"
+      },
+      {
+        "rank": 67,
+        "title": "会计做账适合用什么样的财务软件？",
+        "tag": "做账",
+        "author": "会计说",
+        "url": "https://weixin.sogou.com/weixin?query=%E4%BC%9A%E8%AE%A1%E5%81%9A%E8%B4%A6+%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6&type=2"
       }
     ]
   }
 };
+
+// 词云数据 - 自动生成于 2026-06-26T08:26:17.979Z
+const KEYWORD_CLOUD_DATA = [
+  {
+    "text": "ERP",
+    "weight": 100
+  },
+  {
+    "text": "财务软件",
+    "weight": 82
+  },
+  {
+    "text": "做账",
+    "weight": 68
+  },
+  {
+    "text": "进销存",
+    "weight": 56
+  },
+  {
+    "text": "财务管理",
+    "weight": 27
+  },
+  {
+    "text": "ERP系统",
+    "weight": 15
+  },
+  {
+    "text": "库存管理",
+    "weight": 13
+  },
+  {
+    "text": "业财一体",
+    "weight": 13
+  },
+  {
+    "text": "出纳",
+    "weight": 13
+  },
+  {
+    "text": "项目管理",
+    "weight": 13
+  },
+  {
+    "text": "开单软件",
+    "weight": 13
+  },
+  {
+    "text": "出入库",
+    "weight": 13
+  },
+  {
+    "text": "会计实操",
+    "weight": 13
+  },
+  {
+    "text": "报税",
+    "weight": 13
+  },
+  {
+    "text": "发票",
+    "weight": 13
+  },
+  {
+    "text": "记账软件",
+    "weight": 13
+  },
+  {
+    "text": "财务报表",
+    "weight": 13
+  },
+  {
+    "text": "小公司没",
+    "weight": 10
+  },
+  {
+    "text": "有财务软",
+    "weight": 10
+  },
+  {
+    "text": "记账",
+    "weight": 10
+  },
+  {
+    "text": "一张表格",
+    "weight": 10
+  },
+  {
+    "text": "轻松搞定",
+    "weight": 10
+  },
+  {
+    "text": "做批发的",
+    "weight": 10
+  },
+  {
+    "text": "老板",
+    "weight": 10
+  },
+  {
+    "text": "别再花冤",
+    "weight": 10
+  },
+  {
+    "text": "枉钱了",
+    "weight": 10
+  },
+  {
+    "text": "骓云",
+    "weight": 10
+  },
+  {
+    "text": "采购销售",
+    "weight": 10
+  },
+  {
+    "text": "库存财务",
+    "weight": 10
+  },
+  {
+    "text": "全配齐",
+    "weight": 10
+  }
+];
 
 // ============================================================
 // 关键词数据（基于实际SEO搜索量）
@@ -1971,47 +2809,47 @@ function renderPlatformDist(container) {
   `;
 }
 
+// 词云数据兜底（财务垂直领域基础词）
+// 正常情况下由 update-data.js 注入 KEYWORD_CLOUD_DATA
+const FINANCE_KEYWORDS_FALLBACK = [
+  { text: '财务软件', weight: 100 },
+  { text: '做账', weight: 95 },
+  { text: '进销存', weight: 92 },
+  { text: 'ERP系统', weight: 90 },
+  { text: '库存管理', weight: 88 },
+  { text: '业财一体', weight: 85 },
+  { text: '出纳', weight: 82 },
+  { text: '项目管理', weight: 80 },
+  { text: '开单软件', weight: 78 },
+  { text: '出入库', weight: 75 },
+  { text: '财务管理', weight: 72 },
+  { text: '会计实操', weight: 70 },
+  { text: '报税', weight: 68 },
+  { text: '发票', weight: 65 },
+  { text: '记账软件', weight: 62 },
+  { text: '财务报表', weight: 60 },
+  { text: '金蝶', weight: 58 },
+  { text: '用友', weight: 55 },
+  { text: '管家婆', weight: 52 },
+  { text: '代理记账', weight: 50 },
+  { text: '小微企业', weight: 48 },
+  { text: '数字化转型', weight: 45 },
+  { text: '仓库管理', weight: 42 },
+  { text: '采购管理', weight: 40 },
+  { text: '销售管理', weight: 38 },
+  { text: '应收应付', weight: 35 },
+  { text: '增值税', weight: 32 },
+  { text: '企业所得税', weight: 30 },
+  { text: '汇算清缴', weight: 28 },
+  { text: '成本核算', weight: 25 }
+];
+
 function renderKeywordCloud(container) {
-  // 全网热门关键词
-  const trendingKeywords = [
-    { text: '2026高考', weight: 100 },
-    { text: '芒种', weight: 95 },
-    { text: '油价调整', weight: 92 },
-    { text: '高考加油', weight: 90 },
-    { text: '奚梦瑶婚礼', weight: 88 },
-    { text: '中国小电驴', weight: 85 },
-    { text: '燃油车价格跳水', weight: 82 },
-    { text: '金饰降价', weight: 80 },
-    { text: '特朗普', weight: 78 },
-    { text: '泽连斯基', weight: 75 },
-    { text: 'AI对话', weight: 73 },
-    { text: '豆包', weight: 70 },
-    { text: '人形机器人', weight: 68 },
-    { text: '台风', weight: 65 },
-    { text: '高考倒计时', weight: 63 },
-    { text: '高考物品清单', weight: 60 },
-    { text: '股市', weight: 58 },
-    { text: '防晒', weight: 55 },
-    { text: '减肥', weight: 53 },
-    { text: '游泳', weight: 50 },
-    { text: '苹果折叠屏', weight: 48 },
-    { text: '英伟达', weight: 45 },
-    { text: '健身', weight: 43 },
-    { text: '心理健康', weight: 40 },
-    { text: '运动', weight: 38 },
-    { text: '高考', weight: 95 },
-    { text: '旅游', weight: 35 },
-    { text: '美食', weight: 33 },
-    { text: '护肤', weight: 30 },
-    { text: '穿搭', weight: 28 },
-    { text: '科技', weight: 25 },
-    { text: '新能源', weight: 23 },
-    { text: '直播', weight: 20 },
-    { text: '短视频', weight: 18 },
-    { text: '电商', weight: 15 },
-    { text: '职场', weight: 13 },
-    { text: '理财', weight: 10 }
-  ];
+  // 词云数据：由 update-data.js 根据每天抓取的标题动态生成
+  // 兜底：若未注入则使用财务领域基础词
+  const trendingKeywords = (typeof KEYWORD_CLOUD_DATA !== 'undefined' && Array.isArray(KEYWORD_CLOUD_DATA) && KEYWORD_CLOUD_DATA.length > 0)
+    ? KEYWORD_CLOUD_DATA
+    : FINANCE_KEYWORDS_FALLBACK;
 
   // 随机打乱顺序
   const shuffled = [...trendingKeywords].sort(() => Math.random() - 0.5);
