@@ -2804,106 +2804,116 @@ function renderKeywordCloud(container) {
   // 按权重降序：最大的先放中心
   const sorted = [...trendingKeywords].sort((a, b) => b.weight - a.weight);
 
-  // 先渲染到隐藏容器中测量每个词的真实渲染尺寸
+  // 字号/字重/旋转先算好
+  const items = sorted.map((kw, i) => {
+    const fontSize = 16 + (kw.weight / 100) * 32; // 16 ~ 48px
+    const fontWeight = kw.weight >= 80 ? 800 : kw.weight >= 50 ? 700 : 600;
+    const rotation = ((i * 53) % 71) - 35; // -35° ~ 35° 伪随机
+    const lightness = 35 + (kw.weight / 100) * 25;
+    return { ...kw, fontSize, fontWeight, rotation, color: `hsl(220, 90%, ${lightness}%)` };
+  });
+
+  // 画布用固定像素坐标系做布局（最后用百分比输出）
+  // 实际画布：宽 = W, 高 = H，使用接近实际的 2:1 宽高比以匹配 max-height 限制
+  const W = 1000;
+  const H = 500;
+  const CX = W / 2;
+  const CY = H / 2;
+  const PAD = 6; // 词与词之间的最小像素间距
+
+  // 在 measureBox 里测每个词的真实像素尺寸（按画布 CSS 像素）
   const measureBox = document.createElement('div');
-  measureBox.style.cssText = 'position:absolute;visibility:hidden;left:-9999px;top:-9999px;white-space:nowrap;';
+  measureBox.style.cssText = `position:absolute;visibility:hidden;left:-9999px;top:-9999px;white-space:nowrap;font-family:'Inter',sans-serif;`;
   container.appendChild(measureBox);
 
-  const measured = sorted.map(kw => {
+  items.forEach(kw => {
     const span = document.createElement('span');
-    const fontSize = 14 + (kw.weight / 100) * 36; // 14 ~ 50px
-    const fontWeight = kw.weight >= 80 ? 800 : kw.weight >= 50 ? 700 : 600;
-    span.style.cssText = `display:inline-block;font-size:${fontSize}px;font-weight:${fontWeight};padding:0 4px;line-height:1.2;`;
+    span.style.cssText = `display:inline-block;font-size:${kw.fontSize}px;font-weight:${kw.fontWeight};padding:0;line-height:1.15;`;
     span.textContent = kw.text;
     measureBox.appendChild(span);
-    const rect = span.getBoundingClientRect();
-    const w = rect.width;
-    const h = rect.height;
+    const r = span.getBoundingClientRect();
+    const w = r.width;
+    const h = r.height;
     measureBox.removeChild(span);
-    // 字号/旋转
-    const rotation = ((sorted.indexOf(kw) * 53) % 81) - 40; // -40° ~ 40° 伪随机
-    // 旋转后包络（按最坏情况放大 ~1.3 倍）
-    const rotCos = Math.abs(Math.cos(rotation * Math.PI / 180));
-    const rotSin = Math.abs(Math.sin(rotation * Math.PI / 180));
-    const boxW = (w * rotCos + h * rotSin) + 6; // 留 6px 间距
-    const boxH = (w * rotSin + h * rotCos) + 6;
-    // 颜色：单一蓝色调，深浅随权重
-    const lightness = 35 + (kw.weight / 100) * 25;
-    return { ...kw, fontSize, fontWeight, rotation, color: `hsl(220, 90%, ${lightness}%)`, boxW, boxH };
+    // 旋转后外接矩形（用更精确的旋转公式）
+    const rad = kw.rotation * Math.PI / 180;
+    const cos = Math.abs(Math.cos(rad));
+    const sin = Math.abs(Math.sin(rad));
+    const boxW = w * cos + h * sin + PAD * 2;
+    const boxH = w * sin + h * cos + PAD * 2;
+    kw.pxW = w;
+    kw.pxH = h;
+    kw.boxW = boxW;
+    kw.boxH = boxH;
   });
   container.removeChild(measureBox);
 
-  // 黄金角螺旋 + 碰撞检测 布局
-  // 把最大词放中心，后面的词按黄金角 137.5° 螺旋往外铺，
-  // 同时检查与已放置词的矩形是否碰撞，碰撞则增加半径再试
+  // 螺旋布局（Archimedean 螺旋，r = a + b*theta）
+  // 大词先放中心，后续词按角度从 0 扫一圈又一圈，
+  // 角度增量由该词当前半径决定（r 越大角度增量越小）
+  // 碰撞：AABB 矩形碰撞
   const placed = []; // {cx, cy, w, h}
-  const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5)); // ≈ 137.5°
 
-  const collides = (cx, cy, w, h, pad = 2) => {
-    const halfW = w / 2 + pad;
-    const halfH = h / 2 + pad;
+  const collides = (cx, cy, w, h) => {
     for (const p of placed) {
-      if (Math.abs(cx - p.cx) < halfW + p.w / 2 &&
-          Math.abs(cy - p.cy) < halfH + p.h / 2) {
+      if (Math.abs(cx - p.cx) < (w + p.w) / 2 &&
+          Math.abs(cy - p.cy) < (h + p.h) / 2) {
         return true;
       }
     }
     return false;
   };
 
-  // 第一步：先把最大权重的放在画布中心（中心可能放 1~3 个最大的）
-  // 中心只放 1 个最大的，避免遮挡
-  const CENTER = { x: 0.5, y: 0.5 };
+  const inBounds = (cx, cy, w, h) => {
+    return cx - w / 2 > 0 && cx + w / 2 < W &&
+           cy - h / 2 > 10 && cy + h / 2 < H - 10;
+  };
 
-  measured.forEach((kw, i) => {
-    // 归一化盒尺寸（基于画布 width=1 的相对值）
-    // boxW/boxH 是像素值，画布宽度按经验 720px 计（aspect 4:3，max-height 480）
-    // 实际画布宽度随容器变化，所以用经验值；碰撞时用绝对像素按比例
-    // 这里采用相对坐标：以画布宽度 720px 为基准
-    const CANVAS_PX = 720;
-    const w = kw.boxW / CANVAS_PX;
-    const h = kw.boxH / CANVAS_PX;
+  items.forEach((kw, i) => {
+    const w = kw.boxW;
+    const h = kw.boxH;
 
     if (i === 0) {
       // 最大的放正中
-      placed.push({ cx: CENTER.x, cy: CENTER.y, w, h });
-      kw.x = CENTER.x;
-      kw.y = CENTER.y;
+      placed.push({ cx: CX, cy: CY, w, h });
+      kw.x = CX / W;
+      kw.y = CY / H;
       return;
     }
 
-    // 黄金角螺旋 + 步进半径碰撞
+    // Archimedean 螺旋：从中心出发按角度扫描
+    // 步长 b 设为这个词盒对角线的一部分
+    const diag = Math.sqrt(w * w + h * h) / 2;
+    const b = Math.max(diag * 0.25, 3); // 角度步进
     let found = false;
-    // 初始半径：大词的盒对角线 + 一点间隔
-    const minRadius = Math.sqrt(w * w + h * h) / 2 + 0.015;
-    let step = 0;
-    const maxSteps = 4000;
 
-    while (!found && step < maxSteps) {
-      // 黄金角螺旋：step 越大，半径也越大
-      // 半径按 sqrt(step) 增长（更均匀）
-      const r = minRadius + Math.sqrt(step) * 0.005;
-      const angle = step * GOLDEN_ANGLE;
-      const cx = CENTER.x + Math.cos(angle) * r * 1.0; // 椭圆 x 半径系数
-      const cy = CENTER.y + Math.sin(angle) * r * 0.85; // 椭圆 y 略扁
-
-      // 边界检查（留 2% 余量）
-      if (cx - w / 2 > 0.02 && cx + w / 2 < 0.98 &&
-          cy - h / 2 > 0.04 && cy + h / 2 < 0.96) {
-        if (!collides(cx, cy, w, h)) {
+    // 从第 1 圈开始（中心已被最大词占）
+    for (let ring = 1; ring < 200 && !found; ring++) {
+      // 椭圆半径：a 在 x 方向, bEll 在 y 方向
+      // 初始半径 = 0，到 ring 圈时半径 = ring * diag
+      const a = ring * diag * 1.0;
+      const bEll = ring * diag * (H / W);
+      // 这一圈的角度数：椭圆周长 / b 步长
+      // 椭圆近似周长 = π * [3(a+b) - sqrt((3a+b)(a+3b))]
+      const perim = Math.PI * (3 * (a + bEll) - Math.sqrt((3 * a + bEll) * (a + 3 * bEll)));
+      const steps = Math.max(Math.ceil(perim / b), 6);
+      for (let s = 0; s < steps && !found; s++) {
+        const theta = (s / steps) * 2 * Math.PI + ring * 0.7; // 每圈错开
+        const cx = CX + a * Math.cos(theta);
+        const cy = CY + bEll * Math.sin(theta);
+        if (inBounds(cx, cy, w, h) && !collides(cx, cy, w, h)) {
           placed.push({ cx, cy, w, h });
-          kw.x = cx;
-          kw.y = cy;
+          kw.x = cx / W;
+          kw.y = cy / H;
           found = true;
         }
       }
-      step++;
     }
 
     if (!found) {
-      // 实在放不下：放到右上角的小瀑布流区（不显示）
-      kw.x = 1.5;
-      kw.y = 1.5;
+      // 实在放不下：放到画布外不渲染
+      kw.x = -1;
+      kw.y = -1;
     }
   });
 
@@ -2911,9 +2921,8 @@ function renderKeywordCloud(container) {
     <div class="word-cloud">
       <div class="cloud-title">今日新媒体热词</div>
       <div class="cloud-canvas">
-        ${placed.map((_, i) => {
-          const p = measured[i];
-          if (p.x > 1 || p.x < 0) return '';
+        ${items.map(p => {
+          if (p.x < 0) return '';
           return `<span class="cloud-word" style="
             left: ${(p.x * 100).toFixed(2)}%;
             top: ${(p.y * 100).toFixed(2)}%;
