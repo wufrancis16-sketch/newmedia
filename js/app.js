@@ -2801,45 +2801,129 @@ function renderKeywordCloud(container) {
     ? KEYWORD_CLOUD_DATA
     : TRENDING_KEYWORDS_FALLBACK;
 
-  // 按权重降序，让最大的居中
+  // 按权重降序：最大的先放中心
   const sorted = [...trendingKeywords].sort((a, b) => b.weight - a.weight);
 
-  // 圆形布局：角度沿圆周分布 + 半径随权重变化（中心最大）
-  const N = sorted.length;
-  const placed = sorted.map((kw, i) => {
-    // 0~1 归一化位置（0 = 中心，1 = 最外圈）
-    const t = i / Math.max(N - 1, 1);
-    // 半径：从中心 0 到边缘 1（椭圆）
-    const radius = 0.15 + t * 0.85;
-    // 角度：从顶部开始螺旋展开（-90° 起）
-    const angle = -Math.PI / 2 + (i / N) * Math.PI * 2.3; // 2.3 圈让布局更紧凑
-    // 椭圆坐标
-    const x = 0.5 + Math.cos(angle) * radius * 0.45;
-    const y = 0.5 + Math.sin(angle) * radius * 0.45;
-    // 字号：权重 → 12~46px
-    const fontSize = 12 + (kw.weight / 100) * 34;
-    // 旋转：-45~45° 之间，让排版不死板
-    const rotation = ((i * 37) % 91) - 45; // 伪随机
-    // 字重：权重高更粗
+  // 先渲染到隐藏容器中测量每个词的真实渲染尺寸
+  const measureBox = document.createElement('div');
+  measureBox.style.cssText = 'position:absolute;visibility:hidden;left:-9999px;top:-9999px;white-space:nowrap;';
+  container.appendChild(measureBox);
+
+  const measured = sorted.map(kw => {
+    const span = document.createElement('span');
+    const fontSize = 14 + (kw.weight / 100) * 36; // 14 ~ 50px
     const fontWeight = kw.weight >= 80 ? 800 : kw.weight >= 50 ? 700 : 600;
+    span.style.cssText = `display:inline-block;font-size:${fontSize}px;font-weight:${fontWeight};padding:0 4px;line-height:1.2;`;
+    span.textContent = kw.text;
+    measureBox.appendChild(span);
+    const rect = span.getBoundingClientRect();
+    const w = rect.width;
+    const h = rect.height;
+    measureBox.removeChild(span);
+    // 字号/旋转
+    const rotation = ((sorted.indexOf(kw) * 53) % 81) - 40; // -40° ~ 40° 伪随机
+    // 旋转后包络（按最坏情况放大 ~1.3 倍）
+    const rotCos = Math.abs(Math.cos(rotation * Math.PI / 180));
+    const rotSin = Math.abs(Math.sin(rotation * Math.PI / 180));
+    const boxW = (w * rotCos + h * rotSin) + 6; // 留 6px 间距
+    const boxH = (w * rotSin + h * rotCos) + 6;
     // 颜色：单一蓝色调，深浅随权重
-    const lightness = 35 + (kw.weight / 100) * 25; // 35% ~ 60%
-    const color = `hsl(220, 90%, ${lightness}%)`;
-    return { ...kw, x, y, fontSize, rotation, fontWeight, color };
+    const lightness = 35 + (kw.weight / 100) * 25;
+    return { ...kw, fontSize, fontWeight, rotation, color: `hsl(220, 90%, ${lightness}%)`, boxW, boxH };
+  });
+  container.removeChild(measureBox);
+
+  // 黄金角螺旋 + 碰撞检测 布局
+  // 把最大词放中心，后面的词按黄金角 137.5° 螺旋往外铺，
+  // 同时检查与已放置词的矩形是否碰撞，碰撞则增加半径再试
+  const placed = []; // {cx, cy, w, h}
+  const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5)); // ≈ 137.5°
+
+  const collides = (cx, cy, w, h, pad = 2) => {
+    const halfW = w / 2 + pad;
+    const halfH = h / 2 + pad;
+    for (const p of placed) {
+      if (Math.abs(cx - p.cx) < halfW + p.w / 2 &&
+          Math.abs(cy - p.cy) < halfH + p.h / 2) {
+        return true;
+      }
+    }
+    return false;
+  };
+
+  // 第一步：先把最大权重的放在画布中心（中心可能放 1~3 个最大的）
+  // 中心只放 1 个最大的，避免遮挡
+  const CENTER = { x: 0.5, y: 0.5 };
+
+  measured.forEach((kw, i) => {
+    // 归一化盒尺寸（基于画布 width=1 的相对值）
+    // boxW/boxH 是像素值，画布宽度按经验 720px 计（aspect 4:3，max-height 480）
+    // 实际画布宽度随容器变化，所以用经验值；碰撞时用绝对像素按比例
+    // 这里采用相对坐标：以画布宽度 720px 为基准
+    const CANVAS_PX = 720;
+    const w = kw.boxW / CANVAS_PX;
+    const h = kw.boxH / CANVAS_PX;
+
+    if (i === 0) {
+      // 最大的放正中
+      placed.push({ cx: CENTER.x, cy: CENTER.y, w, h });
+      kw.x = CENTER.x;
+      kw.y = CENTER.y;
+      return;
+    }
+
+    // 黄金角螺旋 + 步进半径碰撞
+    let found = false;
+    // 初始半径：大词的盒对角线 + 一点间隔
+    const minRadius = Math.sqrt(w * w + h * h) / 2 + 0.015;
+    let step = 0;
+    const maxSteps = 4000;
+
+    while (!found && step < maxSteps) {
+      // 黄金角螺旋：step 越大，半径也越大
+      // 半径按 sqrt(step) 增长（更均匀）
+      const r = minRadius + Math.sqrt(step) * 0.005;
+      const angle = step * GOLDEN_ANGLE;
+      const cx = CENTER.x + Math.cos(angle) * r * 1.0; // 椭圆 x 半径系数
+      const cy = CENTER.y + Math.sin(angle) * r * 0.85; // 椭圆 y 略扁
+
+      // 边界检查（留 2% 余量）
+      if (cx - w / 2 > 0.02 && cx + w / 2 < 0.98 &&
+          cy - h / 2 > 0.04 && cy + h / 2 < 0.96) {
+        if (!collides(cx, cy, w, h)) {
+          placed.push({ cx, cy, w, h });
+          kw.x = cx;
+          kw.y = cy;
+          found = true;
+        }
+      }
+      step++;
+    }
+
+    if (!found) {
+      // 实在放不下：放到右上角的小瀑布流区（不显示）
+      kw.x = 1.5;
+      kw.y = 1.5;
+    }
   });
 
   container.innerHTML = `
     <div class="word-cloud">
       <div class="cloud-title">今日新媒体热词</div>
       <div class="cloud-canvas">
-        ${placed.map(p => `<span class="cloud-word" style="
-          left: ${(p.x * 100).toFixed(2)}%;
-          top: ${(p.y * 100).toFixed(2)}%;
-          font-size: ${p.fontSize.toFixed(1)}px;
-          font-weight: ${p.fontWeight};
-          color: ${p.color};
-          transform: translate(-50%, -50%) rotate(${p.rotation}deg);
-        ">${p.text}</span>`).join('')}
+        ${placed.map((_, i) => {
+          const p = measured[i];
+          if (p.x > 1 || p.x < 0) return '';
+          return `<span class="cloud-word" style="
+            left: ${(p.x * 100).toFixed(2)}%;
+            top: ${(p.y * 100).toFixed(2)}%;
+            font-size: ${p.fontSize.toFixed(1)}px;
+            font-weight: ${p.fontWeight};
+            color: ${p.color};
+            transform: translate(-50%, -50%) rotate(${p.rotation}deg);
+            --rot: ${p.rotation}deg;
+          ">${p.text}</span>`;
+        }).join('')}
       </div>
     </div>
   `;
