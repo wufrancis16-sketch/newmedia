@@ -41,6 +41,11 @@
         <span class="nav-label">公众号</span>
         <span class="nav-badge wx-badge" id="wxBadge">0</span>
       </a>
+      <a class="nav-item" data-platform="comments">
+        <span class="nav-icon">💬</span>
+        <span class="nav-label">评论区分析</span>
+        <span class="nav-tag">NEW</span>
+      </a>
 
       <div class="nav-section-title">工具</div>
       <a class="nav-item" data-platform="poster" onclick="window.open('/poster.html', '_blank')">
@@ -427,6 +432,31 @@
         <div class="platform-banner-stats" id="wxStats"></div>
       </div>
       <div class="content-list" id="wxList"></div>
+    </div>
+
+    <!-- Comment Analysis Page -->
+    <div class="page" id="page-comments">
+      <div class="page-header">
+        <div class="page-header-left">
+          <h1>💬 小红书评论区分析</h1>
+          <p>每日自动分析热门帖子评论区，洞察用户真实需求与行业趋势</p>
+        </div>
+        <div class="page-header-actions">
+          <div class="date-badge" id="commentDate">📅 今日分析</div>
+        </div>
+      </div>
+
+      <!-- 汇总面板 -->
+      <div class="comment-summary-panel" id="commentSummaryPanel"></div>
+
+      <!-- 关键词筛选 -->
+      <div class="comment-filter-bar" id="commentFilterBar"></div>
+
+      <!-- 帖子分析卡片列表（内含AI生成文案） -->
+      <div class="comment-posts-grid" id="commentPostsGrid"></div>
+
+      <!-- 历史趋势 -->
+      <div class="comment-history-section" id="commentHistorySection"></div>
     </div>
 
     <!-- Topic Recommendations Page -->
