@@ -3804,7 +3804,7 @@ async function loadCommentAnalysisFromAPI() {
   }
   // API 不可用（如 CloudStudio 静态部署），尝试直接加载 JSON 文件
   try {
-    const resp = await fetch('/data/xhs-comment-analysis.json');
+    const resp = await fetch('data/xhs-comment-analysis.json');
     const data = await resp.json();
     if (data && data.posts && data.posts.length) {
       commentAnalysisCache = data;
