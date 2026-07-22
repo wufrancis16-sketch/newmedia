@@ -3948,7 +3948,13 @@ function renderPostCard(post, idx, data) {
   var intents = post.intent_distribution || {};
   var competitors = post.competitor_mentions || {};
   var pains = post.pain_points || {};
-  var repComments = post.representative_comments || [];
+  var repComments = (post.representative_comments || []).filter(function(c) {
+    if (!c || typeof c !== 'string') return false;
+    var t = c.trim();
+    if (t.length < 2) return false;
+    if (/^[\d\s]+$/.test(t)) return false;
+    return true;
+  });
   var suggestions = post.content_suggestions || [];
 
   // 行业分布
