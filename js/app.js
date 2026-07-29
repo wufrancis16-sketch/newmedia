@@ -2331,7 +2331,7 @@ function renderKeywordCloud(container) {
 
   container.innerHTML = `
     <div class="word-cloud">
-      <div class="cloud-title">今日微博热搜词云</div>
+      <div class="cloud-title">今日爆款热词</div>
       <div class="cloud-canvas">
         ${items.map(p => {
           if (p.x < 0) return '';
