@@ -2438,56 +2438,37 @@ function renderKeywordCloud(container) {
 // 概览页渲染
 // ============================================================
 function renderOverview() {
-  const grid = document.getElementById('statsGrid');
   const previews = document.getElementById('platformPreviews');
-  if (!grid || !previews) return;
+  if (!previews) return;
 
-  // 渲染问候语
+  // 清理上一次搜索残留
+  const grid = document.getElementById('statsGrid');
+  if (grid) { grid.innerHTML = ''; grid.style.display = 'none'; }
+
   renderGreeting();
 
-  // 渲染趋势分析
-  renderTrendingContent();
+  // 数据新鲜度
+  const upd = document.getElementById('dataUpdateDate');
+  const fresh = document.getElementById('dataFreshness');
+  if (fresh && upd && upd.textContent) fresh.textContent = upd.textContent.trim();
 
+  // 今日追踪总量
   const platforms = getAllPlatforms();
-  const icons = { xiaohongshu: '📕', douyin: '🎵', wechat: '💬' };
-  const iconCls = { xiaohongshu: 'xhs', douyin: 'dy', wechat: 'wx' };
-  const trendColors = { xiaohongshu: '#FF2442', douyin: '#7C3AED', wechat: '#07C160' };
-  const trends = [23, 18, 12];
+  let total = 0;
+  platforms.forEach(k => { const d = getPlatformData(k); if (d) total += d.items.length; });
+  const totalEl = document.getElementById('wbTotalCount');
+  if (totalEl) totalEl.textContent = total;
 
-  // Stats cards
-  grid.innerHTML = platforms.map((k, i) => {
-    const data = getPlatformData(k);
-    if (!data) return '';
-    return `
-      <div class="stat-card">
-        <div class="stat-card-header">
-          <div class="stat-card-icon">
-            <div class="icon ${iconCls[k]}">${icons[k]}</div>
-            <span class="name">${data.platformName}</span>
-          </div>
-          <span class="stat-card-trend" style="color:${trendColors[k]};">↑ ${trends[i]}%</span>
-        </div>
-        <div class="stat-card-value">${data.items.length}</div>
-        <div class="stat-card-label">热门内容</div>
-        <div class="stat-card-footer">
-          <span class="change">较昨日新增 <span style="color:${trendColors[k]};font-weight:600;">${Math.floor(data.items.length * 0.18)}</span> 条</span>
-          <div class="mini-chart" id="miniChart${i}"></div>
-        </div>
-      </div>`;
-  }).join('');
+  // 快捷工具
+  renderQuickTools();
 
-  // Mini charts
-  setTimeout(() => {
-    renderMiniChart('miniChart0', [65, 72, 85, 78, 82, 90, 85], 'xhs');
-    renderMiniChart('miniChart1', [50, 58, 70, 62, 68, 75, 70], 'dy');
-    renderMiniChart('miniChart2', [35, 42, 55, 48, 52, 58, 55], 'wx');
-  }, 100);
-
-  // Content Analysis
+  // 趋势分析 + 爆款分析
+  renderTrendingContent();
   renderContentAnalysis();
 
-  // Content previews
-  const labels = { xiaohongshu: '小红书热门内容', douyin: '抖音热门内容', wechat: '公众号热门内容' };
+  // 平台预览
+  const icons = { xiaohongshu: '📕', douyin: '🎵', wechat: '💬' };
+  const labels = { xiaohongshu: '小红书热门', douyin: '抖音热门', wechat: '公众号热门' };
   previews.innerHTML = platforms.map(k => {
     const data = getPlatformData(k);
     if (!data) return '';
@@ -2498,9 +2479,9 @@ function renderOverview() {
             <span class="dot ${k === 'xiaohongshu' ? 'xhs' : k === 'douyin' ? 'dy' : 'wx'}"></span>
             ${labels[k]}
           </div>
-          <span class="content-column-count" style="cursor:pointer;color:#7C3AED;" onclick="switchPage('${k}')">${data.items.length}条 > 查看更多</span>
+          <span class="content-column-count" style="cursor:pointer;color:var(--primary);" onclick="switchPage('${k}')">${data.items.length} 条 ›</span>
         </div>
-        ${data.items.slice(0, 5).map(item => {
+        ${data.items.slice(0, 4).map(item => {
           const clickUrl = getItemUrl(k, item);
           return `
           <div class="content-item" onclick="window.open('${clickUrl}','_blank')">
@@ -2518,7 +2499,26 @@ function renderOverview() {
   }).join('');
 }
 
-// ============================================================
+function renderQuickTools() {
+  const el = document.getElementById('wbTools');
+  if (!el) return;
+  const tools = [
+    { icon: '🧭', name: '选题方向', desc: '基于热点智能推荐今日选题', platform: 'analytics' },
+    { icon: '📝', name: '标题推荐', desc: '爆款公式生成吸睛标题', platform: 'titles' },
+    { icon: '✍️', name: '文案生成', desc: '输入产品一键生成推广文案', platform: 'copywriter' },
+    { icon: '🎨', name: '海报生成', desc: '3:4 营销海报快速出图', platform: 'poster', external: true }
+  ];
+  el.innerHTML = tools.map(t => `
+    <div class="wb-tool" ${t.external ? "onclick=\"window.open('poster.html','_blank')\"" : `onclick="switchPage('${t.platform}')"`}>
+      <div class="wb-tool-icon">${t.icon}</div>
+      <div class="wb-tool-body">
+        <div class="wb-tool-name">${t.name}</div>
+        <div class="wb-tool-desc">${t.desc}</div>
+      </div>
+      <div class="wb-tool-arrow">›</div>
+    </div>`).join('');
+}
+
 // 平台页面渲染
 // ============================================================
 function renderPlatform(platform) {
@@ -2624,6 +2624,7 @@ function showSearchResults(results, query) {
   const grid = document.getElementById('statsGrid');
   const previews = document.getElementById('platformPreviews');
 
+  grid.style.display = 'block';
   grid.innerHTML = `
     <div class="stat-card" style="grid-column:1/-1;text-align:center;padding:32px;">
       <div class="stat-card-label">搜索 "${query}"</div>

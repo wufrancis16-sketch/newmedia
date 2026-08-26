@@ -5,74 +5,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>新媒体数据平台</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/redesign.css">
 </head>
 <body>
 
   <!-- Sidebar -->
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-header">
-      <div class="logo">
-        <div class="logo-icon">H</div>
-        <div>
-          <div class="logo-text">AI新媒体平台</div>
-          <div class="logo-sub">智能内容聚合与分析</div>
+      <div class="brand">
+        <div class="brand-mark">新</div>
+        <div class="brand-text">
+          <div class="brand-name">新媒体工作台</div>
+          <div class="brand-sub">财务垂直 · 内容增长</div>
         </div>
       </div>
     </div>
 
     <nav class="sidebar-nav">
-      <div class="nav-section-title">数据平台</div>
       <a class="nav-item active" data-platform="all">
-        <span class="nav-icon">🏠</span>
-        <span class="nav-label">数据概览</span>
-      </a>
-      <a class="nav-item" data-platform="xiaohongshu">
-        <span class="nav-icon xhs-icon">📕</span>
-        <span class="nav-label">小红书</span>
-        <span class="nav-badge xhs-badge" id="xhsBadge">0</span>
-      </a>
-      <a class="nav-item" data-platform="douyin">
-        <span class="nav-icon dy-icon">🎵</span>
-        <span class="nav-label">抖音</span>
-        <span class="nav-badge dy-badge" id="dyBadge">0</span>
-      </a>
-      <a class="nav-item" data-platform="wechat">
-        <span class="nav-icon wx-icon">💬</span>
-        <span class="nav-label">公众号</span>
-        <span class="nav-badge wx-badge" id="wxBadge">0</span>
-      </a>
-      <a class="nav-item" data-platform="comments">
-        <span class="nav-icon">💬</span>
-        <span class="nav-label">评论区分析</span>
-        <span class="nav-tag">NEW</span>
+        <span class="nav-ico">▦</span>
+        <span class="nav-label">工作台</span>
       </a>
 
-      <div class="nav-section-title">工具</div>
-      <a class="nav-item" data-platform="poster" onclick="window.open('poster.html', '_blank')">
-        <span class="nav-icon">🎨</span>
-        <span class="nav-label">海报生成</span>
+      <div class="nav-group">数据洞察</div>
+      <a class="nav-item" data-platform="xiaohongshu">
+        <span class="nav-ico">📕</span>
+        <span class="nav-label">小红书</span>
+        <span class="nav-badge" id="xhsBadge">0</span>
       </a>
+      <a class="nav-item" data-platform="douyin">
+        <span class="nav-ico">🎵</span>
+        <span class="nav-label">抖音</span>
+        <span class="nav-badge" id="dyBadge">0</span>
+      </a>
+      <a class="nav-item" data-platform="wechat">
+        <span class="nav-ico">💬</span>
+        <span class="nav-label">公众号</span>
+        <span class="nav-badge" id="wxBadge">0</span>
+      </a>
+      <a class="nav-item" data-platform="comments">
+        <span class="nav-ico">💡</span>
+        <span class="nav-label">评论区分析</span>
+      </a>
+
+      <div class="nav-group">选题工厂</div>
       <a class="nav-item" data-platform="analytics" onclick="switchPage('analytics')">
-        <span class="nav-icon">💡</span>
+        <span class="nav-ico">🧭</span>
         <span class="nav-label">选题方向</span>
-        <span class="nav-tag">NEW</span>
       </a>
       <a class="nav-item" data-platform="titles" onclick="switchPage('titles')">
-        <span class="nav-icon">📝</span>
+        <span class="nav-ico">📝</span>
         <span class="nav-label">标题推荐</span>
-        <span class="nav-tag">NEW</span>
       </a>
+
+      <div class="nav-group">内容创作</div>
       <a class="nav-item" data-platform="copywriter" onclick="switchPage('copywriter')">
-        <span class="nav-icon">✍️</span>
+        <span class="nav-ico">✍️</span>
         <span class="nav-label">文案生成</span>
-        <span class="nav-tag">NEW</span>
+      </a>
+      <a class="nav-item" data-platform="poster" onclick="window.open('poster.html','_blank')">
+        <span class="nav-ico">🎨</span>
+        <span class="nav-label">海报生成</span>
       </a>
     </nav>
 
     <div class="sidebar-footer">
-      <div class="membership-info">
-        <div class="membership-label">数据更新</div>
-        <div class="membership-date" id="dataUpdateDate">2026-06-01</div>
+      <div class="freshness-pill">
+        <span class="freshness-dot"></span>
+        更新于 <span id="dataUpdateDate">2026-06-01</span>
       </div>
     </div>
   </aside>
@@ -309,19 +309,28 @@
     </div>
 
     <!-- Overview Page -->
+    <!-- 工作台主页 -->
     <div class="page active" id="page-all">
+      <div id="statsGrid" style="display:none;"></div>
 
-      <!-- Greeting Section -->
-      <div class="greeting-section" id="greetingSection">
-        <div class="greeting-content">
-          <h2 class="greeting-title" id="greetingTitle">👋 你好，小白WU</h2>
-          <p class="greeting-subtitle" id="greetingSubtitle">今天是 2026年6月5日，AI 正在为你捕捉全网热点</p>
+      <!-- Hero -->
+      <section class="wb-hero">
+        <div class="wb-hero-left">
+          <h1 class="wb-hero-title" id="greetingTitle">你好，小白WU</h1>
+          <p class="wb-hero-sub" id="greetingSubtitle"></p>
+          <div class="wb-hero-metric">
+            <span class="wb-hero-num" id="wbTotalCount">0</span>
+            <span class="wb-hero-unit">条内容 · 今日跨平台追踪</span>
+          </div>
         </div>
-        <div class="greeting-actions">
+        <div class="wb-hero-right">
+          <div class="wb-freshness">
+            <span class="freshness-dot"></span>
+            数据更新于 <strong id="dataFreshness">—</strong>
+          </div>
           <div class="date-picker-wrap">
-            <div class="date-badge" id="dateBadge" onclick="toggleDatePicker()">
+            <div class="wb-date" id="dateBadge" onclick="toggleDatePicker()">
               📅 <span id="dateRangeText">近 7 天</span>
-              <span style="margin-left:4px;">📆</span>
             </div>
             <div class="date-picker-dropdown" id="datePickerDropdown">
               <div class="date-picker-header">
@@ -349,50 +358,50 @@
               </div>
             </div>
           </div>
-          <button class="btn-icon" onclick="location.reload()">↻</button>
         </div>
-      </div>
+      </section>
 
-      <!-- Stats Cards -->
-      <div class="stats-grid" id="statsGrid"></div>
+      <!-- 创作流水线 -->
+      <section class="wb-section">
+        <div class="wb-section-head">
+          <h2 class="wb-section-title">创作流水线</h2>
+          <span class="wb-section-hint">从洞察到成稿，一步到位</span>
+        </div>
+        <div class="wb-tools" id="wbTools"></div>
+      </section>
 
-      <!-- Trending Analysis -->
-      <div class="trending-section">
-        <div class="trending-header">
-          <div class="trending-title">
-            <span class="trending-icon">📊</span>
-            <span>趋势分析</span>
+      <!-- 趋势 + 爆款 -->
+      <div class="wb-grid">
+        <section class="wb-section wb-card">
+          <div class="wb-section-head">
+            <h2 class="wb-section-title">趋势分析</h2>
           </div>
           <div class="trending-tabs">
             <button class="trending-tab active" data-tab="keyword">关键词云</button>
             <button class="trending-tab" data-tab="hot">热度趋势</button>
             <button class="trending-tab" data-tab="platform">平台分布</button>
           </div>
-        </div>
-        <div class="trending-content" id="trendingContent"></div>
-      </div>
+          <div id="trendingContent"></div>
+        </section>
 
-      <!-- Content Analysis Section -->
-      <div class="charts-section">
-        <div class="chart-card" style="grid-column: 1 / -1;">
-          <div class="chart-card-header">
-            <div class="chart-card-title">🔥 爆款内容分析</div>
-            <div class="chart-card-filter">AI 智能分析</div>
+        <section class="wb-section wb-card">
+          <div class="wb-section-head">
+            <h2 class="wb-section-title">爆款内容分析</h2>
+            <span class="wb-section-hint">AI 智能洞察</span>
           </div>
           <div id="contentAnalysis"></div>
-        </div>
+        </section>
       </div>
 
-      <!-- Content Preview -->
-      <div class="content-section">
-        <div class="content-section-header">
-          <div class="content-section-title">平台热门内容</div>
-          <a class="content-section-link" onclick="switchPage('all')">查看更多 →</a>
+      <!-- 平台热门 -->
+      <section class="wb-section">
+        <div class="wb-section-head">
+          <h2 class="wb-section-title">各平台热门内容</h2>
+          <a class="wb-section-link" onclick="switchPage('xiaohongshu')">查看全部 ›</a>
         </div>
         <div class="content-columns" id="platformPreviews"></div>
-      </div>
+      </section>
     </div>
-
     <!-- Xiaohongshu Page -->
     <div class="page" id="page-xiaohongshu">
       <div class="platform-banner xhs-bg">
