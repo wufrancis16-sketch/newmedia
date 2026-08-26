@@ -2193,21 +2193,21 @@ function renderHotTrend(container) {
   const wxData = getPlatformData('wechat');
   
   container.innerHTML = `
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
-      <div style="text-align: center; padding: 20px; background: var(--bg); border-radius: 10px;">
-        <div style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">📕 小红书</div>
-        <div style="font-size: 28px; font-weight: 700; color: #FF2442;">${xhsData ? xhsData.items.length : 0}</div>
-        <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">内容总量</div>
+    <div class="wb-trend-mini">
+      <div class="wb-trend-card">
+        <div class="label">📕 小红书</div>
+        <div class="num" style="color:#FF2442;">${xhsData ? xhsData.items.length : 0}</div>
+        <div class="hint">内容总量</div>
       </div>
-      <div style="text-align: center; padding: 20px; background: var(--bg); border-radius: 10px;">
-        <div style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">🎵 抖音</div>
-        <div style="font-size: 28px; font-weight: 700; color: #7C3AED;">${dyData ? dyData.items.length : 0}</div>
-        <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">内容总量</div>
+      <div class="wb-trend-card">
+        <div class="label">🎵 抖音</div>
+        <div class="num" style="color:#7C3AED;">${dyData ? dyData.items.length : 0}</div>
+        <div class="hint">内容总量</div>
       </div>
-      <div style="text-align: center; padding: 20px; background: var(--bg); border-radius: 10px;">
-        <div style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">💬 公众号</div>
-        <div style="font-size: 28px; font-weight: 700; color: #07C160;">${wxData ? wxData.items.length : 0}</div>
-        <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">内容总量</div>
+      <div class="wb-trend-card">
+        <div class="label">💬 公众号</div>
+        <div class="num" style="color:#07C160;">${wxData ? wxData.items.length : 0}</div>
+        <div class="hint">内容总量</div>
       </div>
     </div>
   `;
@@ -2240,17 +2240,15 @@ function renderPlatformDist(container) {
   const total = xhsCount + dyCount + wxCount;
   
   container.innerHTML = `
-    <div style="padding: 20px 0;">
-      <div style="display: flex; height: 24px; border-radius: 12px; overflow: hidden; margin-bottom: 20px;">
-        <div style="width: ${total > 0 ? (xhsCount/total*100) : 33}%; background: #FF2442;"></div>
-        <div style="width: ${total > 0 ? (dyCount/total*100) : 33}%; background: #7C3AED;"></div>
-        <div style="width: ${total > 0 ? (wxCount/total*100) : 34}%; background: #07C160;"></div>
-      </div>
-      <div style="display: flex; justify-content: center; gap: 30px; font-size: 13px;">
-        <span style="display: flex; align-items: center; gap: 6px;"><span style="width: 12px; height: 12px; background: #FF2442; border-radius: 3px;"></span>小红书 ${xhsCount}条 (${total > 0 ? Math.round(xhsCount/total*100) : 33}%)</span>
-        <span style="display: flex; align-items: center; gap: 6px;"><span style="width: 12px; height: 12px; background: #7C3AED; border-radius: 3px;"></span>抖音 ${dyCount}条 (${total > 0 ? Math.round(dyCount/total*100) : 33}%)</span>
-        <span style="display: flex; align-items: center; gap: 6px;"><span style="width: 12px; height: 12px; background: #07C160; border-radius: 3px;"></span>公众号 ${wxCount}条 (${total > 0 ? Math.round(wxCount/total*100) : 34}%)</span>
-      </div>
+    <div class="wb-dist-bar">
+      <div style="width: ${total > 0 ? (xhsCount/total*100) : 33}%; background: #FF2442;"></div>
+      <div style="width: ${total > 0 ? (dyCount/total*100) : 33}%; background: #7C3AED;"></div>
+      <div style="width: ${total > 0 ? (wxCount/total*100) : 34}%; background: #07C160;"></div>
+    </div>
+    <div class="wb-dist-legend">
+      <span><span class="wb-dist-dot" style="background:#FF2442;"></span>小红书 ${xhsCount}条 (${total > 0 ? Math.round(xhsCount/total*100) : 33}%)</span>
+      <span><span class="wb-dist-dot" style="background:#7C3AED;"></span>抖音 ${dyCount}条 (${total > 0 ? Math.round(dyCount/total*100) : 33}%)</span>
+      <span><span class="wb-dist-dot" style="background:#07C160;"></span>公众号 ${wxCount}条 (${total > 0 ? Math.round(wxCount/total*100) : 34}%)</span>
     </div>
   `;
 }
@@ -2302,20 +2300,20 @@ function renderKeywordCloud(container) {
 
   // 字号/字重/旋转先算好
   const items = sorted.map((kw, i) => {
-    const fontSize = 16 + (kw.weight / 100) * 32; // 16 ~ 48px
+    const fontSize = 14 + (kw.weight / 100) * 26; // 14 ~ 40px
     const fontWeight = kw.weight >= 80 ? 800 : kw.weight >= 50 ? 700 : 600;
-    const rotation = ((i * 53) % 71) - 35; // -35° ~ 35° 伪随机
-    const lightness = 35 + (kw.weight / 100) * 25;
-    return { ...kw, fontSize, fontWeight, rotation, color: `hsl(220, 90%, ${lightness}%)` };
+    const rotation = ((i * 47) % 41) - 20; // -20° ~ 20° 伪随机
+    const lightness = 36 + (kw.weight / 100) * 22; // 36% ~ 58%
+    return { ...kw, fontSize, fontWeight, rotation, color: `hsl(220, 72%, ${lightness}%)` };
   });
 
   // 画布用固定像素坐标系做布局（最后用百分比输出）
   // 实际画布：宽 = W, 高 = H，使用接近实际的 2:1 宽高比以匹配 max-height 限制
   const W = 1000;
-  const H = 500;
+  const H = 400;
   const CX = W / 2;
   const CY = H / 2;
-  const PAD = 6; // 词与词之间的最小像素间距
+  const PAD = 3; // 词与词之间的最小像素间距（更紧凑）
 
   // 在 measureBox 里测每个词的真实像素尺寸（按画布 CSS 像素）
   const measureBox = document.createElement('div');
@@ -2413,9 +2411,13 @@ function renderKeywordCloud(container) {
     }
   });
 
+  const nowStr = new Date().toLocaleString('zh-CN', { month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' }).replace(/\//g, '-');
   container.innerHTML = `
-    <div class="word-cloud">
-      <div class="cloud-title">今日爆款热词</div>
+    <div class="wb-keyword-cloud">
+      <div class="cloud-hd">
+        <span class="cloud-hd-title">今日爆款热词</span>
+        <span class="cloud-hd-pill">微博热搜</span>
+      </div>
       <div class="cloud-canvas">
         ${items.map(p => {
           if (p.x < 0) return '';
@@ -2429,6 +2431,10 @@ function renderKeywordCloud(container) {
             --rot: ${p.rotation}deg;
           ">${p.text}</span>`;
         }).join('')}
+      </div>
+      <div class="cloud-ft">
+        <span class="cloud-ft-dot"></span>
+        <span>数据来源：微博热搜 · 更新于 ${nowStr}</span>
       </div>
     </div>
   `;
