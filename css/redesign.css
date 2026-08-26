@@ -153,28 +153,27 @@
 .cloud-canvas {
   position: relative;
   width: 100%;
-  aspect-ratio: 2.5 / 1;
-  min-height: 170px;
-  max-height: 240px;
-  padding: 2px;
-  background: transparent;
-  border: 1px dashed var(--border);
-  border-radius: 10px;
+  height: 260px;
+  padding: 14px 16px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
   overflow: hidden;
 }
 .cloud-word {
   text-shadow: none;
   letter-spacing: 0;
-  line-height: 1.05;
+  line-height: 1.1;
+  white-space: nowrap;
   transition: transform .2s ease, filter .2s ease;
 }
 .cloud-word:hover {
-  transform: translate(-50%, -50%) rotate(var(--rot, 0deg)) scale(1.12) !important;
-  filter: brightness(1.08);
+  transform: translate(-50%, -50%) scale(1.1) !important;
+  filter: brightness(1.05);
   z-index: 10;
 }
 .cloud-ft {
-  margin-top: 10px;
+  margin-top: 14px;
   display: flex; align-items: center; gap: 6px;
   font-size: 11px; color: var(--text-muted);
 }
@@ -182,6 +181,90 @@
   width: 6px; height: 6px; border-radius: 50%;
   background: #10B981;
   box-shadow: 0 0 0 2px rgba(16,185,129,.15);
+}
+
+/* Top 热词榜单：填充词云下方空白 */
+.cloud-rank {
+  margin-top: 16px;
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+}
+.cloud-rank-hd {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.cloud-rank-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+}
+.cloud-rank-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+.cloud-rank-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px 18px;
+}
+.cloud-rank-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+.cloud-rank-no {
+  width: 18px;
+  height: 18px;
+  display: grid;
+  place-items: center;
+  border-radius: 5px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+.cloud-rank-no.top {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+.cloud-rank-text {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.cloud-rank-bar-wrap {
+  width: 72px;
+  height: 5px;
+  background: var(--bg);
+  border-radius: 3px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.cloud-rank-bar {
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--primary), #8B5CF6);
+}
+.cloud-rank-val {
+  width: 28px;
+  text-align: right;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text);
+  flex-shrink: 0;
+}
+@media (max-width: 640px) {
+  .cloud-rank-list { grid-template-columns: 1fr; }
+  .cloud-canvas { height: 220px; }
 }
 
 /* 热度趋势 mini */

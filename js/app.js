@@ -2298,22 +2298,26 @@ function renderKeywordCloud(container) {
   // 按权重降序：最大的先放中心
   const sorted = [...trendingKeywords].sort((a, b) => b.weight - a.weight);
 
-  // 字号/字重/旋转先算好
-  const items = sorted.map((kw, i) => {
-    const fontSize = 14 + (kw.weight / 100) * 26; // 14 ~ 40px
-    const fontWeight = kw.weight >= 80 ? 800 : kw.weight >= 50 ? 700 : 600;
-    const rotation = ((i * 47) % 41) - 20; // -20° ~ 20° 伪随机
-    const lightness = 36 + (kw.weight / 100) * 22; // 36% ~ 58%
-    return { ...kw, fontSize, fontWeight, rotation, color: `hsl(220, 72%, ${lightness}%)` };
+  // 词云只展示前 25 个，避免过度拥挤；剩余进入榜单
+  const cloudItemsRaw = sorted.slice(0, 25);
+  const rankItems = sorted.slice(0, 10);
+
+  // 字号/字重/颜色先算好；**取消旋转**，保证可读性
+  const items = cloudItemsRaw.map((kw, i) => {
+    const fontSize = 13 + (kw.weight / 100) * 22; // 13 ~ 35px，更克制
+    const fontWeight = kw.weight >= 80 ? 800 : kw.weight >= 55 ? 700 : 600;
+    const rotation = 0; // 不再旋转，避免重叠看不清
+    const lightness = 32 + (kw.weight / 100) * 24; // 32% ~ 56%
+    return { ...kw, fontSize, fontWeight, rotation, color: `hsl(220, 76%, ${lightness}%)` };
   });
 
   // 画布用固定像素坐标系做布局（最后用百分比输出）
-  // 实际画布：宽 = W, 高 = H，使用接近实际的 2:1 宽高比以匹配 max-height 限制
+  // 实际画布：宽 = W, 高 = H，使用 2:1 宽高比匹配 CSS 固定高度
   const W = 1000;
-  const H = 400;
+  const H = 500;
   const CX = W / 2;
   const CY = H / 2;
-  const PAD = 3; // 词与词之间的最小像素间距（更紧凑）
+  const PAD = 14; // 词与词之间保持足够间距，宁可少显示也要看得清
 
   // 在 measureBox 里测每个词的真实像素尺寸（按画布 CSS 像素）
   const measureBox = document.createElement('div');
@@ -2329,16 +2333,11 @@ function renderKeywordCloud(container) {
     const w = r.width;
     const h = r.height;
     measureBox.removeChild(span);
-    // 旋转后外接矩形（用更精确的旋转公式）
-    const rad = kw.rotation * Math.PI / 180;
-    const cos = Math.abs(Math.cos(rad));
-    const sin = Math.abs(Math.sin(rad));
-    const boxW = w * cos + h * sin + PAD * 2;
-    const boxH = w * sin + h * cos + PAD * 2;
+    // 不旋转，直接用文字外接矩形 + 间距
     kw.pxW = w;
     kw.pxH = h;
-    kw.boxW = boxW;
-    kw.boxH = boxH;
+    kw.boxW = w + PAD * 2;
+    kw.boxH = h + PAD * 2;
   });
   container.removeChild(measureBox);
 
@@ -2359,8 +2358,10 @@ function renderKeywordCloud(container) {
   };
 
   const inBounds = (cx, cy, w, h) => {
-    return cx - w / 2 > 0 && cx + w / 2 < W &&
-           cy - h / 2 > 10 && cy + h / 2 < H - 10;
+    // 留出 CSS padding 对应的边距，防止贴边被截断
+    const M = 28;
+    return cx - w / 2 > M && cx + w / 2 < W - M &&
+           cy - h / 2 > M && cy + h / 2 < H - M;
   };
 
   items.forEach((kw, i) => {
@@ -2412,6 +2413,7 @@ function renderKeywordCloud(container) {
   });
 
   const nowStr = new Date().toLocaleString('zh-CN', { month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' }).replace(/\//g, '-');
+  const maxWeight = Math.max(...rankItems.map(k => k.weight), 1);
   container.innerHTML = `
     <div class="wb-keyword-cloud">
       <div class="cloud-hd">
@@ -2427,14 +2429,32 @@ function renderKeywordCloud(container) {
             font-size: ${p.fontSize.toFixed(1)}px;
             font-weight: ${p.fontWeight};
             color: ${p.color};
-            transform: translate(-50%, -50%) rotate(${p.rotation}deg);
-            --rot: ${p.rotation}deg;
+            transform: translate(-50%, -50%);
           ">${p.text}</span>`;
         }).join('')}
       </div>
       <div class="cloud-ft">
         <span class="cloud-ft-dot"></span>
         <span>数据来源：微博热搜 · 更新于 ${nowStr}</span>
+      </div>
+      <div class="cloud-rank">
+        <div class="cloud-rank-hd">
+          <span class="cloud-rank-title">Top 10 热词榜单</span>
+          <span class="cloud-rank-sub">按出现权重排序</span>
+        </div>
+        <div class="cloud-rank-list">
+          ${rankItems.map((k, i) => {
+            const pct = Math.round((k.weight / maxWeight) * 100);
+            return `
+              <div class="cloud-rank-item">
+                <span class="cloud-rank-no ${i < 3 ? 'top' : ''}">${i + 1}</span>
+                <span class="cloud-rank-text" title="${k.text}">${k.text}</span>
+                <span class="cloud-rank-bar-wrap"><span class="cloud-rank-bar" style="width: ${pct}%"></span></span>
+                <span class="cloud-rank-val">${k.weight}</span>
+              </div>
+            `;
+          }).join('')}
+        </div>
       </div>
     </div>
   `;
