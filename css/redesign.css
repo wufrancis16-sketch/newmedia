@@ -48,17 +48,20 @@
   display: flex; align-items: center; gap: 7px;
   font-size: 12px; color: var(--text-secondary);
   background: var(--bg-card); border: 1px solid var(--border);
-  padding: 7px 13px; border-radius: 999px;
+  padding: 7px 13px; border-radius: 999px; cursor: pointer;
 }
 .freshness-dot {
   width: 8px; height: 8px; border-radius: 50%; background: #10B981;
   box-shadow: 0 0 0 3px rgba(16,185,129,.16);
 }
-.wb-date {
-  font-size: 13px; color: var(--text); background: var(--bg-card);
-  border: 1px solid var(--border); padding: 7px 13px; border-radius: 999px; cursor: pointer;
+.wb-refresh-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 13px; font-weight: 600; color: #fff; background: var(--primary);
+  border: 1px solid var(--primary); padding: 7px 14px; border-radius: 999px;
+  cursor: pointer; transition: all .18s ease; font-family: inherit;
 }
-.wb-date:hover { border-color: var(--primary-light); }
+.wb-refresh-btn:hover { background: var(--primary-hover); transform: translateY(-1px); }
+.wb-refresh-btn:active { transform: translateY(0); }
 
 /* ---------- 区块通用 ---------- */
 .wb-section { margin-bottom: 26px; }

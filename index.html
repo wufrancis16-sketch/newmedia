@@ -324,40 +324,13 @@
           </div>
         </div>
         <div class="wb-hero-right">
-          <div class="wb-freshness">
+          <div class="wb-freshness" title="点击刷新数据" onclick="refreshData()">
             <span class="freshness-dot"></span>
             数据更新于 <strong id="dataFreshness">—</strong>
           </div>
-          <div class="date-picker-wrap">
-            <div class="wb-date" id="dateBadge" onclick="toggleDatePicker()">
-              📅 <span id="dateRangeText">近 7 天</span>
-            </div>
-            <div class="date-picker-dropdown" id="datePickerDropdown">
-              <div class="date-picker-header">
-                <span class="date-picker-title">选择日期范围</span>
-              </div>
-              <div class="date-picker-presets">
-                <button class="preset-btn active" onclick="setDateRange('7d')">近7天</button>
-                <button class="preset-btn" onclick="setDateRange('30d')">近30天</button>
-                <button class="preset-btn" onclick="setDateRange('90d')">近90天</button>
-                <button class="preset-btn" onclick="setDateRange('all')">全部</button>
-              </div>
-              <div class="date-picker-custom">
-                <div class="date-input-group">
-                  <label>开始日期</label>
-                  <input type="date" id="startDate" onchange="updateCustomRange()">
-                </div>
-                <div class="date-input-group">
-                  <label>结束日期</label>
-                  <input type="date" id="endDate" onchange="updateCustomRange()">
-                </div>
-              </div>
-              <div class="date-picker-footer">
-                <button class="btn-secondary" onclick="toggleDatePicker()">取消</button>
-                <button class="btn-primary" onclick="applyDateRange()">确定</button>
-              </div>
-            </div>
-          </div>
+          <button class="wb-refresh-btn" id="refreshDataBtn" onclick="refreshData()">
+            🔄 刷新数据
+          </button>
         </div>
       </section>
 

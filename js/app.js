@@ -2770,7 +2770,14 @@ function renderOverview() {
   // 数据新鲜度
   const upd = document.getElementById('dataUpdateDate');
   const fresh = document.getElementById('dataFreshness');
-  if (fresh && upd && upd.textContent) fresh.textContent = upd.textContent.trim();
+  if (fresh) {
+    const now = new Date();
+    const dateStr = upd && upd.textContent.trim()
+      ? upd.textContent.trim()
+      : `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+    const timeStr = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+    fresh.textContent = `${dateStr} ${timeStr}`;
+  }
 
   // 今日追踪总量
   const platforms = getAllPlatforms();
@@ -3208,6 +3215,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // 设置数据更新日期（必须在 renderOverview 之前，确保 freshness 显示正确）
+  const updateDateEl = document.getElementById('dataUpdateDate');
+  if (updateDateEl) {
+    const now = new Date();
+    const dateStr = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
+    updateDateEl.textContent = dateStr;
+  }
+
   // 根据 sessionStorage 或 URL hash 恢复上次页面，无记录时默认数据概览
   let restorePage = null;
   try { restorePage = sessionStorage.getItem('currentPage'); } catch(e) {}
@@ -3230,14 +3245,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (xhsData) document.getElementById('xhsBadge').textContent = xhsData.items.length;
   if (dyData) document.getElementById('dyBadge').textContent = dyData.items.length;
   if (wxData) document.getElementById('wxBadge').textContent = wxData.items.length;
-
-  // 设置数据更新日期
-  const updateDateEl = document.getElementById('dataUpdateDate');
-  if (updateDateEl) {
-    const now = new Date();
-    const dateStr = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
-    updateDateEl.textContent = dateStr;
-  }
 
   // 用户下拉菜单
   const userPill = document.getElementById('userPill');
@@ -3351,15 +3358,15 @@ function refreshData() {
     }
 
     // 更新刷新时间
+    const now = new Date();
+    const dateStr = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
+    const timeStr = String(now.getHours()).padStart(2, '0') + ':' + String(now.getMinutes()).padStart(2, '0');
     const updateDateEl = document.getElementById('dataUpdateDate');
-    if (updateDateEl) {
-      const now = new Date();
-      updateDateEl.textContent = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
-    }
+    if (updateDateEl) updateDateEl.textContent = dateStr;
+    const freshEl = document.getElementById('dataFreshness');
+    if (freshEl) freshEl.textContent = `${dateStr} ${timeStr}`;
 
     // 添加刷新通知
-    const now = new Date();
-    const timeStr = now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
     addNotification('refresh', `数据刷新完成 ${timeStr}，小红书${xhsData?.items.length || 0}条、抖音${dyData?.items.length || 0}条、公众号${wxData?.items.length || 0}条`);
 
     // 移除提示
@@ -3371,83 +3378,8 @@ function refreshData() {
 }
 
 // ============================================================
-// 日期选择器
+// 顶部状态与刷新
 // ============================================================
-let currentRange = '7d';
-let customStartDate = null;
-let customEndDate = null;
-
-function toggleDatePicker() {
-  const dropdown = document.getElementById('datePickerDropdown');
-  dropdown.classList.toggle('show');
-}
-
-function setDateRange(range) {
-  currentRange = range;
-  // 更新预设按钮状态
-  document.querySelectorAll('.preset-btn').forEach(btn => btn.classList.remove('active'));
-  event.target.classList.add('active');
-
-  // 更新显示文本
-  const rangeText = document.getElementById('dateRangeText');
-  const texts = { '7d': '近 7 天', '30d': '近 30 天', '90d': '近 90 天', 'all': '全部' };
-  rangeText.textContent = texts[range] || range;
-
-  // 设置自定义日期
-  const today = new Date();
-  const endStr = today.toISOString().split('T')[0];
-  document.getElementById('endDate').value = endStr;
-
-  if (range === '7d') {
-    const start = new Date(today);
-    start.setDate(start.getDate() - 7);
-    document.getElementById('startDate').value = start.toISOString().split('T')[0];
-  } else if (range === '30d') {
-    const start = new Date(today);
-    start.setDate(start.getDate() - 30);
-    document.getElementById('startDate').value = start.toISOString().split('T')[0];
-  } else if (range === '90d') {
-    const start = new Date(today);
-    start.setDate(start.getDate() - 90);
-    document.getElementById('startDate').value = start.toISOString().split('T')[0];
-  } else {
-    document.getElementById('startDate').value = '2026-01-01';
-  }
-}
-
-function updateCustomRange() {
-  const start = document.getElementById('startDate').value;
-  const end = document.getElementById('endDate').value;
-  if (start && end) {
-    document.getElementById('dateRangeText').textContent = start + ' ~ ' + end;
-    document.querySelectorAll('.preset-btn').forEach(btn => btn.classList.remove('active'));
-  }
-}
-
-function applyDateRange() {
-  const start = document.getElementById('startDate').value;
-  const end = document.getElementById('endDate').value;
-
-  // 根据日期范围筛选内容
-  filterContentByDate(start, end);
-
-  toggleDatePicker();
-  showToast('日期范围已更新');
-}
-
-function filterContentByDate(startDate, endDate) {
-  // 重新渲染内容，模拟不同日期的内容
-  renderOverview();
-}
-
-// 点击其他区域关闭日期选择器
-document.addEventListener('click', (e) => {
-  const picker = document.getElementById('datePickerDropdown');
-  const badge = document.getElementById('dateBadge');
-  if (picker && badge && !picker.contains(e.target) && !badge.contains(e.target)) {
-    picker.classList.remove('show');
-  }
-});
 function openSettings() {
   document.getElementById('userDropdown').classList.remove('show');
   document.getElementById('settingsModal').style.display = 'flex';
