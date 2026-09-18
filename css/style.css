@@ -2502,6 +2502,16 @@ body.dark-mode .content-item:hover {
   gap: 8px;
 }
 
+.topic-analysis-date {
+  font-size: 12px;
+  color: var(--text-muted);
+  background: rgba(99, 102, 241, 0.08);
+  border: 1px solid rgba(99, 102, 241, 0.18);
+  border-radius: 999px;
+  padding: 3px 10px;
+  white-space: nowrap;
+}
+
 .topic-analysis-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
