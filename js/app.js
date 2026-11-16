@@ -1488,6 +1488,53 @@ function getPlatformData(platform) {
   };
 }
 
+// ============================================================
+// 真实数据加载（云端只读采集 API）
+// 成功则覆盖内嵌数据；失败保持原样，不做假数据兜底。
+// ============================================================
+async function loadHotFromAPI() {
+  const platforms = ['douyin', 'xiaohongshu', 'wechat'];
+  let updated = false;
+  for (const p of platforms) {
+    let loaded = null;
+    // 1) 本地开发：优先走后端 API
+    try {
+      const resp = await fetch(`/api/hot/${p}`, { cache: 'no-store' });
+      if (resp.ok) {
+        const result = await resp.json();
+        if (result.success && result.data && Array.isArray(result.data.items) && result.data.items.length) {
+          loaded = result.data;
+          console.log(`[hot] ${p} 已加载真实数据 ${loaded.items.length} 条 | ${loaded.source}`);
+        }
+      }
+    } catch (e) { /* 静态部署无后端，走降级 */ }
+
+    // 2) 静态部署：读取构建时导出的 JSON
+    if (!loaded) {
+      try {
+        const resp = await fetch(`data/hot-${p}.json`, { cache: 'no-store' });
+        if (resp.ok) {
+          const data = await resp.json();
+          if (data && Array.isArray(data.items) && data.items.length) {
+            loaded = data;
+            console.log(`[hot] ${p} 已加载静态快照 ${loaded.items.length} 条 | ${loaded.source}`);
+          }
+        }
+      } catch (e) { /* 无快照则保持内嵌数据 */ }
+    }
+
+    if (loaded) { REAL_DATA[p] = loaded; updated = true; }
+  }
+  if (updated) {
+    const active = document.querySelector('.page.active');
+    const id = (active ? active.id.replace('page-', '') : '') || 'all';
+    try {
+      if (typeof switchPage === 'function') switchPage(id);
+      else if (typeof renderOverview === 'function') renderOverview();
+    } catch (e) { console.warn('[hot] 重渲染失败:', e.message); }
+  }
+}
+
 function getAllPlatforms() {
   return ['xiaohongshu', 'douyin', 'wechat'];
 }
@@ -3179,6 +3226,7 @@ function searchXHS() {
 // 初始化
 // ============================================================
 document.addEventListener('DOMContentLoaded', () => {
+  loadHotFromAPI();
   document.querySelectorAll('.nav-item').forEach(item => {
     item.addEventListener('click', () => {
       const platform = item.dataset.platform;
