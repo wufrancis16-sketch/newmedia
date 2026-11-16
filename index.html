@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>新媒体数据平台</title>
-  <link rel="stylesheet" href="css/style.css?v=20260918">
-  <link rel="stylesheet" href="css/redesign.css?v=20260918">
+  <link rel="stylesheet" href="css/style.css?v=20261116">
+  <link rel="stylesheet" href="css/redesign.css?v=20261116">
+  <link rel="stylesheet" href="css/ui-v2.css?v=20261116">
 </head>
 <body>
 
@@ -23,48 +24,66 @@
 
     <nav class="sidebar-nav">
       <a class="nav-item active" data-platform="all">
-        <span class="nav-ico">▦</span>
-        <span class="nav-label">工作台</span>
+        <span class="nav-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg>
+        </span>
+        <span class="nav-label">工作概览</span>
       </a>
 
-      <div class="nav-group">数据洞察</div>
+      <div class="nav-group">内容平台</div>
       <a class="nav-item" data-platform="xiaohongshu">
-        <span class="nav-ico">📕</span>
+        <span class="nav-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 1 6.5 18H19v3H6.5"/><path d="M8 7.5h7"/></svg>
+        </span>
         <span class="nav-label">小红书</span>
         <span class="nav-badge" id="xhsBadge">0</span>
       </a>
       <a class="nav-item" data-platform="douyin">
-        <span class="nav-ico">🎵</span>
+        <span class="nav-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="17" r="3.2"/><path d="M11.2 17V4.5c.7 2.6 2.6 4.2 5.3 4.4"/></svg>
+        </span>
         <span class="nav-label">抖音</span>
         <span class="nav-badge" id="dyBadge">0</span>
       </a>
       <a class="nav-item" data-platform="wechat">
-        <span class="nav-ico">💬</span>
+        <span class="nav-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="13" rx="3"/><path d="M8 21l3-3"/><path d="M8.5 10.5h7"/><path d="M8.5 13.5h4.5"/></svg>
+        </span>
         <span class="nav-label">公众号</span>
         <span class="nav-badge" id="wxBadge">0</span>
       </a>
       <a class="nav-item" data-platform="comments">
-        <span class="nav-ico">💡</span>
-        <span class="nav-label">评论区分析</span>
+        <span class="nav-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a7 7 0 0 1-7 7H9l-4 3v-4.6A7 7 0 0 1 13 5a7 7 0 0 1 7 7z"/></svg>
+        </span>
+        <span class="nav-label">评论监控</span>
       </a>
 
       <div class="nav-group">选题工厂</div>
       <a class="nav-item" data-platform="analytics" onclick="switchPage('analytics')">
-        <span class="nav-ico">🧭</span>
+        <span class="nav-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M15.2 8.8l-1.9 4.4-4.4 1.9 1.9-4.4z"/></svg>
+        </span>
         <span class="nav-label">选题方向</span>
       </a>
       <a class="nav-item" data-platform="titles" onclick="switchPage('titles')">
-        <span class="nav-ico">📝</span>
+        <span class="nav-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5h14"/><path d="M12 5v14"/><path d="M9 19h6"/></svg>
+        </span>
         <span class="nav-label">标题推荐</span>
       </a>
 
       <div class="nav-group">内容创作</div>
       <a class="nav-item" data-platform="copywriter" onclick="switchPage('copywriter')">
-        <span class="nav-ico">✍️</span>
+        <span class="nav-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4l-9.5 9.5"/><path d="M14.5 4H20v5.5"/><path d="M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4"/></svg>
+        </span>
         <span class="nav-label">文案生成</span>
       </a>
       <a class="nav-item" data-platform="poster" onclick="window.open('poster.html','_blank')">
-        <span class="nav-ico">🎨</span>
+        <span class="nav-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="8.5" cy="9.5" r="1.6"/><path d="M4 17l4.5-4.5 3.5 3.5 3-3L20 17"/></svg>
+        </span>
         <span class="nav-label">海报生成</span>
       </a>
     </nav>
@@ -82,15 +101,34 @@
     <!-- Top Bar -->
     <header class="top-bar">
       <button class="menu-toggle" id="menuToggle">☰</button>
+
+      <nav class="plat-tabs" id="platTabs">
+        <button class="plat-tab active" data-tab-page="all" onclick="switchPage('all')">工作概览</button>
+        <button class="plat-tab" data-tab-page="xiaohongshu" onclick="switchPage('xiaohongshu')">小红书</button>
+        <button class="plat-tab" data-tab-page="douyin" onclick="switchPage('douyin')">抖音</button>
+        <button class="plat-tab" data-tab-page="wechat" onclick="switchPage('wechat')">公众号</button>
+        <button class="plat-tab" data-tab-page="comments" onclick="switchPage('comments')">评论监控</button>
+      </nav>
+
+      <div class="top-spacer"></div>
+
       <div class="search-box">
-        <span class="search-icon">🔍</span>
-        <input type="text" placeholder="搜索热门内容、作者、标签..." id="searchInput">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" width="14" height="14"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+        </span>
+        <input type="text" placeholder="搜索内容 / 作者 / 标签" id="searchInput">
       </div>
       <div class="top-actions">
-        <button class="btn-icon" id="btnFullscreen" title="全屏">⛶</button>
-        <button class="btn-icon" id="btnRefresh" title="刷新数据">↻</button>
+        <button class="btn-icon" id="btnFullscreen" title="全屏">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 9V4h5"/><path d="M20 15v5h-5"/><path d="M15 4h5v5"/><path d="M9 20H4v-5"/></svg>
+        </button>
+        <button class="btn-icon" id="btnRefresh" title="刷新数据">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M20 12a8 8 0 1 1-2.3-5.6"/><path d="M20 4v5h-5"/></svg>
+        </button>
         <div class="notification-wrap">
-          <button class="btn-icon notification-btn" id="btnNotification" title="通知">🔔</button>
+          <button class="btn-icon notification-btn" id="btnNotification" title="通知">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M18 9a6 6 0 1 0-12 0c0 5-2 6-2 6h16s-2-1-2-6"/><path d="M10.5 20a2 2 0 0 0 3 0"/></svg>
+          </button>
           <span class="notification-badge" id="notificationBadge" style="display:none;">0</span>
           <div class="notification-dropdown" id="notificationDropdown">
             <div class="notification-header">
@@ -103,7 +141,7 @@
           </div>
         </div>
         <div class="user-pill" id="userPill">
-          <div class="user-avatar">👤</div>
+          <div class="user-avatar">白</div>
           <span>小白WU</span>
         </div>
         <!-- 用户下拉菜单 -->
@@ -313,26 +351,47 @@
     <div class="page active" id="page-all">
       <div id="statsGrid" style="display:none;"></div>
 
-      <!-- Hero -->
-      <section class="wb-hero">
-        <div class="wb-hero-left">
-          <h1 class="wb-hero-title" id="greetingTitle">你好，小白WU</h1>
-          <p class="wb-hero-sub" id="greetingSubtitle"></p>
-          <div class="wb-hero-metric">
-            <span class="wb-hero-num" id="wbTotalCount">0</span>
-            <span class="wb-hero-unit">条内容 · 今日跨平台追踪</span>
-          </div>
+      <!-- 页头 -->
+      <section class="page-head">
+        <div class="page-head-left">
+          <div class="head-chip">多平台工作台</div>
+          <h1>工作概览</h1>
+          <p>查看三大平台的真实热门内容，接着推进今天的内容工作。</p>
         </div>
-        <div class="wb-hero-right">
-          <div class="wb-freshness" title="点击刷新数据" onclick="refreshData()">
-            <span class="freshness-dot"></span>
-            数据更新于 <strong id="dataFreshness">—</strong>
-          </div>
-          <button class="wb-refresh-btn" id="refreshDataBtn" onclick="refreshData()">
-            🔄 刷新数据
-          </button>
+        <div class="page-head-actions">
+          <button class="btn-secondary" onclick="openHelp()">使用向导</button>
+          <button class="btn-icon" onclick="refreshData()" title="刷新数据">↻</button>
+          <button class="btn-primary" onclick="switchPage('copywriter')">＋ 创作内容</button>
         </div>
       </section>
+
+      <!-- Hero -->
+      <section class="wb-hero">
+        <div class="wb-hero-row">
+          <div class="wb-hero-left">
+            <div class="hero-pill" id="heroPill">数据已就绪</div>
+            <h1 class="wb-hero-title" id="greetingTitle">你好，小白WU</h1>
+            <p class="wb-hero-sub" id="greetingSubtitle"></p>
+            <div class="wb-hero-metric">
+              <span class="wb-hero-num" id="wbTotalCount">0</span>
+              <span class="wb-hero-unit">条内容 · 今日跨平台追踪</span>
+            </div>
+          </div>
+          <div class="wb-hero-right">
+            <div class="wb-freshness" title="点击刷新数据" onclick="refreshData()">
+              <span class="freshness-dot"></span>
+              数据更新于 <strong id="dataFreshness">—</strong>
+            </div>
+            <button class="wb-refresh-btn" id="refreshDataBtn" onclick="refreshData()">
+              ↻ 刷新数据
+            </button>
+          </div>
+        </div>
+        <div class="hero-cards" id="heroCards"></div>
+      </section>
+
+      <!-- 指标卡 -->
+      <section class="stat-strip" id="statStrip"></section>
 
       <!-- 创作流水线 -->
       <section class="wb-section">
@@ -377,10 +436,11 @@
     </div>
     <!-- Xiaohongshu Page -->
     <div class="page" id="page-xiaohongshu">
-      <div class="platform-banner xhs-bg">
+      <div class="platform-banner">
         <div>
-          <h1>📕 小红书热门</h1>
-          <p>今日小红书热门内容 Top 10 · 实时追踪爆款笔记</p>
+          <div class="head-chip">小红书 · 实时</div>
+          <h1>小红书热门</h1>
+          <p>今日探索页热门笔记 · 登录态实时抓取</p>
         </div>
         <div class="platform-banner-stats" id="xhsStats"></div>
       </div>
@@ -394,10 +454,11 @@
 
     <!-- Douyin Page -->
     <div class="page" id="page-douyin">
-      <div class="platform-banner dy-bg">
+      <div class="platform-banner">
         <div>
-          <h1>🎵 抖音热门</h1>
-          <p>今日抖音热门内容 Top 10 · 全网最火视频追踪</p>
+          <div class="head-chip is-blue">抖音 · 实时</div>
+          <h1>抖音热门</h1>
+          <p>今日抖音热榜话题 · 公开接口实时拉取</p>
         </div>
         <div class="platform-banner-stats" id="dyStats"></div>
       </div>
@@ -406,10 +467,11 @@
 
     <!-- Wechat Page -->
     <div class="page" id="page-wechat">
-      <div class="platform-banner wx-bg">
+      <div class="platform-banner">
         <div>
-          <h1>💬 公众号热门</h1>
-          <p>今日公众号热门内容 Top 10 · 深度好文精选</p>
+          <div class="head-chip is-green">公众号 · 24 小时</div>
+          <h1>公众号热门</h1>
+          <p>24 小时热文榜 · 公开榜单页解析</p>
         </div>
         <div class="platform-banner-stats" id="wxStats"></div>
       </div>
@@ -420,7 +482,8 @@
     <div class="page" id="page-comments">
       <div class="page-header">
         <div class="page-header-left">
-          <h1>💬 小红书评论区分析</h1>
+          <div class="head-chip">评论洞察</div>
+          <h1>小红书评论区分析</h1>
           <p>每日自动分析热门帖子评论区，洞察用户真实需求与行业趋势</p>
         </div>
         <div class="page-header-actions">
@@ -445,7 +508,8 @@
     <div class="page" id="page-analytics">
       <div class="page-header">
         <div class="page-header-left">
-          <h1>💡 今日选题方向</h1>
+          <div class="head-chip">选题工厂</div>
+          <h1>今日选题方向</h1>
           <p>基于热门数据和平台趋势，为你推荐今日最佳选题</p>
         </div>
         <div class="page-header-actions">
@@ -467,7 +531,8 @@
     <div class="page" id="page-titles">
       <div class="page-header">
         <div class="page-header-left">
-          <h1>📝 今日标题推荐</h1>
+          <div class="head-chip">选题工厂</div>
+          <h1>今日标题推荐</h1>
           <p id="titleDate">基于爆款公式，为你推荐不同角度的吸睛标题</p>
         </div>
         <div class="page-header-actions">
@@ -556,6 +621,14 @@
     </div>
   </main>
 
-  <script src="js/app.js?v=20260918"></script>
+  <!-- 浮动 AI 助手 -->
+  <button class="ai-fab" onclick="switchPage('copywriter')" title="AI 文案助手">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="4" y="7" width="16" height="12" rx="3"/><path d="M12 3v4"/><circle cx="9" cy="13" r="1"/><circle cx="15" cy="13" r="1"/><path d="M9.5 16.5h5"/>
+    </svg>
+    AI 助手
+  </button>
+
+  <script src="js/app.js?v=20261116"></script>
 </body>
 </html>

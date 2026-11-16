@@ -2528,7 +2528,7 @@ function renderGreeting() {
   const weekdays = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
   const weekday = weekdays[now.getDay()];
 
-  titleEl.textContent = `👋 ${greeting}，小白WU`;
+  titleEl.textContent = `${greeting}，小白WU`;
   subtitleEl.textContent = `今天是 ${dateStr} ${weekday}，AI 正在为你捕捉全网热点`;
 }
 
@@ -2832,6 +2832,110 @@ function renderKeywordCloud(container) {
 // ============================================================
 // 概览页渲染
 // ============================================================
+// ============================================================
+// 概览 · Hero 平台卡 + 指标卡条
+// ============================================================
+const HERO_PLATFORM_META = {
+  xiaohongshu: {
+    label: '小红书 · 探索页',
+    cls: 'ico-pink',
+    svg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 1 6.5 18H19v3H6.5"/></svg>',
+  },
+  douyin: {
+    label: '抖音 · 热榜',
+    cls: 'ico-blue',
+    svg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="17" r="3.2"/><path d="M11.2 17V4.5c.7 2.6 2.6 4.2 5.3 4.4"/></svg>',
+  },
+  wechat: {
+    label: '公众号 · 24 小时',
+    cls: 'ico-green',
+    svg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="13" rx="3"/><path d="M8 21l3-3"/><path d="M8.5 10.5h7"/></svg>',
+  },
+};
+
+function renderHeroCards(platforms) {
+  const el = document.getElementById('heroCards');
+  if (!el) return;
+  el.innerHTML = platforms.map(k => {
+    const meta = HERO_PLATFORM_META[k];
+    const data = getPlatformData(k);
+    if (!meta || !data) return '';
+    return `
+      <div class="hero-card" onclick="switchPage('${k}')">
+        <div class="hero-card-ico ${meta.cls}">${meta.svg}</div>
+        <div class="hero-card-body">
+          <div class="hero-card-label">${meta.label}</div>
+          <div class="hero-card-num">${data.items.length}<small>条</small></div>
+        </div>
+        <div class="hero-card-arrow">›</div>
+      </div>`;
+  }).join('');
+}
+
+function renderStatStrip(platforms, total) {
+  const el = document.getElementById('statStrip');
+  if (!el) return;
+
+  const sources = new Set();
+  platforms.forEach(k => {
+    const d = getPlatformData(k);
+    if (d && d.source) sources.add(d.source);
+  });
+  const fresh = document.getElementById('dataFreshness');
+  const freshText = fresh ? fresh.textContent.trim() : '—';
+  const [datePart] = freshText.split(' ');
+
+  const tiles = [
+    {
+      cls: 'ico-pink',
+      num: total,
+      unit: '条',
+      label: '今日追踪内容',
+      svg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h10"/></svg>',
+    },
+    {
+      cls: 'ico-blue',
+      num: platforms.length,
+      unit: '个',
+      label: '覆盖内容平台',
+      svg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg>',
+    },
+    {
+      cls: 'ico-green',
+      num: sources.size,
+      unit: '个',
+      label: '真实数据源',
+      svg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg>',
+    },
+    {
+      cls: 'ico-orange',
+      num: datePart || '—',
+      unit: '',
+      label: '最近更新时间',
+      isText: true,
+      svg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>',
+    },
+  ];
+
+  el.innerHTML = tiles.map(t => `
+    <div class="stat-tile">
+      <div class="stat-tile-ico ${t.cls}">${t.svg}</div>
+      <div class="stat-tile-body">
+        <div class="stat-tile-num${t.isText ? ' is-text' : ''}">${t.num}${t.unit ? `<small>${t.unit}</small>` : ''}</div>
+        <div class="stat-tile-label">${t.label}</div>
+      </div>
+    </div>`).join('');
+}
+
+function syncNavBadges() {
+  const map = { xhsBadge: 'xiaohongshu', dyBadge: 'douyin', wxBadge: 'wechat' };
+  Object.entries(map).forEach(([id, k]) => {
+    const el = document.getElementById(id);
+    const d = getPlatformData(k);
+    if (el && d && d.items) el.textContent = d.items.length;
+  });
+}
+
 function renderOverview() {
   const previews = document.getElementById('platformPreviews');
   if (!previews) return;
@@ -2860,6 +2964,11 @@ function renderOverview() {
   platforms.forEach(k => { const d = getPlatformData(k); if (d) total += d.items.length; });
   const totalEl = document.getElementById('wbTotalCount');
   if (totalEl) totalEl.textContent = total;
+
+  // Hero 平台卡 + 指标卡条
+  renderHeroCards(platforms);
+  renderStatStrip(platforms, total);
+  syncNavBadges();
 
   // 快捷工具
   renderQuickTools();
@@ -2904,11 +3013,13 @@ function renderOverview() {
 function renderQuickTools() {
   const el = document.getElementById('wbTools');
   if (!el) return;
+  const svg = (d) =>
+    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
   const tools = [
-    { icon: '🧭', name: '选题方向', desc: '基于热点智能推荐今日选题', platform: 'analytics' },
-    { icon: '📝', name: '标题推荐', desc: '爆款公式生成吸睛标题', platform: 'titles' },
-    { icon: '✍️', name: '文案生成', desc: '输入产品一键生成推广文案', platform: 'copywriter' },
-    { icon: '🎨', name: '海报生成', desc: '3:4 营销海报快速出图', platform: 'poster', external: true }
+    { icon: svg('<circle cx="12" cy="12" r="8.5"/><path d="M15.2 8.8l-1.9 4.4-4.4 1.9 1.9-4.4z"/>'), name: '选题方向', desc: '基于热点智能推荐今日选题', platform: 'analytics' },
+    { icon: svg('<path d="M5 5h14"/><path d="M12 5v14"/><path d="M9 19h6"/>'), name: '标题推荐', desc: '爆款公式生成吸睛标题', platform: 'titles' },
+    { icon: svg('<path d="M20 4l-9.5 9.5"/><path d="M14.5 4H20v5.5"/><path d="M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4"/>'), name: '文案生成', desc: '输入产品一键生成推广文案', platform: 'copywriter' },
+    { icon: svg('<rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="8.5" cy="9.5" r="1.6"/><path d="M4 17l4.5-4.5 3.5 3.5 3-3L20 17"/>'), name: '海报生成', desc: '3:4 营销海报快速出图', platform: 'poster', external: true }
   ];
   el.innerHTML = tools.map(t => `
     <div class="wb-tool" ${t.external ? "onclick=\"window.open('poster.html','_blank')\"" : `onclick="switchPage('${t.platform}')"`}>
@@ -2939,9 +3050,10 @@ function renderPlatform(platform) {
   }
 
   if (statsEl) {
+    const srcShort = (data.source || '—').replace(/[（(].*?[)）]/g, '').trim();
     statsEl.innerHTML = `
       <div class="banner-stat"><div class="banner-stat-value">${data.items.length}</div><div class="banner-stat-label">内容条数</div></div>
-      <div class="banner-stat"><div class="banner-stat-value">${data.source}</div><div class="banner-stat-label">数据来源</div></div>`;
+      <div class="banner-stat"><div class="banner-stat-value is-text">${srcShort}</div><div class="banner-stat-label">数据来源</div></div>`;
   }
 
   listEl.innerHTML = data.items.map((item, i) => {
@@ -2974,6 +3086,10 @@ function switchPage(platform) {
 
   const page = document.getElementById('page-' + platform);
   if (page) page.classList.add('active');
+
+  document.querySelectorAll('.plat-tab').forEach(t => {
+    t.classList.toggle('active', t.dataset.tabPage === platform);
+  });
 
   const nav = document.querySelector(`.nav-item[data-platform="${platform}"]`);
   if (nav) nav.classList.add('active');
